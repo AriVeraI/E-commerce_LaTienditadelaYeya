@@ -19,7 +19,7 @@ Proyecto desarrollado colaborativamente aplicando el marco de trabajo **SCRUM** 
 * **Iran Gutierrez** — *Product Owner*
 * **Cristian Rodriguez** — *Desarrollador*
 * **Ernesto Nava** — *Desarrollador Sr.*
-* **Brandon Cortez** — *Desarrollador*
+* **Essaw Cortez** — *Desarrollador*
 * **Israel Martínez** — *Desarrollador*
 * **Joyce Martinez** — *Desarrolladora*
 * **Santiago López** — *Desarrollador*
