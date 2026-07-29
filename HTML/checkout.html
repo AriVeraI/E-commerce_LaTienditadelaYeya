@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <link rel="stylesheet" href="../CSS/checkout.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Contact</title>
+  </head>
+
+  <body>
+    <!--navbar-->
+    <header class="main-header">
+      <p class="title-shop-header"><strong>La tiendita de la Yeya</strong></p>
+      <nav class="main-nav">
+        <ul class="links-nav">
+          <li>
+            <a class="principal-link-header" href="">Inicio</a>
+          </li>
+          <li>
+            <a class="principal-link-header" href="">Catálogo</a>
+          </li>
+          <li>
+            <a class="principal-link-header" href="about.html">Nosotros</a>
+          </li>
+          <li>
+            <a class="principal-link-header" href="contact.html">Contacto</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="icons-header">
+        <img src="assets/search.png" alt="search-icon" />
+        <a href=""><img src="assets/Icon.png" alt="user-icon" /></a>
+        <a href=""><img src="assets/shop.png" alt="shop-icon" /></a>
+      </div>
+    </header>
+    <!-- Contenido Principal de Checkout -->
+    <main class="container my-5">
+      <h2 class="mb-4 fw-bold">Finalizar Compra</h2>
+
+      <div class="row">
+        <!-- Columna Izquierda: Pasos de Carrito, Envío y Pago -->
+        <div class="col-lg-8">
+          <!-- Paso 1: Tu Carrito -->
+          <div class="card shadow-sm border-0 mb-4 p-4">
+            <h5 class="fw-bold mb-3">
+              <span class="badge rounded-circle bg-secondary me-2">1</span> Tu
+              Carrito
+            </h5>
+            <div
+              class="d-flex align-items-center justify-content-between border-bottom pb-3 mb-3"
+            >
+              <div>
+                <h6 class="mb-0 fw-bold">Colgante Azul Océano</h6>
+                <small class="text-muted">Plata, 18"</small>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <button class="btn btn-sm btn-outline-secondary">-</button>
+                <span>1</span>
+                <button class="btn btn-sm btn-outline-secondary">+</button>
+              </div>
+              <span class="fw-bold">$890</span>
+            </div>
+          </div>
+
+          <!-- Paso 2: Dirección de Envío -->
+          <div class="card shadow-sm border-0 mb-4 p-4">
+            <h5 class="fw-bold mb-3">
+              <span class="badge rounded-circle bg-secondary me-2">2</span>
+              Dirección de Envío
+            </h5>
+            <form>
+              <div class="mb-3">
+                <label class="form-label text-muted small"
+                  >Nombre Completo</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Ej. Ana Pérez"
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label text-muted small"
+                  >Dirección (Calle y número)</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Ej. Av. Reforma 222, Depto 4"
+                />
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label text-muted small">Ciudad</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Ej. Ciudad de México"
+                  />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label text-muted small"
+                    >Código Postal</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Ej. 06600"
+                  />
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label text-muted small"
+                  >Número de Teléfono</label
+                >
+                <input
+                  type="tel"
+                  class="form-control"
+                  placeholder="+52 (55) 1234-5678"
+                />
+              </div>
+            </form>
+          </div>
+
+          <!-- Paso 3: Método de Pago -->
+          <div class="card shadow-sm border-0 mb-4 p-4">
+            <h5 class="fw-bold mb-3">
+              <span class="badge rounded-circle bg-secondary me-2">3</span>
+              Método de Pago
+            </h5>
+
+            <!-- Opción 1: Tarjeta -->
+            <div class="form-check mb-3 p-3 border rounded">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="metodoPago"
+                id="tarjeta"
+                checked
+              />
+              <label class="form-check-label fw-bold" for="tarjeta">
+                <i class="bi bi-credit-card me-2"></i> Tarjeta de Crédito o
+                Débito
+              </label>
+              <div class="mt-3">
+                <input
+                  type="text"
+                  class="form-control mb-2"
+                  placeholder="Número de Tarjeta"
+                />
+                <div class="row">
+                  <div class="col-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="MM/AA"
+                    />
+                  </div>
+                  <div class="col-6">
+                    <input type="text" class="form-control" placeholder="CVV" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Opción 2: PayPal -->
+            <div class="form-check mb-3 p-3 border rounded">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="metodoPago"
+                id="paypal"
+              />
+              <label class="form-check-label fw-bold" for="paypal">
+                <i class="bi bi-paypal me-2 text-primary"></i> PayPal
+              </label>
+              <small class="d-block text-muted mt-1"
+                >Serás redirigido a PayPal para completar tu pago de forma
+                segura.</small
+              >
+            </div>
+
+            <!-- Opción 3: Mercado Pago -->
+            <div class="form-check p-3 border rounded">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="metodoPago"
+                id="mercadopago"
+              />
+              <label class="form-check-label fw-bold" for="mercadopago">
+                <i class="bi bi-wallet2 me-2 text-info"></i> Mercado Pago (Meses
+                sin intereses / Efectivo)
+              </label>
+              <small class="d-block text-muted mt-1"
+                >Paga con Tarjeta, OXXO o Dinero en cuenta de Mercado
+                Pago.</small
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna Derecha: Resumen de Compra -->
+        <div class="col-lg-4">
+          <div class="card shadow-sm border-0 p-4 sticky-top" style="top: 20px">
+            <h5 class="fw-bold mb-3">Resumen de Compra</h5>
+            <div class="d-flex justify-content-between mb-2 text-muted">
+              <span>Subtotal</span>
+              <span>$2,140.00</span>
+            </div>
+            <div class="d-flex justify-content-between mb-2 text-muted">
+              <span>Envío</span>
+              <span class="text-success fw-bold">Gratis</span>
+            </div>
+            <hr />
+            <div class="d-flex justify-content-between mb-3">
+              <span class="fw-bold fs-5">Total</span>
+              <span class="fw-bold fs-5 text-danger">$2,140.00</span>
+            </div>
+            <button class="btn btn-yeya w-100 py-2 fw-bold shadow-sm">
+              Finalizar Compra
+            </button>
+            <small class="text-center text-muted mt-3 d-block"
+              ><i class="bi bi-lock"></i> Pago Seguro (Encriptación SSL
+              256-bit)</small
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!--footer-->
+    <footer class="footer-seccion py-5 px-4 px-md-5">
+      <div class="container-fluid">
+        <!-- Tu fila de contenido actual sin el logo a la izquierda -->
+        <div class="row g-4">
+          <!-- Columna 1: Marca -->
+          <div class="col-12 col-md-3">
+            <!-- Contenedor del Logo en lugar del título de texto -->
+            <div class="footer-logo-header mb-3">
+              <img
+                src="Imagenes/logo.png"
+                alt="La Tiendita de la Yeya"
+                class="img-fluid logo-superior"
+              />
+            </div>
+
+            <p class="footer-texto">
+              Elevando tu estilo diario con piezas de bisutería temática,
+              finamente elaboradas y diseñadas para destacar.
+            </p>
+          </div>
+
+          <!-- Columna 2: Tienda -->
+          <div class="col-6 col-md-2 offset-md-1">
+            <h4 class="footer-subtitulo">Tienda</h4>
+            <ul class="footer-enlaces p-0">
+              <li><a href="#">Todas las Colecciones</a></li>
+              <li><a href="#">Anillos</a></li>
+              <li><a href="#">Collares</a></li>
+              <li><a href="#">Pulseras</a></li>
+            </ul>
+          </div>
+
+          <!-- Columna 3: Compañía -->
+          <div class="col-6 col-md-2">
+            <h4 class="footer-subtitulo">Compañía</h4>
+            <ul class="footer-enlaces p-0">
+              <li><a href="about.html">Nosotros</a></li>
+              <li><a href="contact.html">Contacto</a></li>
+              <li><a href="#">Política de Privacidad</a></li>
+              <li><a href="#">Términos de Servicio</a></li>
+            </ul>
+          </div>
+
+          <!-- Columna 4: Boletín -->
+          <div class="col-12 col-md-4">
+            <h4 class="footer-subtitulo">Boletín</h4>
+            <p class="footer-texto">
+              Suscríbete para recibir actualizaciones y ofertas exclusivas.
+            </p>
+
+            <div class="d-flex flex-wrap gap-2 mb-3 align-items-center">
+              <input
+                type="email"
+                class="form-control footer-input"
+                placeholder="tu correo electrónico"
+              />
+              <button type="submit" class="btn btn-dark btn-suscripción">
+                Suscribir
+              </button>
+            </div>
+
+            <!-- Agrega la clase footer-redes al contenedor principal -->
+            <div class="footer-redes d-flex gap-2 align-items-center mt-3">
+              <!-- Cambia social-icon-pink por social-icon-footer -->
+              <a
+                href="#"
+                target="_blank"
+                class="social-icon-footer"
+                aria-label="Instagram"
+              >
+                <i class="bi bi-instagram"></i>
+              </a>
+
+              <a
+                href="#"
+                target="_blank"
+                class="social-icon-footer"
+                aria-label="Facebook"
+              >
+                <i class="bi bi-facebook"></i>
+              </a>
+
+              <a
+                href="#"
+                target="_blank"
+                class="social-icon-footer"
+                aria-label="TikTok"
+              >
+                <i class="bi bi-tiktok"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="../JS/script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
