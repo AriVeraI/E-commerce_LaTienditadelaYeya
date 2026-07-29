@@ -1,0 +1,50 @@
+:root {
+  --color-principal: #c66271;
+  --color-oscuro: #333333;
+}
+
+/* 1. Importar tipografías oficiales de tu guía */
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Montserrat:wght@400;500;700&display=swap");
+
+/* 2. Fondo general de la página (Platinum) y tipografía por defecto */
+body {
+  font-family: "Montserrat", sans-serif !important;
+  background-color: #f2f4f6 !important;
+}
+
+/* Aplicar Montserrat al contenido y formularios sin forzarles fondo */
+input,
+select,
+textarea,
+button,
+p,
+span,
+label {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+/* 3. Aplicar Fredoka a títulos y encabezados */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.fw-bold,
+.navbar-brand {
+  font-family: "Fredoka", sans-serif !important;
+}
+
+.navbar-yeya {
+  background-color: var(--color-principal);
+}
+
+.btn-yeya {
+  background-color: var(--color-principal);
+  color: white;
+}
+
+.btn-yeya:hover {
+  background-color: #a8525f;
+  color: white;
+}
