@@ -1,0 +1,134 @@
+:root {
+    /* Colores oficiales */
+    --color-primario: #C66271;    /* Rosa suave / Malva de la barra de navegación */
+    --color-fondo: #F2F4F6;       /* Gris/blanco muy claro de fondo */
+    --color-footer: #D9D9D9;      /* Gris suave para el footer */
+    --color-blanco: #FFFFFF;      /* Letras en contraste claro */
+    --color-negro: #000000;       /* Letras en contraste oscuro */
+
+    /* Fuentes oficiales */
+    --fuente-titulos: 'Fredoka', sans-serif;
+    --fuente-cuerpo: 'Montserrat', sans-serif;
+}
+
+.cabecera-inicio{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../../assets/Images/banner-home.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 550px;
+}
+
+#contenedor-inicio{
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+
+}
+
+.titulo-blanco{
+    font-family: var(--fuente-titulos);
+    font-weight: bold;
+    color: var(--color-blanco);
+    margin-bottom: 40px
+}
+
+.titulo-negro{
+    font-family: var(--fuente-titulos);
+    font-weight: bold;
+    color: var(--color-negro);
+    margin-bottom: 30px
+}
+
+.parrafo-blanco{
+    font-family: var(--fuente-cuerpo);
+    color: var(--color-blanco);
+    font-size: 18px;
+    margin-bottom: 20px
+}
+
+.parrafo-negro{
+    font-family: var(--fuente-cuerpo);
+    color: var(--color-negro);
+    font-size: 18px;
+    margin-bottom: 20px
+}
+
+.parrafo-rosa{
+    font-family: var(--fuente-cuerpo);
+    color: var(--color-primario);
+    font-size: 18px;
+    margin-bottom: 20px
+}
+
+#btn-inicio{
+    font-family: var(--fuente-cuerpo);
+    color: var(--color-blanco);
+    font-size: 20;
+    background-color: var(--color-primario);
+    padding: 10px 23px;
+}
+
+.inicio-beneficios{
+    padding: 100px 0px;
+}
+
+.circulo {
+    width: 80px;
+    height: 80px;
+    background-color: #f3f3f3; /* Color del círculo */
+    border-radius: 50%; /* Esto lo convierte en círculo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 0px 50px 140px;
+}
+
+.contenedor-categoria{
+    padding: 50px 0px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#anillos{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../../assets//Images/banner-anillos.png');
+    height: 400px;
+    border-radius: 5%;
+    margin: 40px 20px 0px;
+    padding: 250px 30px 20px;
+}
+
+#collares{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../../assets/Images/banner-collares.png');
+    height: 400px;
+    border-radius: 5%;
+    margin: 40px 20px 0px;
+    padding: 250px 30px 20px;
+}
+
+#pulseras{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../../assets/Images/banner-pulseras.png');
+    height: 400px;
+    border-radius: 5%;
+    margin: 40px 20px 0px;
+    padding: 250px 30px 20px;
+}
+
+.piezas-destacadas{
+    padding: 50px 0px;
+}
+
+.recomendaciones{
+    padding: 50px 0px 150px;
+}
+
+#resenas{
+    margin-top: 40px;
+    width: 22rem; 
+    border-radius: 20px;
+}

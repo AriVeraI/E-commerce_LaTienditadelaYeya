@@ -1,0 +1,746 @@
+:root {
+    /* Colores oficiales */
+    --color-primario: #C66271;    /* Rosa suave / Malva de la barra de navegación */
+    --color-fondo: #F2F4F6;       /* Gris/blanco muy claro de fondo */
+    --color-footer: #D9D9D9;      /* Gris suave para el footer */
+    --color-blanco: #FFFFFF;      /* Letras en contraste claro */
+    --color-negro: #000000;       /* Letras en contraste oscuro */
+
+    /* Fuentes oficiales */
+    --fuente-titulos: 'Fredoka', sans-serif;
+    --fuente-cuerpo: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: var(--color-fondo);
+    min-height: 100vh; /* Cambiado de height a min-height para permitir scroll */
+}
+
+/* ======================= CABECERA ======================= */
+.main-header {
+    background: var(--color-primario);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px; /* Ajustado el padding superior de 1px a 10px para mejor respiración */
+}
+
+.title-shop-header {
+    font-family: var(--fuente-titulos);
+    font-size: 20px;
+    color: var(--color-blanco);
+    margin-bottom: 0; /* Evita márgenes basura de Bootstrap */
+}
+
+.links-nav {
+    display: flex;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+.links-nav li {
+    margin: 10px 15px;
+    list-style: none;
+}
+
+.principal-link-header {
+    color: var(--color-blanco);
+    text-decoration: none;
+    font-family: var(--fuente-cuerpo);
+}
+
+.principal-link-header:hover {
+    text-decoration: underline;
+    color: var(--color-fondo);
+}
+
+/* Corregido el selector para que no afecte a todos los enlaces del sitio */
+.icons-header img, 
+.icons-header a {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* ====================== INTRO NOSOTROS ====================== */
+section > section:first-of-type {
+    position: relative;
+    width: 100%;
+    height: 320px; 
+    overflow: hidden;
+    margin: 0;
+    padding: 0;                  
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.about-imagen {
+    width: 100%;
+    height: 100%;
+}
+
+.about-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;      
+    display: block;              
+    filter: brightness(75%); 
+}
+
+.about-titulo-imagen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+}
+
+.about-titulo {
+    font-family: var(--fuente-titulos);
+    color: var(--color-blanco);
+    font-size: 3.5rem;           
+    font-weight: 600;
+    margin: 0;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6); 
+}
+
+.about-seccion {
+    background-color: var(--color-blanco) !important; 
+    margin: 0;                                                    
+    padding: 60px 20px 40px 20px; /* Un espacio equilibrado arriba y abajo */
+    display: flex;
+    justify-content: center;
+}
+
+.contendor-about-descripcion {
+    max-width: 860px;                                     
+    width: 100%;
+    text-align: center;                                   
+    position: relative;
+}
+
+.about-subtitulo {
+    font-family: var(--fuente-titulos);
+    color: var(--color-negro);
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.About-parrafo1, 
+.About-parrafo2 {
+    font-family: var(--fuente-cuerpo);
+    color: #555555;
+    font-size: 1.0rem;
+    line-height: 1.5;                                     
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.About-parrafo2 {
+    margin-bottom: 0;                                     
+}
+
+.contendor-about-descripcion::before,
+.contendor-about-descripcion::after {
+    content: "";
+    display: block;
+    width: 45px;
+    height: 3px;
+    background-color: var(--color-primario);
+    margin: 0 auto;
+}
+
+/* ================= SECCIÓN DE ESTILO DE DESCRIPCION ================= */
+#descripcion {
+    background-color: var(--color-fondo) !important;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+#descripcion .container-fluid,
+#div-descripcion {
+    background-color: var(--color-fondo) !important;
+    background: var(--color-fondo) !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+#div-descripcion {
+    background-color: var(--color-fondo) !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+#descripcion .card, 
+#descripcion .bg-white,
+#descripcion div[class*="bg-"] {
+    background-color: transparent !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+#h2-texto-descripcion {
+    color: #C66271;
+    font-family: var(--fuente-titulos);
+    text-align: center;
+}
+
+#p-descripcion {
+    font-family: var(--fuente-cuerpo);
+    background-color: var(--color-blanco) !important; 
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    border-radius: 16px !important;
+    padding: 2.5rem 1.5rem;
+    color: #555555;
+    text-align: justify;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.04); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#descripHover:hover #p-descripcion {
+    transform: scale(1.03) translateY(-5px);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Animación recuadro descripción */
+#descripHover {
+    transition: transform 0.3s ease;
+}
+#descripHover:hover {
+    transform: scale(1.04) translateY(-5px);
+}
+
+/* ================= NUESTRO PROPOSITO -> MISION Y VISION ================= */
+/* ================= NUESTRO PROPOSITO -> MISION Y VISION ================= */
+#seccion-proposito {
+    background-color: var(--color-fondo) !important;
+    /* Reducimos el padding superior de 40px a 10px para subir la sección */
+    padding: 10px 20px 40px 20px; 
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    display: block !important;
+    position: relative;
+    z-index: 1;
+}
+#descripcion {
+    background-color: var(--color-fondo) !important;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    margin-bottom: 0 !important;    /* Evita que la sección anterior empuje con blanco */
+}
+
+/* Forzamos a que si hay un contenedor de Bootstrap adentro, también sea gris claro */
+#seccion-proposito .container,
+#seccion-proposito .container-fluid,
+#seccion-proposito div[class*="bg-"] {
+    background-color: var(--color-fondo) !important;
+    background: var(--color-fondo) !important;
+}
+
+#seccion-proposito h2 {
+    text-align: center;
+    font-family: var(--fuente-titulos);
+    color: var(--color-negro);
+    margin-top: 10px;        /* Pequeño espacio controlado arriba del título */
+    margin-bottom: 35px;     /* Separa el título "Nuestro Propósito" de las tarjetas de abajo */
+    background-color: transparent !important;
+}
+
+#seccion-proposito h2 {
+    text-align: center;
+    font-family: var(--fuente-titulos);
+    color: var(--color-negro);
+    margin-bottom: 20px;
+}
+
+.contenedor-tarjetas {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.mision-vision {
+    background-color: var(--color-blanco) !important; /* Forzamos el fondo blanco limpio para ambas */
+    border: none !important;
+    border-radius: 12px !important; /* Bordes redondeados sutiles */
+    padding: 2.5rem 1.5rem; /* Margen interno para que el texto respire */
+    flex: 1; /* Hace que ambas midan exactamente lo mismo de ancho */
+    min-width: 280px; /* Evita que se aplasten en móviles */
+    max-width: 500px; /* Evita que se estiren demasiado en pantallas gigantes */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.06); /* Sombra suave y elegante abajo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para el hover */
+}
+
+.mision-vision:hover {
+    transform: scale(1.04) translateY(-5px);
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.1); /* La sombra se intensifica al elevarse */
+}
+
+.mision-vision h3 {
+    font-family: var(--fuente-titulos);
+    color: var(--color-primario); /* Tu color rosa/malva oficial para los títulos */
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.mision-vision p {
+    font-family: var(--fuente-cuerpo);
+    text-align: justify;
+    color: #555555; /* Gris oscuro elegante para la lectura */
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* ================= VALORES FUNDAMENTALES ================= */
+h3, h4, h5, h6, .valores-titulo, .valor-card-title {
+    font-family: var(--fuente-titulos);
+}
+
+p, .valores-subtitulo, .valor-card-text {
+    font-family: var(--fuente-cuerpo);
+}
+
+.valores-titulo {
+    font-weight: 500; 
+    color: var(--color-negro);
+    font-size: 27px;
+    margin-bottom: 2px;
+}
+
+.valores-subtitulo {
+    color: #6c757d;
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+
+.valor-card {
+    background-color: var(--color-fondo) !important; /* Cambiado de --color-footer al gris ultra claro oficial */
+    border: 1px solid rgba(0, 0, 0, 0.05) !important; /* Un borde casi invisible para dar definición */
+    border-radius: 16px !important;
+    padding: 2.5rem 1.5rem;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.02); /* Sombra muy tenue en reposo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.valor-numero {
+    width: 60px;
+    height: 60px;
+    background-color: var(--color-primario); 
+    color: var(--color-blanco);
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+    font-size: 1.25rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem auto;
+    box-shadow: 0 4px 10px rgba(196, 109, 118, 0.35);
+}
+
+#animacard {
+    transition: transform 0.3s ease;
+}
+
+#animacard:hover .valor-card {
+    transform: scale(1.04) translateY(-5px);
+    background-color: var(--color-blanco) !important; /* Opcional: cambia a blanco al pasar el mouse para un efecto interactivo genial */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.08); /* Se levanta elegantemente */
+}
+
+.valor-card-title {
+    font-weight: 600;
+    color: var(--color-negro);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.valor-card-text {
+    color: #5a5a5a;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    font-weight: 400; 
+    text-align: justify;
+}
+
+/* ================= CARRUSEL DE PERFILES CONTINUO ================= */
+
+.card-team-body, 
+.equipo-seccion .card,
+.equipo-seccion .member-info,
+.cinta-constante .card { /* Añadido aquí para unificar el comportamiento */
+    background-color: var(--color-fondo) !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.equipo-seccion h5, 
+.equipo-seccion p {
+    color: #333333 !important; 
+}
+
+/* Forzamos a que el cuerpo interno de la tarjeta también sea transparente/gris claro */
+.equipo-seccion .card-body,
+.cinta-constante .card-body {
+    background-color: transparent !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important; 
+    align-items: center !important;
+    height: 100% !important;
+    padding: 1.5rem !important;
+    flex-grow: 1 !important;
+}
+
+/* ================= CARRUSEL DE PERFILES CONTINUO (ESTRUCTURA) ================= */
+.cinta-constante-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden; 
+    padding: 20px 0;
+}
+
+.cinta-constante {
+    display: flex;
+    width: max-content;
+    animation: scrollConstante 35s linear infinite; 
+}
+
+.cinta-constante:hover {
+    animation-play-state: paused;
+}
+
+.cinta-bloque {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.tarjeta-perfil {
+    width: 300px; 
+    margin: 0 15px; 
+    flex-shrink: 0;
+}
+
+@keyframes scrollConstante {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Removido el background-color molesto de aquí para evitar conflictos */
+.cinta-constante .card {
+    display: flex;
+    flex-direction: column;
+    transform: scale(0.95);
+}
+
+.cinta-constante .card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 12px 12px 0 0; /* Opcional: redondeado superior si la tarjeta lo requiere */
+}
+
+.cinta-constante .card-title {
+    font-family: var(--fuente-titulos) !important;
+    color: var(--color-negro) !important;
+    font-size: 1.15rem;
+    width: 100%;
+    text-align: center !important;
+    margin-top: 0 !important;
+    margin-bottom: 0.5rem !important; 
+}
+
+.cinta-constante .card-text {
+    font-family: var(--fuente-cuerpo) !important;
+    color: #555555 !important;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    text-align: justify !important;
+    text-align-last: center;
+    margin-top: auto !important;
+    margin-bottom: auto !important; 
+}
+
+/* ======================= FOOTER GENERAL ======================= */
+.footer-seccion {
+    background-color: var(--color-footer);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    
+    /* Agrega esta línea para estirar el fondo gris hacia abajo */
+    padding-bottom: 5rem !important; 
+}
+
+.footer-titulo {
+    font-family: var(--fuente-titulos);
+    color: var(--color-negro);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.footer-subtitulo {
+    font-family: var(--fuente-titulos);
+    color: var(--color-negro);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+}
+
+.footer-texto {
+    font-family: var(--fuente-cuerpo);
+    color: #555555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Enlaces del Footer */
+.footer-enlaces {
+    list-style: none;
+}
+
+.footer-enlaces li {
+    margin-bottom: 0.6rem;
+}
+
+.footer-enlaces a {
+    font-family: var(--fuente-cuerpo);
+    color: #555555;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.footer-enlaces a:hover {
+    color: var(--color-primario);
+    padding-left: 4px; /* Pequeño efecto dinámico al pasar el cursor */
+}
+
+
+ /* Contacto */
+/* ==========================================
+   FORMULARIO BOLETÍN Y FOOTER
+   ========================================== */
+
+.footer-input {
+    font-family: var(--fuente-cuerpo);
+    font-size: 0.9rem;
+    max-width: 240px;
+    height: 40px;
+    border: 1px solid #cccccc;
+    border-radius: 8px !important;
+    padding: 0.5rem 0.75rem;
+}
+
+.footer-input:focus {
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 0.25rem rgba(196, 98, 113, 0.25);
+}
+
+.btn-suscripción {
+    font-family: var(--fuente-titulos);
+    font-size: 0.9rem;
+    height: 40px;
+    border-radius: 8px !important;
+    padding: 0 1.2rem;
+    background-color: #212529;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-suscripción:hover {
+    background-color: var(--color-primario);
+}
+
+/* Iconos de Redes Sociales */
+.footer-redes a {
+    text-decoration: none !important;
+    display: inline-block;
+}
+
+.footer-redes a img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    filter: brightness(0); /* Los vuelve completamente negros/gris oscuro */
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+/* Logo Footer */
+.footer-logo-header {
+    display: block;
+    max-width: 160px;
+}
+
+.logo-superior {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+/* ==========================================
+   SECCIÓN CONTACTO (Corregido)
+   ========================================== */
+
+/* Tarjeta contenedora principal */
+#cajacont {
+  border-radius: 16px !important;
+  overflow: hidden !important; /* Corta todo lo que sobresalga */
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Alineación de las columnas */
+#cajacont .row {
+  display: flex !important;
+  align-items: stretch !important; /* Mantiene ambas columnas a la misma altura exactamente */
+}
+
+/* Columna lateral rosa */
+#backg {
+  background-color: #C66271 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  
+  /* ESQUINA CLAVE: Fuerza las esquinas redondeadas del lado izquierdo */
+  border-top-left-radius: 16px !important;
+  border-bottom-left-radius: 16px !important;
+  
+  /* Forzar que ocupe todo el alto del row sin espacio blanco abajo */
+  height: auto !important; 
+  min-height: 100% !important;
+}
+
+#backg .mt-auto {
+  margin-top: auto !important;
+}
+
+/* Campos del formulario de contacto */
+.contact-label {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: #2d3748;
+  margin-bottom: 0.4rem;
+}
+
+.contact-input {
+  background-color: #f2f4f7 !important;
+  border: none !important;
+  border-radius: 10px !important;
+  padding: 0.75rem 1rem !important;
+  font-size: 0.95rem;
+  color: #4a5568;
+}
+
+.contact-input:focus {
+  background-color: #e9ecef !important;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1) !important;
+  outline: none;
+}
+
+/* Botón Enviar Formulario */
+#btnSend {
+  background-color: #212529 !important;
+  color: #ffffff !important;
+  border-radius: 10px !important;
+  font-size: 0.95rem;
+  border: none !important;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#btnSend:hover {
+  background-color: #C66271 !important;
+  color: #ffffff !important;
+}
+
+#btnSend:active {
+  transform: scale(0.99);
+}
+
+/* Media Query para pantallas pequeñas (móviles) */
+@media (max-width: 767.98px) {
+  #backg {
+    border-bottom-left-radius: 0 !important;
+    border-top-right-radius: 16px !important;
+  }
+}
+/* Botón circular unificado para redes sociales */
+.social-icon-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Estilo para el bloque rosa (fondo blanco translúcido) */
+.social-icon-pink {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+/* Estilo para el footer gris (fondo oscuro / gris translúcido) */
+.social-icon-footer {
+  background-color: rgba(0, 0, 0, 0.15);
+  color: #333333;
+}
+
+.social-icon-circle:hover {
+  opacity: 0.8;
+  transform: translateY(-2px);
+}
+/* Íconos para el Footer Gris */
+.social-icon-footer {
+  width: 34px;
+  height: 34px;
+  background-color: #212529; /* Mismo color del botón Suscribir */
+  color: #ffffff;             /* Ícono en color blanco */
+  border-radius: 50%;         /* Forma circular perfecta */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el mouse por encima (Hover) */
+.social-icon-footer:hover {
+  background-color: #b86273; /* Tono rosa de tu marca al hacer hover */
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+/* Estilo específico para los íconos del footer gris */
+.footer-redes .social-icon-footer {
+  width: 32px;
+  height: 32px;
+  background-color: #212529 !important; /* Fondo oscuro (mismo color que el botón Suscribir) */
+  color: #ffffff !important;             /* Ícono en blanco */
+  border-radius: 50%;                     /* Círculo perfecto */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+/* Efecto hover en el footer */
+.footer-redes .social-icon-footer:hover {
+  background-color: #b86273 !important; /* Cambia a rosa de tu marca al pasar el mouse */
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
