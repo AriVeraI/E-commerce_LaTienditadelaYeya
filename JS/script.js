@@ -66,3 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+
+document.getElementById('btn-inicio').addEventListener('click', function() {
+    window.location.href = 'items.html';
+});
