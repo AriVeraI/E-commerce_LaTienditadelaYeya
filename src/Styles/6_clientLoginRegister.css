@@ -1,0 +1,122 @@
+
+.fondo-gris-claro {
+    background-color: #F2F4F6;
+}
+
+.tarjeta-registro {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+}
+
+.nombre-marca {
+    font-family: 'Fredoka'; 
+    font-size: 1.8rem; 
+    font-weight: 600; 
+    color: #C66271; 
+    text-transform: none !important; 
+    letter-spacing: normal;
+}
+
+.titulo-registro {
+    font-family: 'Fredoka';
+    color: #30343F;
+}
+
+.subtitulo-registro, .etiqueta-campo, .etiqueta-check {
+    font-family: 'Montserrat';
+}
+
+.etiqueta-campo {
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: #30343F;
+}
+
+.entrada-texto {
+    background-color: #F2F4F6 !important;
+    border: 1px solid transparent !important;
+    border-radius: 12px !important; 
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    font-family: 'Montserrat';
+    color: #30343F;
+    box-shadow: none !important;
+}
+
+.entrada-texto:focus {
+    background-color: #FFFFFF !important;
+    border-color: #C66271 !important; 
+    box-shadow: 0 0 0 0.2rem rgba(198, 98, 113, 0.15) !important;
+}
+
+
+.boton-mostrar-clave {
+    background-color: #F2F4F6 !important; /* Mismo gris que el input */
+    border: 1px solid transparent !important;
+    border-left: none !important;
+    color: #6c757d;
+    border-top-right-radius: 12px !important;
+    border-bottom-right-radius: 12px !important;
+}
+
+.boton-mostrar-clave:hover {
+    color: #C66271;
+}
+
+.input-group .entrada-texto {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.casilla-check:checked {
+    background-color: #C66271;
+    border-color: #C66271;
+}
+
+.boton-crear-cuenta {
+    background-color: #C66271;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Montserrat';
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease;
+}
+
+.boton-crear-cuenta:hover {
+    background-color: #a84f5c; 
+}
+
+.boton-red-social {
+    background-color: #FFFFFF !important;
+    border: 1.5px solid #D1D5DB !important;
+    border-radius: 14px !important;
+    font-family: 'Montserrat';
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #30343F;
+    padding: 0.65rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.boton-red-social:hover {
+    background-color: #F8F9FA !important;
+    border-color: #9CA3AF !important;
+    transform: translateY(-2px); 
+}
+
+.color-google { color: #EA4335; }
+.color-facebook { color: #1877F2; }
+
+.enlace-terminos, .enlace-iniciar-sesion {
+    color: #C66271;
+    text-decoration: none;
+}
+
+.enlace-terminos:hover, .enlace-iniciar-sesion:hover {
+    text-decoration: underline;
+}
+
+.invalid-feedback {
+    font-family: 'Montserrat';
+    font-size: 0.8rem;
+}
