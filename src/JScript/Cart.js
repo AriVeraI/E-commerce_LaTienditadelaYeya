@@ -1,64 +1,60 @@
-// ---------------------------------------------------------------------------------------------------------------------------------------Cart
-
-
-// Función para cargar componentes externos como el Offcanvas del carrito
-document.addEventListener("DOMContentLoaded", () => {
-  const cartContainer = document.getElementById("cart-drawer-container");
-  
-  if (cartContainer) {
-    // Ajusta la ruta relativa según el nivel en el que esté tu página HTML actual respecto a cart-drawer.html
-    fetch("../Pages/6_Cart.html")
-      .then((response) => response.text())
-      .then((data) => {
-        cartContainer.innerHTML = data;
-      })
-      .catch((error) => console.error("Error al cargar el carrito lateral:", error));
-  }
-});
-
-// cart.js - Lógica global del carrito de compras para "La tiendita de la Yeya"
+// Cart.js - Lógica global del carrito de compras para "La tiendita de la Yeya"
 
 // 1. Cargar el carrito desde la memoria del navegador (localStorage) o iniciar vacío
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Actualizar la interfaz visual del carrito apenas carga cualquier página
-  updateCartUI();
+  const cartContainer = document.getElementById("cart-drawer-container");
 
-  // Capturar clics en cualquier botón de "Agregar al carrito" en el catálogo o index
+  // Cargamos el HTML del Offcanvas dinámicamente
+  if (cartContainer) {
+    fetch("../Pages/6_Cart.html")
+      .then((response) => response.text())
+      .then((data) => {
+        cartContainer.innerHTML = data;
+
+        // IMPORTANTE: Una vez que el HTML del carrito está inyectado, pintamos su contenido
+        updateCartUI();
+        initCheckoutButton();
+      })
+      .catch((error) => console.error("Error al cargar el carrito lateral:", error));
+  } else {
+    updateCartUI();
+    initCheckoutButton();
+  }
+
+  // Capturar clics en cualquier botón de "Agregar al carrito"
   const addButtons = document.querySelectorAll(".btn-add-cart");
 
   addButtons.forEach((button) => {
     button.addEventListener("click", (e) => {
       e.preventDefault();
 
-      // Extraer la información del producto usando los atributos data-* del botón
+      // Corregido: Coincide exactamente con data-title y data-img puestos en el HTML
       const id = button.getAttribute("data-id");
-      const name = button.getAttribute("data-name");
+      const name = button.getAttribute("data-title");
       const price = parseFloat(button.getAttribute("data-price"));
-      const image = button.getAttribute("data-image");
+      const image = button.getAttribute("data-img");
 
       addProductToCart(id, name, price, image);
     });
   });
+});
 
-  // Conectar el botón de "Proceder al Pago" dentro del Offcanvas para que lleve al checkout.html
-  const checkoutBtn = document.querySelector(
-    ".cart-footer .btn-dark, #checkout-btn",
-  );
+// Función para inicializar el botón de checkout
+function initCheckoutButton() {
+  const checkoutBtn = document.querySelector(".cart-footer .btn-dark, #checkout-btn");
   if (checkoutBtn) {
     checkoutBtn.addEventListener("click", (e) => {
-      // Si el carrito está vacío, evitamos que vaya al pago
       if (cart.length === 0) {
         e.preventDefault();
         alert("Tu carrito está vacío. Agrega productos antes de pagar.");
         return;
       }
-      // Si tiene productos, redirige a tu página de pago que ya creaste
       window.location.href = "6_Cart-Checkout.html";
     });
   }
-});
+}
 
 // Función para agregar un producto o aumentar su cantidad si ya fue añadido
 function addProductToCart(id, name, price, image) {
@@ -72,15 +68,15 @@ function addProductToCart(id, name, price, image) {
 
   saveAndRefresh();
 
-  // Abrir automáticamente el panel lateral (Offcanvas) para darle feedback visual al usuario
-  const cartDrawer = document.getElementById("cartDrawer");
+  // Abrir automáticamente el Offcanvas de Bootstrap
+  const cartDrawer = document.getElementById("cartOffcanvas") || document.getElementById("cartDrawer");
   if (cartDrawer) {
     const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(cartDrawer);
     bsOffcanvas.show();
   }
 }
 
-// Guardar cambios en el navegador y refrescar la vista del carrito
+// Guardar cambios en localStorage y refrescar la vista del carrito
 function saveAndRefresh() {
   localStorage.setItem("cart", JSON.stringify(cart));
   updateCartUI();
@@ -88,10 +84,8 @@ function saveAndRefresh() {
 
 // Función para pintar los productos dentro del panel lateral flotante
 function updateCartUI() {
-  const container = document.querySelector(".cart-items-container");
-  const subtotalEl = document.querySelector(
-    ".cart-footer .fs-5, .cart-subtotal",
-  ); // Elemento del precio total
+  const container = document.querySelector(".cart-items-container, #lista-carrito");
+  const subtotalEl = document.querySelector(".cart-footer .fs-5, .cart-subtotal, #subtotal-carrito");
 
   if (!container) return;
 
@@ -109,24 +103,28 @@ function updateCartUI() {
     subtotal += itemTotal;
 
     html += `
-            <div class="d-flex align-items-center justify-content-between border-bottom pb-3 mb-3">
-                <div class="d-flex align-items-center gap-3">
-                    <img src="${item.image}" alt="${item.name}" style="width: 50px; height: 50px; object-fit: cover;" class="rounded">
-                    <div>
-                        <h6 class="mb-0 fw-bold small">${item.name}</h6>
-                        <small class="text-muted">Cant: ${item.quantity}</small>
-                    </div>
-                </div>
-                <div class="text-end">
-                    <span class="fw-bold text-danger d-block">$${itemTotal}</span>
-                    <button class="btn btn-sm text-danger p-0 border-0 bg-transparent" onclick="removeItem('${item.id}')"><small>Eliminar</small></button>
-                </div>
-            </div>
-        `;
+      <div class="d-flex align-items-center justify-content-between border-bottom pb-3 mb-3">
+        <div class="d-flex align-items-center gap-3">
+          <img src="${item.image}" alt="${item.name}" style="width: 50px; height: 50px; object-fit: cover;" class="rounded">
+          <div>
+            <h6 class="mb-0 fw-bold small">${item.name}</h6>
+            <small class="text-muted">Cant: ${item.quantity} x $${item.price}</small>
+          </div>
+        </div>
+        <div class="text-end">
+          <span class="fw-bold d-block">$${itemTotal.toLocaleString("es-MX", { minimumFractionDigits: 2 })}</span>
+          <button class="btn btn-sm text-danger p-0 border-0 bg-transparent" onclick="removeItem('${item.id}')">
+            <small>Eliminar</small>
+          </button>
+        </div>
+      </div>
+    `;
   });
 
   container.innerHTML = html;
-  if (subtotalEl) subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
+  if (subtotalEl) {
+    subtotalEl.textContent = `$${subtotal.toLocaleString("es-MX", { minimumFractionDigits: 2 })}`;
+  }
 }
 
 // Función global para eliminar un producto específico del carrito
@@ -134,6 +132,3 @@ window.removeItem = function (id) {
   cart = cart.filter((item) => item.id !== id);
   saveAndRefresh();
 };
-
-
-// --------------------------------------------------------------------------------------------------------------------------------------------------------Cart

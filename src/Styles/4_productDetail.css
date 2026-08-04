@@ -1,0 +1,118 @@
+#titulo-negro{
+    font-family: var(--fuente-titulos);
+    font-weight: bold;
+    color: var(--color-negro);
+    margin-bottom: 30px
+}
+
+
+/* Tamaños de fuentes específicos y alineación justificada */
+#info-resenas {
+  font-size: 0.85rem;
+}
+
+#descripcion-producto {
+  font-size: 0.9rem;
+  text-align: justify;
+}
+
+#texto-material-seleccionado {
+  font-size: 0.8rem;
+}
+
+/* Ajustes de tamaño botones de opciones */
+.boton-opcion {
+  font-size: 0.8rem;
+}
+
+/* Miniaturas de imágenes */
+.miniatura-item {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+
+#selector-cantidad {
+  width: 120px;
+}
+#selector-cantidad input {
+  font-size: 0.9rem;
+}
+
+
+#btn-anadir-carrito {
+  background-color: #c8647a;
+  font-size: 0.9rem;
+}
+#btn-anadir-carrito:hover {
+  background-color: #b35368; 
+}
+
+#btn-favorito {
+  width: 38px;
+  height: 38px;
+}
+#btn-favorito span {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+#seccion-beneficios {
+  font-size: 0.8rem;
+}
+
+
+.icono-beneficio {
+  color: #c8647a;
+  font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+
+.texto-beneficio {
+  font-size: 0.8rem;
+  letter-spacing: -0.1px;
+}
+
+
+/*RESEÑAS*/
+
+#puntuacion-general {
+  font-size: 0.9rem;
+}
+
+#btn-escribir-reseña {
+  font-size: 0.85rem;
+  border-color: #000000;
+}
+#btn-escribir-reseña:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+
+.nombre-usuario {
+  font-size: 0.95rem;
+}
+
+.estrellas-reseña {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.fecha-reseña {
+  font-size: 0.75rem;
+}
+
+.titulo-comentario {
+  font-size: 0.9rem !important;
+  color: #000000;
+}
+
+.comentario-texto {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  text-align: justify;
+}
