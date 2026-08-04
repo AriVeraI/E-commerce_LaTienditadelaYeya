@@ -27,10 +27,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Simular éxito de compra y limpiar carrito
       alert("¡Compra realizada con éxito! Gracias por tu pedido en La tiendita de la Yeya.");
+      localStorage.setItem("ultimoPedido", localStorage.getItem("cart"));
       localStorage.removeItem("cart");
       
       // Redirigir a la página de confirmación o inicio
-      window.location.href = "7_Order-Confirmation.html"; 
+      window.location.href = "6_Cart-Thanks.html"; 
     });
   }
 });
