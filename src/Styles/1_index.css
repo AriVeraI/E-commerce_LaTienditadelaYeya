@@ -134,8 +134,47 @@
   padding: 50px 0px 150px;
 }
 
+<<<<<<< Updated upstream
 #resenas {
   margin-top: 40px;
   width: 22rem;
   border-radius: 20px;
 }
+=======
+#resenas{
+    margin-top: 40px;
+    width: 22rem; 
+    border-radius: 20px;
+}
+#art1, #art2, #art3, #art4 {
+  background-color: #C66271; 
+  color: #ffffff;            
+  border: none;             
+  padding: 10px 20px;       
+  border-radius: 5px;       
+  cursor: pointer;          
+}
+
+
+#art1:hover, #art2:hover, #art3:hover, #art4:hover {
+  background-color: #212529;
+}
+/* Contenedor que recorta la imagen cuando se expande */
+.card-img-container {
+  overflow: hidden;
+  border-top-left-radius: inherit;  /* Mantiene los bordes redondeados */
+  border-top-right-radius: inherit;
+}
+
+/* Estado normal de la imagen con animación suave */
+.card-img-container img {
+  width: 100%;
+  display: block;
+  transition: transform 0.4s ease; /* Suaviza el zoom */
+}
+
+/* Efecto de zoom al hacer hover sobre la tarjeta o la imagen */
+.card:hover .card-img-container img {
+  transform: scale(1.08); /* Ajusta el valor según qué tanto zoom quieras (1.05 a 1.1) */
+}
+>>>>>>> Stashed changes

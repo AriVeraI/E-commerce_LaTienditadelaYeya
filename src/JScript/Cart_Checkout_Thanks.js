@@ -1,6 +1,4 @@
-
 // ---------------------------------------------------------------------------------------------------------------------------------------------- CART CHECKOUT --
-
 
 document.addEventListener("DOMContentLoaded", () => {
   renderCheckoutCart();
@@ -18,18 +16,27 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       // Validar formulario de envío básico
-      const name = document.getElementById("shipping-name").value;
-      const address = document.getElementById("shipping-address").value;
+      const name = document.getElementById("shipping-name")?.value.trim();
+      const address = document.getElementById("shipping-address")?.value.trim();
       if (!name || !address) {
         alert("Por favor completa los datos de envío.");
         return;
       }
 
-      // Simular éxito de compra y limpiar carrito
+      // Simular éxito de compra
       alert("¡Compra realizada con éxito! Gracias por tu pedido en La tiendita de la Yeya.");
+
+      // Limpiar los campos de los formularios (envío y pago)
+      const shippingForm = document.getElementById("shipping-form");
+      const paymentForm = document.getElementById("payment-form");
+
+      if (shippingForm) shippingForm.reset();
+      if (paymentForm) paymentForm.reset();
+
+      // Limpiar carrito en localStorage
       localStorage.removeItem("cart");
-      
-      // Redirigir a la página de confirmación o inicio
+
+      // Redirigir a la página de confirmación
       window.location.href = "7_Order-Confirmation.html"; 
     });
   }
@@ -57,17 +64,26 @@ function renderCheckoutCart() {
     const itemTotal = item.price * item.quantity;
     subtotal += itemTotal;
 
+    // Obtener la ruta de la imagen (soporta tanto item.image como item.img)
+    const imgSrc = item.image || item.img || '../../assets/Images/placeholder.png';
+
     html += `
       <div class="d-flex align-items-center justify-content-between border-bottom pb-3 mb-3">
-        <div>
-          <h6 class="mb-0 fw-bold">${item.name}</h6>
-          <small class="text-muted">Precio unitario: $${item.price}</small>
+        <div class="d-flex align-items-center gap-3">
+          <!-- Imagen del producto -->
+          <img src="${imgSrc}" alt="${item.name || item.title}" class="rounded" style="width: 64px; height: 64px; object-fit: cover;">
+          <div>
+            <h6 class="mb-0 fw-bold">${item.name || item.title}</h6>
+            <small class="text-muted">Precio unitario: $${item.price}</small>
+          </div>
         </div>
+
         <div class="d-flex align-items-center gap-2">
           <button class="btn btn-sm btn-outline-secondary" onclick="updateQuantity('${item.id}', -1)">-</button>
-          <span>${item.quantity}</span>
+          <span class="fw-bold px-1">${item.quantity}</span>
           <button class="btn btn-sm btn-outline-secondary" onclick="updateQuantity('${item.id}', 1)">+</button>
         </div>
+
         <span class="fw-bold text-danger">$${itemTotal.toFixed(2)}</span>
       </div>
     `;
@@ -81,12 +97,12 @@ function renderCheckoutCart() {
 // Función global para sumar o restar cantidades desde el checkout
 window.updateQuantity = function (id, change) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const product = cart.find((item) => item.id === id);
+  const product = cart.find((item) => String(item.id) === String(id));
 
   if (product) {
     product.quantity += change;
     if (product.quantity <= 0) {
-      cart = cart.filter((item) => item.id !== id);
+      cart = cart.filter((item) => String(item.id) !== String(id));
     }
   }
 
