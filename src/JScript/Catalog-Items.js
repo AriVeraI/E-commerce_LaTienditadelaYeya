@@ -1,18 +1,18 @@
 // catalog.js - Lógica para renderizar dinámicamente los productos del catálogo
 
 const productosCatalogo = [
-    { id: "1", category: "Anillos", name: "Pieza Temática 1", sub: "Anillos • Oro 18k", price: 150, img: "../../assets/Images/banner-anillos.png" },
-    { id: "2", category: "Collares", name: "Pieza Temática 2", sub: "Collares • Plata", price: 260, img: "../../assets/Images/banner-collares.png" },
-    { id: "3", category: "Pulseras", name: "Pieza Temática 3", sub: "Pulseras • Oro Rosado", price: 370, img: "../../assets/Images/banner-pulseras.png" },
-    { id: "4", category: "Anillos", name: "Pieza Temática 4", sub: "Anillos • Oro 18k", price: 480, img: "../../assets/Images/banner-anillos.png" },
-    { id: "5", category: "Collares", name: "Pieza Temática 5", sub: "Collares • Plata", price: 590, img: "../../assets/Images/banner-collares.png" },
-    { id: "6", category: "Pulseras", name: "Pieza Temática 6", sub: "Pulseras • Oro Rosado", price: 700, img: "../../assets/Images/banner-pulseras.png" },
-    { id: "7", category: "Anillos", name: "Pieza Temática 7", sub: "Anillos • Oro 18k", price: 810, img: "../../assets/Images/banner-anillos.png" },
-    { id: "8", category: "Collares", name: "Pieza Temática 8", sub: "Collares • Plata", price: 920, img: "../../assets/Images/banda-de-eternidad-diamante.png" },
-    { id: "9", category: "Pulseras", name: "Pieza Temática 9", sub: "Pulseras • Oro Rosado", price: 1030, img: "../../assets/Images/banner-pulseras.png" },
-    { id: "10", category: "Anillos", name: "Pieza Temática 10", sub: "Anillos • Oro 18k", price: 1140, img: "../../assets/Images/banner-anillos.png" },
-    { id: "11", category: "Collares", name: "Pieza Temática 11", sub: "Collares • Plata", price: 1250, img: "../../assets/Images/banner-collares.png" },
-    { id: "12", category: "Pulseras", name: "Pieza Temática 12", sub: "Pulseras • Oro Rosado", price: 1360, img: "../../assets/Images/banner-pulseras.png" }
+    { id: "1", category: "Anillos", name: "Pieza Temática 1", sub: "Anillos • Oro 18k", price: 150, img: "../../assets/Images/An1.png" },
+    { id: "2", category: "Collares", name: "Pieza Temática 2", sub: "Collares • Plata", price: 260, img: "../../assets/Images/collarazul.png" },
+    { id: "3", category: "Pulseras", name: "Pieza Temática 3", sub: "Pulseras • Oro Rosado", price: 370, img: "../../assets/Images/P2.png" },
+    { id: "4", category: "Anillos", name: "Pieza Temática 4", sub: "Anillos • Oro 18k", price: 480, img: "../../assets/Images/An4.png" },
+    { id: "5", category: "Collares", name: "Pieza Temática 5", sub: "Collares • Plata", price: 590, img: "../../assets/Images/collarabeja.png" },
+    { id: "6", category: "Pulseras", name: "Pieza Temática 6", sub: "Pulseras • Oro Rosado", price: 700, img: "../../assets/Images/P4_.png" },
+    { id: "7", category: "Anillos", name: "Pieza Temática 7", sub: "Anillos • Oro 18k", price: 810, img: "../../assets/Images/An33.png" },
+    { id: "8", category: "Collares", name: "Pieza Temática 8", sub: "Collares • Plata", price: 920, img: "../../assets/Images/collarmar.png" },
+    { id: "9", category: "Pulseras", name: "Pieza Temática 9", sub: "Pulseras • Oro Rosado", price: 1030, img: "../../assets/Images/P1.png" },
+    { id: "10", category: "Anillos", name: "Pieza Temática 10", sub: "Anillos • Oro 18k", price: 1140, img: "../../assets/Images/An2.png" },
+    { id: "11", category: "Collares", name: "Pieza Temática 11", sub: "Collares • Plata", price: 1250, img: "../../assets/Images/collarvaquero.png" },
+    { id: "12", category: "Pulseras", name: "Pieza Temática 12", sub: "Pulseras • Oro Rosado", price: 1360, img: "../../assets/Images/P3.png" }
 ];
 
 document.addEventListener("DOMContentLoaded", () => {

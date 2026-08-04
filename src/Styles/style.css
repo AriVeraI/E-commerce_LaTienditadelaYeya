@@ -7,8 +7,8 @@
     --color-negro: #000000;       /* Letras en contraste oscuro */
 
     /* Fuentes oficiales */
-    --fuente-titulos: 'Fredoka', sans-serif;
-    --fuente-cuerpo: 'Montserrat', sans-serif;
+    --fuente-titulos: 'Fredoka';
+    --fuente-cuerpo: 'Montserrat';
 }
 
 body {
