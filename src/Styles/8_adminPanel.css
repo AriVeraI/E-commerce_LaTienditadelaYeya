@@ -1,0 +1,70 @@
+/*------------------Ajustes generales---------------------*/
+
+:root {
+    /* Colores oficiales */
+    --color-primario: #C66271;    /* Rosa suave / Malva de la barra de navegación */
+    --color-fondo: #F2F4F6;       /* Gris/blanco muy claro de fondo */
+    --color-footer: #D9D9D9;      /* Gris suave para el footer */
+    --color-blanco: #FFFFFF;      /* Letras en contraste claro */
+    --color-negro: #000000;       /* Letras en contraste oscuro */
+
+    /* Fuentes oficiales */
+    --fuente-titulos: 'Fredoka';
+    --fuente-cuerpo: 'Montserrat';
+}
+
+
+/*------------------Login Inicio de sesión---------------------*/
+.contenedor-inicio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+h1{
+    font-family: var(--fuente-titulos);
+    color: var(--color-negro);
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+p {
+    font-family: var(--fuente-cuerpo);
+    color: var(--color-negro);
+    text-align: center;
+}
+
+label, input{
+    font-family: var(--fuente-cuerpo);
+    color: var(--color-negro);
+}
+
+.forgot-password, .register-link{
+    font-family: var(--fuente-cuerpo);
+    color: var(--color-primario);
+}
+
+.register-text{
+    margin: 30px 0px 0px;
+}
+
+
+.form-group{
+    margin: 30px 0px;
+}
+
+#btnSend{
+    margin: 20px 0px;
+}
+
+#inicio-de-sesion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    box-shadow: 0 0 0 4px #0000000e;
+    border-radius: 20px;
+    margin: 100px 0px;
+    padding: 50px;
+}
