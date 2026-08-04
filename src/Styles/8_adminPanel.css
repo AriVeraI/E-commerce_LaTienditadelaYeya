@@ -68,3 +68,12 @@ label, input{
     margin: 100px 0px;
     padding: 50px;
 }
+
+.titulo-negro{
+    font-family: var(--fuente-titulos);
+    font-weight: bold;
+    color: var(--color-negro);
+    margin-bottom: 30px
+}
+
+
