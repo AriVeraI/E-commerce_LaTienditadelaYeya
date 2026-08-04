@@ -172,21 +172,26 @@
 }
 
 /* Botón Seguir Explorando */
-.boton-seguir-explorando {
-    background-color: #C66271;
-    border: none;
-    border-radius: 25px;
-    font-size: 0.95rem;
-    transition: background-color 0.3s ease, transform 0.1s ease;
-    text-decoration: none;
-    display: block;
+.tarjeta-confirmacion a.boton-seguir-explorando {
+    background-color: #C66271 !important;
+    color: #FFFFFF !important;            
+    border: none !important;
+    border-radius: 25px !important;     
+    font-size: 0.95rem !important;
+    font-family: 'Montserrat', !important;
+    text-decoration: none !important;
+    display: block !important;
+    width: 100% !important;
+    padding: 10px 0 !important;
+    transition: background-color 0.3s ease, transform 0.1s ease !important;
 }
 
-.boton-seguir-explorando:hover {
-    background-color: #a84f5c;
-    color: #FFFFFF;
+/* Efecto Hover */
+.tarjeta-confirmacion a.boton-seguir-explorando:hover {
+    background-color: #a84f5c !important; 
+    color: #FFFFFF !important;
 }
 
-.boton-seguir-explorando:active {
-    transform: scale(0.98);
+.tarjeta-confirmacion a.boton-seguir-explorando:active {
+    transform: scale(0.98) !important;
 }
