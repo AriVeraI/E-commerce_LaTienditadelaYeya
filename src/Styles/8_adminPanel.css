@@ -1,0 +1,57 @@
+:root {
+    /* Colores oficiales */
+    --color-primario: #C66271;    /* Rosa suave / Malva de la barra de navegación */
+    --color-fondo: #F2F4F6;       /* Gris/blanco muy claro de fondo */
+    --color-footer: #D9D9D9;      /* Gris suave para el footer */
+    --color-blanco: #FFFFFF;      /* Letras en contraste claro */
+    --color-negro: #000000;       /* Letras en contraste oscuro */
+
+    /* Fuentes oficiales */
+    --fuente-titulos: 'Fredoka', sans-serif;
+    --fuente-cuerpo: 'Montserrat', sans-serif;
+}
+
+
+#fondo-seccion{
+
+}
+
+#form-add-product{
+    font-family: var(--fuente-cuerpo);
+
+}
+
+titulo-blanco{
+    font-family: var(--fuente-titulos);
+    font-weight: bold;
+    color: var(--color-blanco);
+    margin-bottom: 40px
+}
+
+.titulo-negro{
+    font-family: var(--fuente-titulos);
+    font-weight: bold;
+    color: var(--color-negro);
+    margin-bottom: 30px
+}
+
+.parrafo-blanco{
+    font-family: var(--fuente-cuerpo);
+    color: var(--color-blanco);
+    font-size: 18px;
+    margin-bottom: 20px
+}
+
+.parrafo-negro{
+    font-family: var(--fuente-cuerpo);
+    color: var(--color-negro);
+    font-size: 18px;
+    margin-bottom: 20px
+}
+
+.parrafo-rosa{
+    font-family: var(--fuente-cuerpo);
+    color: var(--color-primario);
+    font-size: 18px;
+    margin-bottom: 20px
+}
