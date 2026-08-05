@@ -1,7 +1,4 @@
-/* =======================================================
-   LÓGICA DE VALIDACIÓN Y FUNCIONALIDAD - REGISTRO
-   Desarrollado para: La Tiendita de la Yeya
-======================================================= */
+/* LÓGICA DE VALIDACIÓN Y FUNCIONALIDAD */
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -15,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const inputClave = document.getElementById('clave-usuario');
     const inputConfirmar = document.getElementById('confirmar-clave');
     const checkTerminos = document.getElementById('acepto-terminos');
+    const errorClave = document.getElementById('error-clave');
+    const errorConfirmar = document.getElementById('error-confirmar');
 
     // Botones de ver/ocultar contraseña
     const btnToggleClave1 = document.getElementById('toggle-clave-1');
@@ -101,19 +100,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Validar Contraseña (Min 6 caracteres)
         const claveValor = inputClave.value;
-        if (claveValor.length < 6) {
+        if (claveValor.length <= 6) {
             marcarCampo(inputClave, false);
+            errorClave.classList.add('d-block');
             formularioEsValido = false;
         } else {
             marcarCampo(inputClave, true);
+            errorClave.classList.remove('d-block');
         }
 
         // Validar Confirmación de Contraseña
         if (inputConfirmar.value === '' || inputConfirmar.value !== claveValor) {
             marcarCampo(inputConfirmar, false);
+            errorConfirmar.classList.add('d-block');
             formularioEsValido = false;
         } else {
             marcarCampo(inputConfirmar, true);
+            errorConfirmar.classList.remove('d-block');
         }
 
         // Validar Términos y Condiciones
