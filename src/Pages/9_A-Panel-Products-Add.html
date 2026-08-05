@@ -24,6 +24,56 @@
 </head>
 
 <body>
+  <div class="modal alert-text" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Campos obligatorios</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Debe ingresar todos los campos.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-price" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Error al ingresar el precio</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Debe ingresar el precio con un numero valido.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-cero" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Error al ingresar el precio</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>El precio debe ser mayor a cero.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
   <!------------------------------------------------ NAVBAR PARA ADMIN--------------------------------------------->
   <header id="navbar1" class="main-header"></header>
 
@@ -89,7 +139,7 @@
             <p class="card-header">Completa la información para publicar</p>
             <div class="card-body">
               <h5 class="card-title">Información básica</h5>
-              <form action="">
+              <form action="" id="mainForm">
                 <div class="mb-3">
                   <label for="titulo-producto" class="form-label">Titulo *</label>
                   <input type="text" id="titulo-producto" class="form-control" placeholder="Nombre del producto" />
@@ -125,7 +175,7 @@
               <div class="d-flex justify-content-center">
                 <div class="input-group input-group-lg mb-3" style="max-width: 500px;">
                   <label class="input-group-text" for="inputGroupFile01">Cargar archivos</label>
-                  <input type="file" class="form-control" id="inputGroupFile01">
+                  <input type="file" class="form-control charger-image" id="inputGroupFile01">
                 </div>
               </div>
             </div>
@@ -153,6 +203,7 @@
   <!--------------------------------------LLAMADA AL SCRIPT----------------------------------------->
   <script src="../JScript/Navbar_Footer.js"></script>
   <script src="../JScript/Admin-Panel.js"></script>
+  <script src="../JScript/Product-Add.js"></script>
 </body>
 
 </html>
