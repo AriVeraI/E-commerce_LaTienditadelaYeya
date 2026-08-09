@@ -1,0 +1,103 @@
+/*------------------Ajustes generales---------------------*/
+
+:root {
+    /* Colores oficiales */
+    --color-primario: #C66271;    /* Rosa suave / Malva de la barra de navegación */
+    --color-fondo: #F2F4F6;       /* Gris/blanco muy claro de fondo */
+    --color-footer: #D9D9D9;      /* Gris suave para el footer */
+    --color-blanco: #FFFFFF;      /* Letras en contraste claro */
+    --color-negro: #000000;       /* Letras en contraste oscuro */
+
+    /* Fuentes oficiales */
+    --fuente-titulos: 'Fredoka';
+    --fuente-cuerpo: 'Montserrat';
+}
+
+
+/*------------------Login Inicio de sesión---------------------*/
+.contenedor-inicio-sesion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+h1{
+    font-family: var(--fuente-titulos);
+    color: var(--color-negro);
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+p {
+    font-family: var(--fuente-cuerpo);
+    color: var(--color-negro);
+    text-align: center;
+}
+
+label, input{
+    font-family: var(--fuente-cuerpo);
+    color: var(--color-negro);
+}
+
+.forgot-password, .register-link{
+    font-family: var(--fuente-cuerpo);
+    color: var(--color-primario);
+}
+
+.register-text{
+    margin: 30px 0px 0px;
+}
+
+
+.form-group{
+    margin: 30px 0px;
+}
+
+#btnSend{
+    margin: 20px 0px;
+}
+
+#inicio-de-sesion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    box-shadow: 0 0 0 4px #0000000e;
+    border-radius: 20px;
+    margin: 100px 0px;
+    padding: 50px;
+}
+
+<<<<<<< Updated upstream:src/Styles/8_adminPanel.css
+.titulo-negro{
+    font-family: var(--fuente-titulos);
+    font-weight: bold;
+    color: var(--color-negro);
+    margin-bottom: 30px
+}
+
+
+=======
+
+
+
+/*------------------Login Inicio de sesión admin---------------------*/
+.title-shop-header-admin{
+    font-family: var(--fuente-titulos);
+    font-size: 35px;
+    color: var(--color-primario);
+    padding: 30px 0px 0px;
+}
+
+#contenedor-login-admin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    box-shadow: 0 0 0 4px #0000000e;
+    border-radius: 20px;
+    margin: 25px 0px 50px;
+    padding: 50px;
+}
+>>>>>>> Stashed changes:src/Styles/8_login.css
