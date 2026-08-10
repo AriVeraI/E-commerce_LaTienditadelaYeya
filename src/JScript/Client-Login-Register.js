@@ -133,8 +133,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // CREACIÓN DE CUENTA EXITOSA
     if (formularioEsValido) {
-      // Guardamos el correo en el LocalStorage
-      localStorage.setItem("nuevoUsuarioEmail", inputCorreo.value.trim());
+      //Obj para el usuario registrado
+      const nvoUsuario = {
+          nombre: inputNombre.value.trim(),
+          correo: inputCorreo.value.trim(),
+          telefono: inputTelefono.value.trim(),
+          clave:  btoa(encodeURIComponent(inputClave.value))
+      };
+
+      //lista para los usuarios, se inicializa en un array vacio 
+      let listaUsuarios = JSON.parse(localStorage.getItem('usuarios')) || [];   
+      //en caso de que el correo se repita y evitar que el local Storage lo sobre escriba 
+      const correoExistente = listaUsuarios.find(usuario => usuario.correo === nvoUsuario.correo);
+      if (correoExistente) {
+          alert('Este correo ya está vinculado a una cuenta');
+          marcarCampo(inputCorreo, false);
+          return; 
+      }
+      //Agregando el user a la lista
+      listaUsuarios.push(nvoUsuario);
+      
+      localStorage.setItem('usuarios', JSON.stringify(listaUsuarios));
+      //console.log(listaUsuarios);
+
 
       // Alerta nativa para notificar al cliente
       alert(
@@ -170,38 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
-        // CREACIÓN DE CUENTA EXITOSA
-        if (formularioEsValido) {
-            //Obj para el usuario registrado
-            const nvoUsuario = {
-                nombre: inputNombre.value.trim(),
-                correo: inputCorreo.value.trim(),
-                telefono: inputTelefono.value.trim(),
-                clave: inputClave.value
-            };
-
-            //lista para los usuarios, se inicializa en un array vacio 
-            let listaUsuarios = JSON.parse(localStorage.getItem('usuarios')) || [];   
-            //en caso de que el correo se repita y evitar que el local Storage lo sobre escriba 
-            const correoExistente = listaUsuarios.find(usuario => usuario.correo === nvoUsuario.correo);
-            if (correoExistente) {
-                alert('Este correo ya está vinculado a una cuenta');
-                marcarCampo(inputCorreo, false);
-                return; 
-            }
-            //Agregando el user a la lista
-            listaUsuarios.push(nvoUsuario);
-           
-            localStorage.setItem('usuarios', JSON.stringify(listaUsuarios));
-            //console.log(listaUsuarios);
-
-            // Alerta nativa para notificar al cliente
-            alert('¡Cuenta creada con éxito! Bienvenida(o) a La Tiendita de la Yeya. Serás redirigido para iniciar sesión.');
-
-            // REDIRECCIÓN a la página de Login que está en tu HTML
-            window.location.href = '8_Client-Login.html';
-        }
-    });
+});
 
 
   // Cerrar modal presionando la tecla Escape
@@ -210,4 +200,121 @@ document.addEventListener("DOMContentLoaded", function () {
       modal.style.display = "none";
     }
   });
+
+//---------------------------------- SCRIPT LOGIN---------------
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Capturamos los elementos del HTML
+  const loginForm = document.getElementById('loginForm');
+  const emailInput = document.getElementById('exampleInputEmail1');
+  const passwordInput = document.getElementById('exampleInputPassword1');
+  const emailError = document.getElementById('emailError');
+  const passwordError = document.getElementById('passwordError');
+
+  // Expresión regular para validar formato de correo electrónico
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  loginForm.addEventListener('submit', (e) => {
+    e.preventDefault(); // Evita que se recargue la página
+
+    const emailValue = emailInput.value.trim();
+    const passwordValue = passwordInput.value.trim();
+
+    // NUEVA CONDICIÓN: Si AMBOS campos están vacíos al hacer clic
+    if (emailValue === '' && passwordValue === '') {
+      alert('Por favor completa los campos del formulario. No has ingresado ninguna información.');
+      showError(emailInput, emailError, 'El correo electrónico es obligatorio.');
+      showError(passwordInput, passwordError, 'La contraseña es obligatoria.');
+      return; // Detenemos la ejecución aquí
+    }
+
+    let isValid = true;
+
+    // --- 1. Validar Correo Electrónico ---
+    if (emailValue === '') {
+      showError(emailInput, emailError, 'El correo electrónico es obligatorio.');
+      isValid = false;
+    } else if (!emailRegex.test(emailValue)) {
+      showError(emailInput, emailError, 'Ingresa un correo electrónico con formato válido.');
+      isValid = false;
+    } else {
+      showSuccess(emailInput, emailError);
+    }
+
+    // --- 2. Validar Contraseña ---
+    if (passwordValue === '') {
+      showError(passwordInput, passwordError, 'La contraseña es obligatoria.');
+      isValid = false;
+    } else if (passwordValue.length < 6) {
+      showError(passwordInput, passwordError, 'La contraseña debe tener al menos 6 caracteres.');
+      isValid = false;
+    } else {
+      showSuccess(passwordInput, passwordError);
+    }
+
+    // --- 3. Si todo es válido ---
+    if (isValid) {
+      console.log('Datos listos para enviar:', {
+        email: emailValue,
+        password: passwordValue
+      });
+      //alert('¡Inicio de sesión exitoso!');
+      
+      checkloging ()
+      // loginForm.submit();
+    }
+  });
+
+  // Limpiar/Validar dinámicamente mientras el usuario escribe
+  emailInput.addEventListener('input', () => {
+    if (emailInput.classList.contains('is-invalid')) {
+      clearStatus(emailInput, emailError);
+    }
+  });
+
+  passwordInput.addEventListener('input', () => {
+    if (passwordInput.classList.contains('is-invalid')) {
+      clearStatus(passwordInput, passwordError);
+    }
+  });
+
+  // --- Funciones Auxiliares para clases de Bootstrap ---
+  function showError(input, errorElement, message) {
+    input.classList.remove('is-valid');
+    input.classList.add('is-invalid');
+    errorElement.textContent = message;
+    errorElement.style.display = 'block';
+  }
+
+  function showSuccess(input, errorElement) {
+    input.classList.remove('is-invalid');
+    input.classList.add('is-valid');
+    errorElement.textContent = '';
+    errorElement.style.display = 'none';
+  }
+
+  function clearStatus(input, errorElement) {
+    input.classList.remove('is-invalid', 'is-valid');
+    errorElement.textContent = '';
+    errorElement.style.display = 'none';
+  }
+});
+
+// Función login
+function checkloging () {
+  const emailInput = document.getElementById("exampleInputEmail1").value;
+  let listaUsuarios = JSON.parse(localStorage.getItem('usuarios')) || [];   
+  const usuarioExistente = listaUsuarios.find(usuario => usuario.correo === emailInput);
+    if (usuarioExistente) {
+      const contraInput = document.getElementById ("exampleInputPassword1").value;
+      if (usuarioExistente.clave === btoa(encodeURIComponent(contraInput))) {
+        alert ('Bienvenido');
+      } else {
+          alert ('La contraseña no es correcta');
+
+      }
+    } else {
+      alert ('El correo no está registrado');
+    }
+}
 
