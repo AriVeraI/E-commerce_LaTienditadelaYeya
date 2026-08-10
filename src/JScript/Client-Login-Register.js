@@ -130,20 +130,78 @@ document.addEventListener("DOMContentLoaded", () => {
       checkTerminos.classList.remove("is-invalid");
       checkTerminos.classList.add("is-valid");
     }
-
+    // ALERTA EMERGENTE DE VALIDACIÓN
+    if (!formularioEsValido) {
+      if (inputNombre.value.trim().length < 3) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Ingresa un nombre valido',
+          text: 'Ingresa tu nombre y apellido',
+          confirmButtonColor: '#c05c6d',
+            confirmButtonText: 'Aceptar'
+          });
+      } else if (!esCorreoValido(inputCorreo.value.trim())) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Ingresa un correo electrónico válido',
+          text: 'Tu correo debe de ser valido ejemplo: (ejemplo@dominio.com)',
+          confirmButtonColor: '#c05c6d',
+            confirmButtonText: 'Aceptar'
+          });
+      } else if (!esTelefonoValido(inputTelefono.value.trim())) {
+        Swal.fire({
+          icon: 'error',
+          title: 'El número de teléfono debe tener exactamente 10 dígitos.',
+          text: 'Tu numero de teléfono ejemplo: (5512345678) ',
+          confirmButtonColor: '#c05c6d',
+            confirmButtonText: 'Aceptar'
+          });
+      } else if (claveValor.length <= 6) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Contraseña débil',
+          text: 'La contraseña debe ser mayor a 6 caracteres.',
+          confirmButtonColor: '#c05c6d',
+            confirmButtonText: 'Aceptar'
+          });
+      } else if (inputConfirmar.value === "" || inputConfirmar.value !== claveValor) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Las contraseñas no coinciden',
+          text: 'Verifica las contraseñas',
+          confirmButtonColor: '#c05c6d',
+            confirmButtonText: 'Aceptar'
+          });
+      } else if (!checkTerminos.checked) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Acepta Terminos y Condiciones',
+          text: 'Debes aceptar los Términos y Condiciones para continuar.',
+          confirmButtonColor: '#c05c6d',
+            confirmButtonText: 'Aceptar'
+          });
+      }
+      return;
+    }
     // CREACIÓN DE CUENTA EXITOSA
     if (formularioEsValido) {
       // Guardamos el correo en el LocalStorage
       localStorage.setItem("nuevoUsuarioEmail", inputCorreo.value.trim());
 
-      // Alerta nativa para notificar al cliente
-      alert(
-        "¡Cuenta creada con éxito! Bienvenida(o) a La Tiendita de la Yeya. Serás redirigido para iniciar sesión.",
-      );
-
-      // REDIRECCIÓN a la página de Login que está en tu HTML
-      window.location.href = "8_Client-Login.html";
-    }
+      // Alerta con formato usando SweetAlert2
+      Swal.fire({
+        icon: 'success',
+        title: '¡Felicitaciones!',
+        text: 'Creaste tu cuenta con éxito. Serás redirigido a la página de inicio de sesión.',
+        confirmButtonColor: '#c05c6d',
+        confirmButtonText: 'Aceptar'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // REDIRECCIÓN a la página de Login después de dar clic en Aceptar
+          window.location.href = "8_Client-Login.html";
+        }
+        });
+        }
   });
 });
 document.addEventListener("DOMContentLoaded", function () {

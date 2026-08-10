@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Expresión regular para validar formato de correo electrónico
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  loginForm.addEventListener('submit', (e) => {
+  loginForm.addEventListener('submit', (e) => { 
     e.preventDefault(); // Evita que se recargue la página
 
     const emailValue = emailInput.value.trim();
@@ -47,13 +47,39 @@ document.addEventListener('DOMContentLoaded', () => {
       showSuccess(passwordInput, passwordError);
     }
 
+    // --- NUEVA VALIDACIÓN: Consultar datos dinámicos ---
+    // Busca las credenciales del usuario guardado dinámicamente en el navegador
+    const storedUser = JSON.parse(localStorage.getItem('registeredUser')) || {
+      email: "ana@ejemplo.com", // Valor por defecto si no hay nada guardado
+      password: "123456password"
+    };
+
+    if (isValid && (emailValue !== storedUser.email || passwordValue !== storedUser.password)) {
+      Swal.fire({
+          icon: 'error',
+          title: 'Error de acceso',
+          text: 'El usuario o la contraseña son incorrectos. Por favor verifica tus datos.',
+          confirmButtonColor: '#c05c6d',
+            confirmButtonText: 'Aceptar'
+          });
+      showError(emailInput, emailError, 'Correo o contraseña incorrectos.');
+      showError(passwordError, passwordError, 'Correo o contraseña incorrectos.');
+      isValid = false;
+    }
+
     // --- 3. Si todo es válido ---
     if (isValid) {
       console.log('Datos listos para enviar:', {
         email: emailValue,
         password: passwordValue
       });
-      alert('¡Inicio de sesión exitoso!');
+      Swal.fire({
+          icon: 'success',
+          title: 'Accesso Correcto',
+          text: 'Inicio de sesión exitoso.',
+          confirmButtonColor: '#c05c6d',
+            confirmButtonText: 'Aceptar'
+});
       
       // loginForm.submit();
     }
