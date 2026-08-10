@@ -1,122 +1,212 @@
-
 .fondo-gris-claro {
-    background-color: #F2F4F6;
+  background-color: #f2f4f6;
 }
 
 .tarjeta-registro {
-    background-color: #FFFFFF;
-    border-radius: 16px;
+  background-color: #ffffff;
+  border-radius: 16px;
 }
 
 .nombre-marca {
-    font-family: 'Fredoka'; 
-    font-size: 1.8rem; 
-    font-weight: 600; 
-    color: #C66271; 
-    text-transform: none !important; 
-    letter-spacing: normal;
+  font-family: "Fredoka";
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #c66271;
+  text-transform: none !important;
+  letter-spacing: normal;
 }
 
 .titulo-registro {
-    font-family: 'Fredoka';
-    color: #30343F;
+  font-family: "Fredoka";
+  color: #30343f;
 }
 
-.subtitulo-registro, .etiqueta-campo, .etiqueta-check {
-    font-family: 'Montserrat';
+.subtitulo-registro,
+.etiqueta-campo,
+.etiqueta-check {
+  font-family: "Montserrat";
 }
 
 .etiqueta-campo {
-    font-weight: 600;
-    font-size: 0.88rem;
-    color: #30343F;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: #30343f;
 }
 
 .entrada-texto {
-    background-color: #F2F4F6 !important;
-    border: 1px solid transparent !important;
-    border-radius: 12px !important; 
-    padding: 0.75rem 1rem;
-    font-size: 0.9rem;
-    font-family: 'Montserrat';
-    color: #30343F;
-    box-shadow: none !important;
+  background-color: #f2f4f6 !important;
+  border: 1px solid transparent !important;
+  border-radius: 12px !important;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  font-family: "Montserrat";
+  color: #30343f;
+  box-shadow: none !important;
 }
 
 .entrada-texto:focus {
-    background-color: #FFFFFF !important;
-    border-color: #C66271 !important; 
-    box-shadow: 0 0 0 0.2rem rgba(198, 98, 113, 0.15) !important;
+  background-color: #ffffff !important;
+  border-color: #c66271 !important;
+  box-shadow: 0 0 0 0.2rem rgba(198, 98, 113, 0.15) !important;
 }
 
-
 .boton-mostrar-clave {
-    background-color: #F2F4F6 !important; /* Mismo gris que el input */
-    border: 1px solid transparent !important;
-    border-left: none !important;
-    color: #6c757d;
-    border-top-right-radius: 12px !important;
-    border-bottom-right-radius: 12px !important;
+  background-color: #f2f4f6 !important; /* Mismo gris que el input */
+  border: 1px solid transparent !important;
+  border-left: none !important;
+  color: #6c757d;
+  border-top-right-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
 }
 
 .boton-mostrar-clave:hover {
-    color: #C66271;
+  color: #c66271;
 }
 
 .input-group .entrada-texto {
-    border-top-right-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+.casilla-check {
+  transform: scale(1.3); /* Agranda el cuadrito */
+  margin-right: 8px; /* Lo separa un poco del texto */
+  cursor: pointer;
+  border: 2px solid #c66271; /* Borde con tu color de marca */
+  background-color: #ffffff; /* Fondo blanco para que resalte limpio */
 }
 
 .casilla-check:checked {
-    background-color: #C66271;
-    border-color: #C66271;
+  background-color: #c66271;
+  border-color: #c66271;
 }
 
 .boton-crear-cuenta {
-    background-color: #C66271;
-    border: none;
-    border-radius: 25px;
-    font-family: 'Montserrat';
-    font-size: 0.95rem;
-    transition: background-color 0.3s ease;
+  background-color: #c66271;
+  border: none;
+  border-radius: 25px;
+  font-family: "Montserrat";
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease;
 }
 
 .boton-crear-cuenta:hover {
-    background-color: #a84f5c; 
+  background-color: #a84f5c;
 }
 
 .boton-red-social {
-    background-color: #FFFFFF !important;
-    border: 1.5px solid #D1D5DB !important;
-    border-radius: 14px !important;
-    font-family: 'Montserrat';
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #30343F;
-    padding: 0.65rem 1rem;
-    transition: all 0.2s ease;
+  background-color: #ffffff !important;
+  border: 1.5px solid #d1d5db !important;
+  border-radius: 14px !important;
+  font-family: "Montserrat";
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #30343f;
+  padding: 0.65rem 1rem;
+  transition: all 0.2s ease;
 }
 
 .boton-red-social:hover {
-    background-color: #F8F9FA !important;
-    border-color: #9CA3AF !important;
-    transform: translateY(-2px); 
+  background-color: #f8f9fa !important;
+  border-color: #9ca3af !important;
+  transform: translateY(-2px);
 }
 
-.color-google { color: #EA4335; }
-.color-facebook { color: #1877F2; }
-
-.enlace-terminos, .enlace-iniciar-sesion {
-    color: #C66271;
-    text-decoration: none;
+.color-google {
+  color: #ea4335;
+}
+.color-facebook {
+  color: #1877f2;
 }
 
-.enlace-terminos:hover, .enlace-iniciar-sesion:hover {
-    text-decoration: underline;
+.enlace-terminos,
+.enlace-iniciar-sesion {
+  color: #c66271;
+  text-decoration: none;
+}
+
+.enlace-terminos:hover,
+.enlace-iniciar-sesion:hover {
+  text-decoration: underline;
 }
 
 .invalid-feedback {
-    font-family: 'Montserrat';
-    font-size: 0.8rem;
+  font-family: "Montserrat";
+  font-size: 0.8rem;
+}
+.enlace-terminos {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+/* Fondo oscuro que cubre toda la pantalla */
+.modal-overlay {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    48,
+    52,
+    63,
+    0.6
+  ); /* Tono oscuro acorde a tu paleta (#30343F) */
+  z-index: 1050;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Caja blanca central de la ventana */
+.modal-contenedor {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  font-family: "Montserrat";
+}
+
+/* Cabecera del modal */
+.modal-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 12px;
+  margin-bottom: 15px;
+}
+
+.modal-titulo-texto {
+  font-family: "Fredoka";
+  color: #30343f;
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+/* Botón de la "X" para cerrar */
+.modal-cerrar {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #6c757d;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-cerrar:hover {
+  color: #c66271; /* Tu color principal al pasar el mouse */
+}
+
+/* Cuerpo del texto con scroll si es largo */
+.modal-cuerpo {
+  max-height: 60vh;
+  overflow-y: auto;
+  color: #30343f;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
