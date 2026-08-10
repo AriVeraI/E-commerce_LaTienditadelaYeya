@@ -131,8 +131,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // CREACIÓN DE CUENTA EXITOSA
         if (formularioEsValido) {
-            // Guardamos el correo en el LocalStorage
-            localStorage.setItem('nuevoUsuarioEmail', inputCorreo.value.trim());
+            //Obj para el usuario registrado
+            const nvoUsuario = {
+                nombre: inputNombre.value.trim(),
+                correo: inputCorreo.value.trim(),
+                telefono: inputTelefono.value.trim(),
+                clave: inputClave.value
+            };
+
+            //lista para los usuarios, se inicializa en un array vacio 
+            let listaUsuarios = JSON.parse(localStorage.getItem('usuarios')) || [];   
+            //en caso de que el correo se repita y evitar que el local Storage lo sobre escriba 
+            const correoExistente = listaUsuarios.find(usuario => usuario.correo === nvoUsuario.correo);
+            if (correoExistente) {
+                alert('Este correo ya está vinculado a una cuenta');
+                marcarCampo(inputCorreo, false);
+                return; 
+            }
+
+            listaUsuarios.push(nvoUsuario);
+           
+            localStorage.setItem('usuarios', JSON.stringify(listaUsuarios));
+            //console.log(listaUsuarios);
 
             // Alerta nativa para notificar al cliente
             alert('¡Cuenta creada con éxito! Bienvenida(o) a La Tiendita de la Yeya. Serás redirigido para iniciar sesión.');
