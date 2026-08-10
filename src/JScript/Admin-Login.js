@@ -1,12 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Capturamos los elementos del HTML
+  // 1. CAPTURAMOS LOS ELEMENTOS DEL HTML CON LOS IDs CORRECTOS
   const loginForm = document.getElementById('loginForm');
   const emailInput = document.getElementById('exampleInputEmail1');
-  const passwordInput = document.getElementById('exampleInputPassword1');
+  const passwordInput = document.getElementById('clave-usuario');
   const emailError = document.getElementById('emailError');
   const passwordError = document.getElementById('passwordError');
+  const btnToggleClave1 = document.getElementById('toggle-clave-1');
 
-  // Expresión regular para validar formato de correo electrónico
+  // 2. FUNCIONALIDAD: MOSTRAR / OCULTAR CONTRASEÑA (Totalmente fuera del formulario)
+  function alternarVisibilidadClave(inputCampo, botonBuscado) {
+    const icono = botonBuscado.querySelector("i");
+    
+    if (inputCampo.type === "password") {
+      inputCampo.type = "text"; 
+      icono.classList.remove("bi-eye");
+      icono.classList.add("bi-eye-slash"); 
+    } else {
+      inputCampo.type = "password"; 
+      icono.classList.remove("bi-eye-slash");
+      icono.classList.add("bi-eye"); 
+    }
+  }
+
+  // 3. ACTIVAMOS EL ESCUCHADOR DEL OJITO
+  btnToggleClave1.addEventListener("click", () => {
+    alternarVisibilidadClave(passwordInput, btnToggleClave1);
+  });
+
+  // 4. LÓGICA DEL FORMULARIO Y VALIDACIONES
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   loginForm.addEventListener('submit', (e) => {
@@ -15,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const emailValue = emailInput.value.trim();
     const passwordValue = passwordInput.value.trim();
 
-    // NUEVA CONDICIÓN: Si AMBOS campos están vacíos al hacer clic
+    // Condición: Si AMBOS campos están vacíos al hacer clic
     if (emailValue === '' && passwordValue === '') {
       alert('Por favor completa los campos del formulario. No has ingresado ninguna información.');
       showError(emailInput, emailError, 'El correo electrónico es obligatorio.');
@@ -25,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let isValid = true;
 
-    // --- 1. Validar Correo Electrónico ---
+    // --- Validar Correo Electrónico ---
     if (emailValue === '') {
       showError(emailInput, emailError, 'El correo electrónico es obligatorio.');
       isValid = false;
@@ -36,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
       showSuccess(emailInput, emailError);
     }
 
-    // --- 2. Validar Contraseña ---
+    // --- Validar Contraseña ---
     if (passwordValue === '') {
       showError(passwordInput, passwordError, 'La contraseña es obligatoria.');
       isValid = false;
@@ -47,14 +68,13 @@ document.addEventListener('DOMContentLoaded', () => {
       showSuccess(passwordInput, passwordError);
     }
 
-    // --- 3. Si todo es válido ---
+    // --- Si todo es válido ---
     if (isValid) {
       console.log('Datos listos para enviar:', {
         email: emailValue,
         password: passwordValue
       });
       alert('¡Inicio de sesión exitoso!');
-      
       // loginForm.submit();
     }
   });
