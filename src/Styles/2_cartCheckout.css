@@ -1,0 +1,63 @@
+:root {
+  --color-principal: #b05763;
+  --color-oscuro: #333333;
+}
+
+/* 1. Importar tipografías oficiales de tu guía */
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Montserrat:wght@400;500;700&display=swap");
+
+/* 2. Fondo general de la página (Platinum) y tipografía por defecto */
+body {
+  font-family: "Montserrat", sans-serif !important;
+  background-color: #f2f4f6 !important;
+}
+
+/* Aplicar Montserrat al contenido y formularios sin forzarles fondo */
+input,
+select,
+textarea,
+button,
+p,
+span,
+label {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+/* 3. Aplicar Fredoka a títulos y encabezados */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.fw-bold,
+.navbar-brand {
+  font-family: "Fredoka", sans-serif !important;
+}
+
+.navbar-yeya {
+  background-color: var(--color-principal);
+}
+
+/* 4. Estilos unificados, color exacto y efectos de movimiento para el botón (.btn-yeya) */
+.btn-yeya {
+  background-color: var(--color-principal) !important;
+  border-color: var(--color-principal) !important;
+  color: #ffffff !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+/* Efecto al pasar el cursor (Hover): se oscurece ligeramente y se eleva */
+.btn-yeya:hover {
+  background-color: #9a4853 !important;
+  border-color: #9a4853 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Efecto al presionar (Active): simula el hundimiento del botón */
+.btn-yeya:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}

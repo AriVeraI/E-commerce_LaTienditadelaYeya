@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Página responsiva -->
+  <!-- Referencia a archivos con estilos -->
+  <link rel="stylesheet" href="../Styles/style.css">
+  <link rel="stylesheet" href="../Styles/1_index.css">
+  
+  <link rel="stylesheet" href="../Styles/5_cartThanks.css">
+
+  <!-- Enlaces a librerías externas por CDN (FontAwesome, Bootstrap Icons y Bootstrap CSS) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <!-- Importación de fuentes tipográficas de Google Fonts (Fredoka y Montserrat) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <!-- Título de la pestaña del navegador -->
+  <title>Confirmación de Pedido - La Tiendita de la Yeya</title>
+</head>
+
+<body>
+  <!------------------------------------------------ NAVBAR --------------------------------------------->
+  <header id="navbar1" class="main-header"></header>
+
+  <!--------------------------------------PRINCIPAL----------------------------------------->
+  <main class="contenedor-principal-confirmacion container py-5 my-4">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8 col-xl-7">
+
+        <div class="tarjeta-confirmacion card border-0 shadow p-4 p-md-5">
+
+          <div class="encabezado-exito text-center mb-4">
+            <div class="contenedor-icono-check mx-auto mb-3 d-flex align-items-center justify-content-center">
+              <i class="bi bi-check-circle-fill icono-check"></i>
+            </div>
+            <span class="nombre-marca d-block text-uppercase mb-1">La Tiendita de la Yeya</span>
+            <h1 class="titulo-gracias h2 fw-bold mb-2">¡Gracias por tu compra!</h1>
+            <p class="subtitulo-confirmacion text-muted mb-0">Tu pedido ha sido recibido y ya lo estamos preparando con
+              mucho cariño.</p>
+          </div>
+
+          <div class="caja-numero-pedido text-center p-3 mb-3">
+            <span class="etiqueta-pedido text-muted d-block small">Número de pedido</span>
+            <strong id="numero-pedido" class="codigo-pedido font-monospace fs-4">#YEYA-00000</strong>
+          </div>
+
+          <div class="caja-aviso-correo p-3 mb-4 d-flex align-items-center gap-3">
+            <div class="contenedor-icono-sobre d-flex align-items-center justify-content-center">
+              <i class="bi bi-envelope-check-fill icono-sobre"></i>
+            </div>
+            <p class="texto-aviso-correo mb-0 small">
+              Hemos enviado un correo electrónico con la confirmación de tu pedido y los detalles de seguimiento.
+            </p>
+          </div>
+
+          <div class="seccion-resumen-compra mb-4">
+            <h2 class="titulo-seccion-resumen h5 fw-bold mb-3">Resumen de compra</h2>
+
+            <div id="contenedor-productos-resumen" class="lista-productos-resumen mb-3">
+            </div>
+
+            <div class="desglose-costos p-3">
+              <div class="fila-costo d-flex justify-content-between mb-2">
+                <span class="texto-costo text-muted">Subtotal:</span>
+                <span id="subtotal-compra" class="monto-costo">$0.00 MXN</span>
+              </div>
+              <div class="fila-costo d-flex justify-content-between mb-2">
+                <span class="texto-costo text-muted">Envío:</span>
+                <span id="envio-compra" class="monto-costo">$0.00 MXN</span>
+              </div>
+              <hr class="linea-separadora my-2">
+              <div class="fila-costo d-flex justify-content-between fw-bold pt-1">
+                <span class="texto-total fs-6">Total pagado:</span>
+                <span id="total-compra" class="monto-total fs-6">$0.00 MXN</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="caja-tiempo-envio p-3 mb-4 d-flex align-items-center gap-3">
+            <div class="contenedor-icono-camion d-flex align-items-center justify-content-center">
+              <i class="bi bi-truck icono-camion"></i>
+            </div>
+            <div>
+              <strong class="etiqueta-envio d-block small">Tiempo estimado de entrega:</strong>
+              <span class="detalle-envio text-muted small">3 a 5 días hábiles a tu domicilio</span>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <a href="4_Catalog-Items.html" class="btn boton-seguir-explorando w-100 py-2 fw-bold text-white">
+              Seguir explorando
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+  <!--------------------------------------- Footer ---------------------------------------------------->
+  <footer id="footer1" class="footer-seccion py-5 px-4 px-md-5"></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../JScript/Navbar_Footer.js"></script>
+  <script src="../JScript/Cart_Confirm-Order.js"></script>
+
+</body>
+
+</html>
