@@ -67,6 +67,7 @@
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
 }
+
 .casilla-check {
   transform: scale(1.3); /* Agranda el cuadrito */
   margin-right: 8px; /* Lo separa un poco del texto */

@@ -1,76 +1,70 @@
-  <!doctype html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>About</title>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-------------POR FAVOR MANTEN EL ORDEN DEL HEAD COMO ESTÁ, AÑADE LO QUE NECESITES EN LA SECCIÓN CORRESPONDIENTE (CADA LINK O REFERENCIA EN UNA LÍNEA DE CÓDIGO)------------------------------------------------------------>  <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <!-- Página responsiva -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Referencia a archivos con estilos -->
+    <link rel="stylesheet" href="../Styles/style.css">
+    <!-- Enlaces a librerías externas por CDN (FontAwesome, Bootstrap Icons y Bootstrap CSS) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- Importación de fuentes tipográficas de Google Fonts (Fredoka y Montserrat) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Título de la pestaña del navegador -->
+    <title>About</title>
+  </head>
 
-      <link rel="stylesheet" href="../Styles/style.css">
-
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-    <body>
-      <!--navbar-->
-      <header id="navbar1" class="main-header"></header>
-      
-      <!--------------------------------------PRINCIPAL----------------------------------------->
-      <main>
-          <!--Inicio=Nuestra historia  -->
-          <section>
-              <section>
-                  <div class="about-imagen">
-                      <img src="../../assets/Images/AboutUs.jpeg" alt="Bisutería La Tiendita de la Yeya">
+  <body>
+    <!--navbar-->
+    <header id="navbar1" class="main-header"></header>
+    
+    <!--------------------------------------PRINCIPAL----------------------------------------->
+    <main>
+      <!--Inicio=Nuestra historia  -->
+      <section>
+        <section>
+          <div class="about-imagen">
+            <img src="../../assets/Images/AboutUs.jpeg" alt="Bisutería La Tiendita de la Yeya">
+          </div>
+          <div class="about-titulo-imagen">
+            <h1 class="about-titulo">Nuestra historia</h1>
+          </div>
+        </section>
+        <section class="about-seccion">
+          <div class="contendor-about-descripcion">
+            <h2 class="about-subtitulo">El Origen de un Estilo sin Moldes</h2>
+            <p class="About-parrafo1">
+              La Tiendita de la Yeya nació de la idea de transformar los accesorios tradicionales 
+              en piezas únicas con temática y significado. Ofrecemos bisutería especializada que rompe 
+              con lo convencional, diseñada para que mujeres expresen su autenticidad, conecten 
+              con sus pasiones y se sientan plenamente identificados con su propio estilo.
+            </p>
+          </div>
+        </section>
+        <!-- Descripción = Accesorios -->
+        <section id="descripcion" class="mb-3 pt-3" >
+          <div id="div-descripcion"  class="container-fluid py-5">
+            <div class="text-center mb-5 mt-3">
+              <h2 id="h2-texto-descripcion"> Descripción </h2>
+              <h4>Accesorios para quienes llevan sus historias favoritas a todas partes.</h4>
+            </div>
+            <div id="descripHover"class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="card border-0 shadow-sm">
+                  <div class="card-body py-4">
+                    <p id="p-descripcion" class="mb-0 lh-lg">Somos una tienda en línea creada con el propósito de reunir accesorios y bisutería inspirados en series, películas icónicas y anime, ofreciendo productos que permitan a cada persona expresar su estilo y sus gustos. Nuestro catálogo incluye principalmente joyería temática, además de una selección de lentes, accesorios para el cabello, glosses y llaveros. </p>
                   </div>
-                  <div class="about-titulo-imagen">
-                  <h1 class="about-titulo">Nuestra historia</h1>
-                  </div>
-              </section>
-              <section class="about-seccion">
-                  <div class="contendor-about-descripcion">
-                      <h2 class="about-subtitulo">El Origen de un Estilo sin Moldes</h2>
-                      
-                      <p class="About-parrafo1">
-                          La Tiendita de la Yeya nació de la idea de transformar los accesorios tradicionales 
-                          en piezas únicas con temática y significado. Ofrecemos bisutería especializada que rompe 
-                          con lo convencional, diseñada para que mujeres expresen su autenticidad, conecten 
-                          con sus pasiones y se sientan plenamente identificados con su propio estilo.
-                      </p>
-                  </div>
-              </section>
-          <!-- Descripción = Accesorios -->
-          <section id="descripcion" class="mb-3 pt-3" >
-              <div id="div-descripcion"  class="container-fluid py-5">
-          
-                  <div class="text-center mb-5 mt-3">
-                      <h2 id="h2-texto-descripcion"> Descripción </h2>
-                      <h4>
-                          Accesorios para quienes llevan sus historias favoritas a todas partes.
-                      </h4>
-                  </div>
-
-                  <div id="descripHover"class="row justify-content-center">
-                      <div class="col-lg-8">
-                          <div class="card border-0 shadow-sm">
-                              <div class="card-body py-4">
-                                <p id="p-descripcion" class="mb-0 lh-lg">
-                                  Somos una tienda en línea creada con el propósito de reunir accesorios y bisutería inspirados en series, películas icónicas y anime, ofreciendo productos que permitan a cada persona expresar su estilo y sus gustos. Nuestro catálogo incluye principalmente joyería temática, además de una selección de lentes, accesorios para el cabello, glosses y llaveros. 
-                                </p>
-                              </div>
-                          </div>
-                      </div>    
-                  </div>
-
-              </div>
-
-          </section>
+                </div>
+              </div>    
+            </div>
+          </div>
+        </section>
+        <!--Misión - Visión -->
         <section id="seccion-proposito">
-          <!--Misión - Visión -->
           <h2>Nuestro Propósito</h2>
           <div class="contenedor-tarjetas">
             <div class="mision-vision">
@@ -83,7 +77,6 @@
                 identificadas con su propio estilo.
               </p>
             </div>
-
             <div class="mision-vision">
               <h3>Visión</h3>
               <p>
@@ -96,327 +89,281 @@
             </div>
           </div>
         </section>
-      
-      <!-- VALORES -->
+        <!-- VALORES -->
+        <div class="text-center my-5">
+          <h2 class="valores-titulo">Valores Fundamentales</h2>
+          <p1 class="valores-subtitulo">Los principios que guían cada corte, pulido y engaste.</p>
+        </div>
+        <!-- Contenedor de Tarjetas -->
+        <div class="row row-cols-1 row-cols-md-3 g-4 px-3 px-md-5">
+          
+          <!-- Valor 01 -->
+          <div id="animacard" class="col">
+            <div class="card h-100 valor-card">
+              <div class="valor-numero tex-center">01
+              </div>
+              <div class="card-body p-0">
+                <h5 class="card-title valor-card-title text-center">Autenticidad</h5>
+                <p class="card-text valor-card-text">Creemos en materiales genuinos y prácticas transparentes. Cada gema está certificada y se obtiene de forma ética.</p>
+              </div>
+            </div>
+          </div>
 
-  <div class="text-center my-5">
-    <h2 class="valores-titulo">Valores Fundamentales</h2>
-    <p1 class="valores-subtitulo">Los principios que guían cada corte, pulido y engaste.</p>
-  </div>
+          <!-- Valor 02 -->
+          <div id="animacard" class="col">
+            <div class="card h-100 valor-card">
+              <div class="valor-numero text-center">02</div>
+              <div class="card-body p-0">
+                <h5 class="card-title valor-card-title text-center">Artesanía</h5>
+                <p class="card-text valor-card-text">Honramos las técnicas consagradas de la alta joyería, asegurando que cada pieza sea robusta, impecable y hermosa.</p>
+              </div>
+            </div>
+          </div>
 
-  <!-- Contenedor de Tarjetas -->
-  <div class="row row-cols-1 row-cols-md-3 g-4 px-3 px-md-5">
+          <!-- Valor 03 -->
+          <div id="animacard" class="col">
+            <div class="card h-100 valor-card">
+              <div class="valor-numero text-center">03
+              </div>
+              <div class="card-body p-0">
+                <h5 class="card-title valor-card-title text-center">Sostenibilidad</h5>
+                <p class="card-text valor-card-text">Estamos comprometidos a minimizar nuestra huella ambiental utilizando metales reciclados y apoyando la minería responsable.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      <!-- SECCIÓN NUESTRO EQUIPO -->
+      <div class="text-center my-5">
+        <!-- Título en Fredoka -->
+        <h2 class="valores-titulo">Conoce a nuestro equipo</h2>
+        <!-- Subtítulo en Montserrat -->
+        <p class="valores-subtitulo">Las mentes brillantes y las manos expertas que hacen posible la magia detrás de cada colección de La Tiendita de la Yeya.</p>
+      </div>
+
+      <!-- Carrusel de perfiles continuo -->
+      <section class="cinta-constante-wrapper">
+        <div class="cinta-constante">
+          
+          <!-- ================= BLOQUE ORIGINAL (1ra VUELTA) ================= -->
+          <div class="cinta-bloque">
+            
+            <!-- 1. Ariadna -->
+            <div class="tarjeta-perfil">
+              <div class="card bg-dark text-white rounded-4 border-0 h-100">
+                <img src="../../assets/Images_perfil/Ariadna.png" class="card-img-top rounded-top-4" alt="Ariadna Jazmín Vera Iglesias">
+                <div class="card-body d-flex flex-column justify-content-between p-4">
+                  <h5 class="card-title fw-bold mb-2 text-center">Ariadna Jazmín Vera Iglesias</h5>
+                  <p class="card-text text-secondary mb-3 text-center">Diseño, desarrollo y facilito proyectos tecnológicos. Conecto el trabajo técnico con los objetivos del equipo de manera simple y directa.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Brandon Essaw -->
+            <div class="tarjeta-perfil">
+              <div class="card bg-dark text-white rounded-4 border-0 h-100">
+                <img src="../../assets/Images_perfil/Essaw.png" class="card-img-top rounded-top-4" alt="Brandon Essaw Cortez Beltrán">
+                <div class="card-body d-flex flex-column justify-content-between p-4">
+                  <h5 class="card-title fw-bold mb-2 text-center">Brandon Essaw Cortez Beltrán</h5>
+                  <p class="card-text text-secondary mb-3 text-center">Creador de la base de datos y del desarrollo backend de la tienda en línea. Especialista en Java con gran interés en el cloud computing, enfocado en desarrollar infraestructura segura, eficiente y de alto rendimiento.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Cristian Giovany -->
+            <div class="tarjeta-perfil">
+              <div class="card bg-dark text-white rounded-4 border-0 h-100">
+                <img src="../../assets/Images_perfil/Cristian.png" class="card-img-top rounded-top-4" alt="Cristian Giovany Rodriguez Rosales">
+                <div class="card-body d-flex flex-column justify-content-between p-4">
+                  <h5 class="card-title fw-bold mb-2 text-center">Cristian Giovany Rodriguez Rosales</h5>
+                  <p class="card-text text-secondary mb-3 text-center">Desarrollador Full Stack enfocado en diseñar soluciones técnicas eficientes. Colaboración activa en el desarrollo del código y en la resolución de problemas lógicos del proyecto.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. Ernesto -->
+            <div class="tarjeta-perfil">
+              <div class="card bg-dark text-white rounded-4 border-0 h-100">
+                <img src="../../assets/Images_perfil/Ernesto.png" class="card-img-top rounded-top-4" alt="Ernesto Nava Hernandez">
+                <div class="card-body d-flex flex-column justify-content-between p-4">
+                  <h5 class="card-title fw-bold mb-2 text-center">Ernesto Nava Hernandez</h5>
+                  <p class="card-text text-secondary mb-3 text-center">Matemático con experiencia en el desarrollo backend Java. Desarrollo de la lógica de negocio del proyecto.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. Irán Daniela -->
+            <div class="tarjeta-perfil">
+              <div class="card bg-dark text-white rounded-4 border-0 h-100">
+                <img src="../../assets/Images_perfil/Iran.png" class="card-img-top rounded-top-4" alt="Irán Daniela Gutiérrez Salazar">
+                <div class="card-body d-flex flex-column justify-content-between p-4">
+                  <h5 class="card-title fw-bold mb-2 text-center">Irán Daniela Gutiérrez Salazar</h5>
+                  <p class="card-text text-secondary mb-3 text-center">Desarrolladora Full Stack egresada de Ingeniería en Sistemas Computacionales, enfocada en crear soluciones digitales eficientes. Especializada en el desarrollo moderno de aplicaciones web y móviles.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 6. Israel Josue -->
+            <div class="tarjeta-perfil">
+              <div class="card bg-dark text-white rounded-4 border-0 h-100">
+                <img src="../../assets/Images_perfil/Israel.png" class="card-img-top rounded-top-4" alt="Israel Josue Martinez Ruiz">
+                <div class="card-body d-flex flex-column justify-content-between p-4">
+                  <h5 class="card-title fw-bold mb-2 text-center">Israel Josue Martinez Ruiz</h5>
+                  <p class="card-text text-secondary mb-3 text-center">Desarrollador Full Stack Java Jr. con formación en Generation México. Experiencia en desarrollo web, gestión académica y entornos administrativos.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 7. Joyce -->
+            <div class="tarjeta-perfil">
+              <div class="card bg-dark text-white rounded-4 border-0 h-100">
+                <img src="../../assets/Images_perfil/Joyce.png" class="card-img-top rounded-top-4" alt="Joyce Martinez Zubieta">
+                <div class="card-body d-flex flex-column justify-content-between p-4">
+                  <h5 class="card-title fw-bold mb-2 text-center">Joyce Martinez Zubieta</h5>
+                  <p class="card-text text-secondary mb-3 text-center">Especialista en Data Analytics y Profesional en Desarrollo Organizacional y desarrolladora Java. Mi perfil híbrido me permite impulsar soluciones técnicas estructuradas y mantener la sinergia óptima dentro de equipos multidisciplinarios.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 8. Noe Santiago -->
+            <div class="tarjeta-perfil">
+              <div class="card bg-dark text-white rounded-4 border-0 h-100">
+                <img src="../../assets/Images_perfil/Noe.png" class="card-img-top rounded-top-4" alt="Noe Santiago Lopez Damian">
+                <div class="card-body d-flex flex-column justify-content-between p-4">
+                  <h5 class="card-title fw-bold mb-2 text-center">Noe Santiago Lopez Damian</h5>
+                  <p class="card-text text-secondary mb-3 text-center">Desarrollador Java FullStack. Coordino y ejecuto tareas en diversas áreas del negocio, enfocando mi especialización técnica en el desarrollo backend mediante tecnologías como Java, JavaScript y bases de datos.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 9. Yazmin Aurora -->
+            <div class="tarjeta-perfil">
+              <div class="card bg-dark text-white rounded-4 border-0 h-100">
+                <img src="../../assets/Images_perfil/Yazmin.png" class="card-img-top rounded-top-4" alt="Yazmin Aurora Silva Olivares">
+                <div class="card-body d-flex flex-column justify-content-between p-4">
+                  <h5 class="card-title fw-bold mb-2 text-center">Yazmin Aurora Silva Olivares</h5>
+                  <p class="card-text text-secondary mb-3 text-center">Desarrolladora FullStack Java. Experiencia en desarrollo de soluciones web personalizadas, páginas web estáticas y E-commerce.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- ================= BLOQUE CLONADO (2da VUELTA - COPIA EXACTA) ================= -->
+          <div class="cinta-bloque" aria-hidden="true">
+            
+            <!-- 1. Ariadna (Copia) -->
+            <div class="tarjeta-perfil">
+              <div class="card bg-dark text-white rounded-4 border-0 h-100">
+                <img src="../../assets/Images_perfil/Ariadna.png" class="card-img-top rounded-top-4">
+                <div class="card-body d-flex flex-column justify-content-between p-4">
+                  <h5 class="card-title fw-bold mb-2 text-center">Ariadna Jazmín Vera Iglesias</h5>
+                  <p class="card-text text-secondary mb-3 text-center">Diseño, desarrollo y facilito proyectos tecnológicos. Conecto el trabajo técnico con los objetivos del equipo de manera simple y directa.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Brandon Essaw (Copia) -->
+            <div class="tarjeta-perfil">
+              <div class="card bg-dark text-white rounded-4 border-0 h-100">
+                <img src="../../assets/Images_perfil/Essaw.png" class="card-img-top rounded-top-4">
+                <div class="card-body d-flex flex-column justify-content-between p-4">
+                  <h5 class="card-title fw-bold mb-2 text-center">Brandon Essaw Cortez Beltrán</h5>
+                  <p class="card-text text-secondary mb-3 text-center">Creador de la base de datos y del desarrollo backend de la tienda en línea. Especialista en Java con gran interés en el cloud computing, enfocado en desarrollar infraestructura segura, eficiente y de alto rendimiento.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Cristian Giovany (Copia) -->
+            <div class="tarjeta-perfil">
+              <div class="card bg-dark text-white rounded-4 border-0 h-100">
+                <img src="../../assets/Images_perfil/Cristian.png" class="card-img-top rounded-top-4">
+                <div class="card-body d-flex flex-column justify-content-between p-4">
+                  <h5 class="card-title fw-bold mb-2 text-center">Cristian Giovany Rodriguez Rosales</h5>
+                  <p class="card-text text-secondary mb-3 text-center">Desarrollador Full Stack enfocado en diseñar soluciones técnicas eficientes. Colaboración activa en el desarrollo del código y en la resolución de problemas lógicos del proyecto.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. Ernesto (Copia) -->
+            <div class="tarjeta-perfil">
+              <div class="card bg-dark text-white rounded-4 border-0 h-100">
+                <img src="../../assets/Images_perfil/Ernesto.png" class="card-img-top rounded-top-4">
+                <div class="card-body d-flex flex-column justify-content-between p-4">
+                  <h5 class="card-title fw-bold mb-2 text-center">Ernesto Nava Hernandez</h5>
+                  <p class="card-text text-secondary mb-3 text-center">Matemático con experiencia en el desarrollo backend Java. Desarrollo de la lógica de negocio del proyecto.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. Irán Daniela (Copia) -->
+            <div class="tarjeta-perfil">
+              <div class="card bg-dark text-white rounded-4 border-0 h-100">
+                <img src="../../assets/Images_perfil/Iran.png" class="card-img-top rounded-top-4">
+                <div class="card-body d-flex flex-column justify-content-between p-4">
+                  <h5 class="card-title fw-bold mb-2 text-center">Irán Daniela Gutiérrez Salazar</h5>
+                  <p class="card-text text-secondary mb-3 text-center">Desarrolladora Full Stack egresada de Ingeniería en Sistemas Computacionales, enfocada en crear soluciones digitales eficientes. Especializada en el desarrollo moderno de aplicaciones web y móviles.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 6. Israel Josue (Copia) -->
+            <div class="tarjeta-perfil">
+              <div class="card bg-dark text-white rounded-4 border-0 h-100">
+                <img src="../../assets/Images_perfil/Israel.png" class="card-img-top rounded-top-4">
+                <div class="card-body d-flex flex-column justify-content-between p-4">
+                  <h5 class="card-title fw-bold mb-2 text-center">Israel Josue Martinez Ruiz</h5>
+                  <p class="card-text text-secondary mb-3 text-center">Desarrollador Full Stack Java Jr. con formación en Generation México. Experiencia en desarrollo web, gestión académica y entornos administrativos.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 7. Joyce (Copia) -->
+            <div class="tarjeta-perfil">
+              <div class="card bg-dark text-white rounded-4 border-0 h-100">
+                <img src="../../assets/Images_perfil/Joyce.png" class="card-img-top rounded-top-4">
+                <div class="card-body d-flex flex-column justify-content-between p-4">
+                  <h5 class="card-title fw-bold mb-2 text-center">Joyce Martinez Zubieta</h5>
+                  <p class="card-text text-secondary mb-3 text-center">Especialista en Data Analytics y Profesional en Desarrollo Organizacional y desarrolladora Java. Mi perfil híbrido me permite impulsar soluciones técnicas estructuradas y mantener la sinergia óptima dentro de equipos multidisciplinarios.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 8. Noe Santiago (Copia) -->
+            <div class="tarjeta-perfil">
+              <div class="card bg-dark text-white rounded-4 border-0 h-100">
+                <img src="../../assets/Images_perfil/Noe.png" class="card-img-top rounded-top-4">
+                <div class="card-body d-flex flex-column justify-content-between p-4">
+                  <h5 class="card-title fw-bold mb-2 text-center">Noe Santiago Lopez Damian</h5>
+                  <p class="card-text text-secondary mb-3 text-center">Desarrollador Java FullStack. Coordino y ejecuto tareas en diversas áreas del negocio, enfocando mi especialización técnica en el desarrollo backend mediante tecnologías como Java, JavaScript y bases de datos.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 9. Yazmin Aurora (Copia) -->
+            <div class="tarjeta-perfil">
+              <div class="card bg-dark text-white rounded-4 border-0 h-100">
+                <img src="../../assets/Images_perfil/Yazmin.png" class="card-img-top rounded-top-4">
+                <div class="card-body d-flex flex-column justify-content-between p-4">
+                  <h5 class="card-title fw-bold mb-2 text-center">Yazmin Aurora Silva Olivares</h5>
+                  <p class="card-text text-secondary mb-3 text-center">Desarrolladora FullStack Java. Experiencia en desarrollo de soluciones web personalizadas, páginas web estáticas y E-commerce.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
     
-    <!-- Valor 01 -->
-    <div id="animacard" class="col">
-      <div class="card h-100 valor-card">
-        <div class="valor-numero tex-center">01</div>
-        <div class="card-body p-0">
-          <h5 class="card-title valor-card-title text-center">Autenticidad</h5>
-          <p class="card-text valor-card-text">
-            Creemos en materiales genuinos y prácticas transparentes. Cada gema está certificada y se obtiene de forma ética.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Valor 02 -->
-    <div id="animacard" class="col">
-      <div class="card h-100 valor-card">
-        <div class="valor-numero text-center">02</div>
-        <div class="card-body p-0">
-          <h5 class="card-title valor-card-title text-center">Artesanía</h5>
-          <p class="card-text valor-card-text">
-            Honramos las técnicas consagradas de la alta joyería, asegurando que cada pieza sea robusta, impecable y hermosa.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Valor 03 -->
-    <div id="animacard" class="col">
-      <div class="card h-100 valor-card">
-        <div class="valor-numero text-center">03</div>
-        <div class="card-body p-0">
-          <h5 class="card-title valor-card-title text-center">Sostenibilidad</h5>
-          <p class="card-text valor-card-text">
-            Estamos comprometidos a minimizar nuestra huella ambiental utilizando metales reciclados y apoyando la minería responsable.
-          </p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-    <br>
-  </p>
-
-<!-- SECCIÓN NUESTRO EQUIPO -->
-<div class="text-center my-5">
-  <!-- Título en Fredoka -->
-  <h2 class="valores-titulo">Conoce a nuestro equipo</h2>
-  <!-- Subtítulo en Montserrat -->
-  <p class="valores-subtitulo">
-    Las mentes brillantes y las manos expertas que hacen posible la magia detrás de cada colección de La Tiendita de la Yeya.
-  </p>
-</div>
-
-  <!-- Carrusel de perfiles continuo -->
-  <section class="cinta-constante-wrapper">
-    <div class="cinta-constante">
-      
-      <!-- ================= BLOQUE ORIGINAL (1ra VUELTA) ================= -->
-      <div class="cinta-bloque">
-        
-        <!-- 1. Ariadna -->
-        <div class="tarjeta-perfil">
-          <div class="card bg-dark text-white rounded-4 border-0 h-100">
-            <img src="../../assets/Images_perfil/Ariadna.png" class="card-img-top rounded-top-4" alt="Ariadna Jazmín Vera Iglesias">
-            <div class="card-body d-flex flex-column justify-content-between p-4">
-              <h5 class="card-title fw-bold mb-2 text-center">Ariadna Jazmín Vera Iglesias</h5>
-              <p class="card-text text-secondary mb-3 text-center">
-                Diseño, desarrollo y facilito proyectos tecnológicos. Conecto el trabajo técnico con los objetivos del equipo de manera simple y directa.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2. Brandon Essaw -->
-        <div class="tarjeta-perfil">
-          <div class="card bg-dark text-white rounded-4 border-0 h-100">
-            <img src="../../assets/Images_perfil/Essaw.png" class="card-img-top rounded-top-4" alt="Brandon Essaw Cortez Beltrán">
-            <div class="card-body d-flex flex-column justify-content-between p-4">
-              <h5 class="card-title fw-bold mb-2 text-center">Brandon Essaw Cortez Beltrán</h5>
-              <p class="card-text text-secondary mb-3 text-center">
-                Creador de la base de datos y del desarrollo backend de la tienda en línea. Especialista en Java con gran interés en el cloud computing, enfocado en desarrollar infraestructura segura, eficiente y de alto rendimiento.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3. Cristian Giovany -->
-        <div class="tarjeta-perfil">
-          <div class="card bg-dark text-white rounded-4 border-0 h-100">
-            <img src="../../assets/Images_perfil/Cristian.png" class="card-img-top rounded-top-4" alt="Cristian Giovany Rodriguez Rosales">
-            <div class="card-body d-flex flex-column justify-content-between p-4">
-              <h5 class="card-title fw-bold mb-2 text-center">Cristian Giovany Rodriguez Rosales</h5>
-              <p class="card-text text-secondary mb-3 text-center">
-                Desarrollador Full Stack enfocado en diseñar soluciones técnicas eficientes. Colaboración activa en el desarrollo del código y en la resolución de problemas lógicos del proyecto.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4. Ernesto -->
-        <div class="tarjeta-perfil">
-          <div class="card bg-dark text-white rounded-4 border-0 h-100">
-            <img src="../../assets/Images_perfil/Ernesto.png" class="card-img-top rounded-top-4" alt="Ernesto Nava Hernandez">
-            <div class="card-body d-flex flex-column justify-content-between p-4">
-              <h5 class="card-title fw-bold mb-2 text-center">Ernesto Nava Hernandez</h5>
-              <p class="card-text text-secondary mb-3 text-center">
-                Matemático con experiencia en el desarrollo backend Java. Desarrollo de la lógica de negocio del proyecto.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 5. Irán Daniela -->
-        <div class="tarjeta-perfil">
-          <div class="card bg-dark text-white rounded-4 border-0 h-100">
-            <img src="../../assets/Images_perfil/Iran.png" class="card-img-top rounded-top-4" alt="Irán Daniela Gutiérrez Salazar">
-            <div class="card-body d-flex flex-column justify-content-between p-4">
-              <h5 class="card-title fw-bold mb-2 text-center">Irán Daniela Gutiérrez Salazar</h5>
-              <p class="card-text text-secondary mb-3 text-center">
-                Desarrolladora Full Stack egresada de Ingeniería en Sistemas Computacionales, enfocada en crear soluciones digitales eficientes. Especializada en el desarrollo moderno de aplicaciones web y móviles.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 6. Israel Josue -->
-        <div class="tarjeta-perfil">
-          <div class="card bg-dark text-white rounded-4 border-0 h-100">
-            <img src="../../assets/Images_perfil/Israel.png" class="card-img-top rounded-top-4" alt="Israel Josue Martinez Ruiz">
-            <div class="card-body d-flex flex-column justify-content-between p-4">
-              <h5 class="card-title fw-bold mb-2 text-center">Israel Josue Martinez Ruiz</h5>
-              <p class="card-text text-secondary mb-3 text-center">
-                Desarrollador Full Stack Java Jr. con formación en Generation México. Experiencia en desarrollo web, gestión académica y entornos administrativos.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 7. Joyce -->
-        <div class="tarjeta-perfil">
-          <div class="card bg-dark text-white rounded-4 border-0 h-100">
-            <img src="../../assets/Images_perfil/Joyce.png" class="card-img-top rounded-top-4" alt="Joyce Martinez Zubieta">
-            <div class="card-body d-flex flex-column justify-content-between p-4">
-              <h5 class="card-title fw-bold mb-2 text-center">Joyce Martinez Zubieta</h5>
-              <p class="card-text text-secondary mb-3 text-center">
-                Especialista en Data Analytics y Profesional en Desarrollo Organizacional y desarrolladora Java. Mi perfil híbrido me permite impulsar soluciones técnicas estructuradas y mantener la sinergia óptima dentro de equipos multidisciplinarios.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 8. Noe Santiago -->
-        <div class="tarjeta-perfil">
-          <div class="card bg-dark text-white rounded-4 border-0 h-100">
-            <img src="../../assets/Images_perfil/Noe.png" class="card-img-top rounded-top-4" alt="Noe Santiago Lopez Damian">
-            <div class="card-body d-flex flex-column justify-content-between p-4">
-              <h5 class="card-title fw-bold mb-2 text-center">Noe Santiago Lopez Damian</h5>
-              <p class="card-text text-secondary mb-3 text-center">
-                Desarrollador Java FullStack. Coordino y ejecuto tareas en diversas áreas del negocio, enfocando mi especialización técnica en el desarrollo backend mediante tecnologías como Java, JavaScript y bases de datos.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 9. Yazmin Aurora -->
-        <div class="tarjeta-perfil">
-          <div class="card bg-dark text-white rounded-4 border-0 h-100">
-            <img src="../../assets/Images_perfil/Yazmin.png" class="card-img-top rounded-top-4" alt="Yazmin Aurora Silva Olivares">
-            <div class="card-body d-flex flex-column justify-content-between p-4">
-              <h5 class="card-title fw-bold mb-2 text-center">Yazmin Aurora Silva Olivares</h5>
-              <p class="card-text text-secondary mb-3 text-center">
-                Desarrolladora FullStack Java. Experiencia en desarrollo de soluciones web personalizadas, páginas web estáticas y E-commerce.
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- ================= BLOQUE CLONADO (2da VUELTA - COPIA EXACTA) ================= -->
-      <div class="cinta-bloque" aria-hidden="true">
-        
-        <!-- 1. Ariadna (Copia) -->
-        <div class="tarjeta-perfil">
-          <div class="card bg-dark text-white rounded-4 border-0 h-100">
-            <img src="../../assets/Images_perfil/Ariadna.png" class="card-img-top rounded-top-4">
-            <div class="card-body d-flex flex-column justify-content-between p-4">
-              <h5 class="card-title fw-bold mb-2 text-center">Ariadna Jazmín Vera Iglesias</h5>
-              <p class="card-text text-secondary mb-3 text-center">
-                Diseño, desarrollo y facilito proyectos tecnológicos. Conecto el trabajo técnico con los objetivos del equipo de manera simple y directa.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2. Brandon Essaw (Copia) -->
-        <div class="tarjeta-perfil">
-          <div class="card bg-dark text-white rounded-4 border-0 h-100">
-            <img src="../../assets/Images_perfil/Essaw.png" class="card-img-top rounded-top-4">
-            <div class="card-body d-flex flex-column justify-content-between p-4">
-              <h5 class="card-title fw-bold mb-2 text-center">Brandon Essaw Cortez Beltrán</h5>
-              <p class="card-text text-secondary mb-3 text-center">
-                Creador de la base de datos y del desarrollo backend de la tienda en línea. Especialista en Java con gran interés en el cloud computing, enfocado en desarrollar infraestructura segura, eficiente y de alto rendimiento.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3. Cristian Giovany (Copia) -->
-        <div class="tarjeta-perfil">
-          <div class="card bg-dark text-white rounded-4 border-0 h-100">
-            <img src="../../assets/Images_perfil/Cristian.png" class="card-img-top rounded-top-4">
-            <div class="card-body d-flex flex-column justify-content-between p-4">
-              <h5 class="card-title fw-bold mb-2 text-center">Cristian Giovany Rodriguez Rosales</h5>
-              <p class="card-text text-secondary mb-3 text-center">
-                Desarrollador Full Stack enfocado en diseñar soluciones técnicas eficientes. Colaboración activa en el desarrollo del código y en la resolución de problemas lógicos del proyecto.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4. Ernesto (Copia) -->
-        <div class="tarjeta-perfil">
-          <div class="card bg-dark text-white rounded-4 border-0 h-100">
-            <img src="../../assets/Images_perfil/Ernesto.png" class="card-img-top rounded-top-4">
-            <div class="card-body d-flex flex-column justify-content-between p-4">
-              <h5 class="card-title fw-bold mb-2 text-center">Ernesto Nava Hernandez</h5>
-              <p class="card-text text-secondary mb-3 text-center">
-                Matemático con experiencia en el desarrollo backend Java. Desarrollo de la lógica de negocio del proyecto.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 5. Irán Daniela (Copia) -->
-        <div class="tarjeta-perfil">
-          <div class="card bg-dark text-white rounded-4 border-0 h-100">
-            <img src="../../assets/Images_perfil/Iran.png" class="card-img-top rounded-top-4">
-            <div class="card-body d-flex flex-column justify-content-between p-4">
-              <h5 class="card-title fw-bold mb-2 text-center">Irán Daniela Gutiérrez Salazar</h5>
-              <p class="card-text text-secondary mb-3 text-center">
-                Desarrolladora Full Stack egresada de Ingeniería en Sistemas Computacionales, enfocada en crear soluciones digitales eficientes. Especializada en el desarrollo moderno de aplicaciones web y móviles.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 6. Israel Josue (Copia) -->
-        <div class="tarjeta-perfil">
-          <div class="card bg-dark text-white rounded-4 border-0 h-100">
-            <img src="../../assets/Images_perfil/Israel.png" class="card-img-top rounded-top-4">
-            <div class="card-body d-flex flex-column justify-content-between p-4">
-              <h5 class="card-title fw-bold mb-2 text-center">Israel Josue Martinez Ruiz</h5>
-              <p class="card-text text-secondary mb-3 text-center">
-                Desarrollador Full Stack Java Jr. con formación en Generation México. Experiencia en desarrollo web, gestión académica y entornos administrativos.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 7. Joyce (Copia) -->
-        <div class="tarjeta-perfil">
-          <div class="card bg-dark text-white rounded-4 border-0 h-100">
-            <img src="../../assets/Images_perfil/Joyce.png" class="card-img-top rounded-top-4">
-            <div class="card-body d-flex flex-column justify-content-between p-4">
-              <h5 class="card-title fw-bold mb-2 text-center">Joyce Martinez Zubieta</h5>
-              <p class="card-text text-secondary mb-3 text-center">
-                Especialista en Data Analytics y Profesional en Desarrollo Organizacional y desarrolladora Java. Mi perfil híbrido me permite impulsar soluciones técnicas estructuradas y mantener la sinergia óptima dentro de equipos multidisciplinarios.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 8. Noe Santiago (Copia) -->
-        <div class="tarjeta-perfil">
-          <div class="card bg-dark text-white rounded-4 border-0 h-100">
-            <img src="../../assets/Images_perfil/Noe.png" class="card-img-top rounded-top-4">
-            <div class="card-body d-flex flex-column justify-content-between p-4">
-              <h5 class="card-title fw-bold mb-2 text-center">Noe Santiago Lopez Damian</h5>
-              <p class="card-text text-secondary mb-3 text-center">
-                Desarrollador Java FullStack. Coordino y ejecuto tareas en diversas áreas del negocio, enfocando mi especialización técnica en el desarrollo backend mediante tecnologías como Java, JavaScript y bases de datos.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 9. Yazmin Aurora (Copia) -->
-        <div class="tarjeta-perfil">
-          <div class="card bg-dark text-white rounded-4 border-0 h-100">
-            <img src="../../assets/Images_perfil/Yazmin.png" class="card-img-top rounded-top-4">
-            <div class="card-body d-flex flex-column justify-content-between p-4">
-              <h5 class="card-title fw-bold mb-2 text-center">Yazmin Aurora Silva Olivares</h5>
-              <p class="card-text text-secondary mb-3 text-center">
-                Desarrolladora FullStack Java. Experiencia en desarrollo de soluciones web personalizadas, páginas web estáticas y E-commerce.
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-    
-    <!-- Componente Lateral del Carrito (Offcanvas) -->
-    <div id="cart-drawer-container"></div>
+      <!-- Componente Lateral del Carrito -->
+      <div id="cart-drawer-container"></div>
+    </main>
 
     <!--------------------------------------- Footer ---------------------------------------------------->
     <footer id="footer1" class="footer-seccion py-5 px-4 px-md-5"></footer>
-    <!-- SCRIPT de Card, Bootstrap, Navbar y Footer-->
+    <!-- SCRIPT de Card, Bootstrap, carrito lateral, Navbar y Footer (MANTENER UN LINK POR LÍNEA DE CÓDIGO POR FAVOR)-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous" ></script>
     <script src="../JScript/Cart.js"></script>
     <script src="../JScript/Navbar_Footer.js"></script>
