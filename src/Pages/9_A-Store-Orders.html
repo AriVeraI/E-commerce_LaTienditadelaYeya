@@ -24,7 +24,153 @@
     <header id="navbar2" class="main-header"></header>
 
     <!--------------------------------------PRINCIPAL----------------------------------------->
-    <main></main>
+    <main>
+      <section class="mx-5 my-3">
+        <div class="row">
+          <!-- Columna de 4 para el menú de categorías (Espacio reservado) -->
+          <div class="col-lg-3 mb-3">
+            <!-- Espacio para el menú del panel -->
+            <div class="p-3 bg-white rounded shadow-sm">
+
+              <!-- SECCIÓN: PANEL -->
+              <small class="text-muted fw-bold text-uppercase px-3" style="font-size: 0.75rem;">Panel</small>
+              <ul id="admin-menu" class="nav flex-column mt-2 mb-4">
+                <li class="nav-item">
+                  <a class="nav-link text-dark py-2 menu-link"
+                   href="9_A-Panel-Estadistica.html">Estadísticas</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-dark py-2 menu-link" href="9_A-Panel-Products.html">Mis productos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-dark py-2 menu-link"
+                     href="9_A-Panel-Products-Add.html">
+                    Agregar producto
+                  </a>
+                </li>
+              </ul>
+
+              <!-- SECCIÓN: TIENDA -->
+              <small class="text-muted fw-bold text-uppercase px-3" style="font-size: 0.75rem;">Tienda</small>
+              <ul class="nav flex-column mt-2 mb-4">
+                <li class="nav-item">
+                  <a class="nav-link text-white rounded-pill px-3 py-2 menu-link active-custom" style="background-color: #c86d7c;" href="9_A-Store-Orders.html">Pedidos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-dark py-2 menu-link" href="9_A-Store-Clients.html">Clientes</a>
+                </li>
+              </ul>
+
+              <!-- SECCIÓN: CONFIGURACIÓN -->
+              <small class="text-muted fw-bold text-uppercase px-3" style="font-size: 0.75rem;">Configuración</small>
+              <ul class="nav flex-column mt-2">
+                <li class="nav-item">
+                  <a class="nav-link text-dark py-2 menu-link" href="9_A-Settings-Admin.html">Administradores</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-dark py-2 menu-link" href="9_A-Settings-Jewelry-Categories.html">Categorías</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-dark py-2 menu-link" href="9_A-Settings-Store.html">Config. Tienda</a>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+
+<!-- COLUMNA PRINCIPAL: PEDIDOS -->
+          <div class="col-lg-9">
+            
+            <!-- Encabezado de la sección -->
+            <div class="mb-4">
+              <h3 class="fw-bold text-dark mb-1">Pedidos</h3>
+              <p class="text-muted mb-0 small">Monitorea el estado de los envíos.</p>
+            </div>
+
+            <!-- CONTENEDOR DE LA TABLA -->
+            <div class="card border-0 shadow-sm rounded-4 p-3">
+              <div class="table-responsive">
+                <table class="table align-middle mb-0">
+                  <thead>
+                    <tr class="text-muted small border-bottom">
+                      <th class="py-3 ps-3">PEDIDO</th>
+                      <th class="py-3">CLIENTE</th>
+                      <th class="py-3">PRODUCTO</th>
+                      <th class="py-3">MONTO</th>
+                      <th class="py-3">ESTADO</th>
+                      <th class="py-3">FECHA</th>
+                      <th class="py-3 text-end pe-3"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                    <!-- Fila 1: Pedido #0041 (Pendiente) -->
+                    <tr>
+                      <td class="ps-3 fw-bold" style="color: #c86d7c;">#0041</td>
+                      <td class="fw-semibold text-dark">María López</td>
+                      <td class="text-muted">Collar Gato</td>
+                      <td class="fw-bold text-dark">$650.00</td>
+                      <td>
+                        <span class="badge rounded-pill px-3 py-2 fw-semibold" style="background-color: #fef3c7; color: #d97706;">Pendiente</span>
+                      </td>
+                      <td class="text-muted small">14 Jul 2026</td>
+                      <td class="text-end pe-3">
+                        <a href="#" class="text-decoration-none fw-bold small" style="color: #c86d7c;">Ver detalles</a>
+                      </td>
+                    </tr>
+
+                    <!-- Fila 2: Pedido #0040 (Enviado) -->
+                    <tr>
+                      <td class="ps-3 fw-bold" style="color: #c86d7c;">#0040</td>
+                      <td class="fw-semibold text-dark">Sofía Ramírez</td>
+                      <td class="text-muted">Aretes Luna</td>
+                      <td class="fw-bold text-dark">$320.00</td>
+                      <td>
+                        <span class="badge rounded-pill px-3 py-2 fw-semibold" style="background-color: #dbeafe; color: #2563eb;">Enviado</span>
+                      </td>
+                      <td class="text-muted small">13 Jul 2026</td>
+                      <td class="text-end pe-3">
+                        <a href="#" class="text-decoration-none fw-bold small" style="color: #c86d7c;">Ver detalles</a>
+                      </td>
+                    </tr>
+
+                    <!-- Fila 3: Pedido #0039 (Entregado) -->
+                    <tr>
+                      <td class="ps-3 fw-bold" style="color: #c86d7c;">#0039</td>
+                      <td class="fw-semibold text-dark">Valeria Torres</td>
+                      <td class="text-muted">Dúo corazón + espada</td>
+                      <td class="fw-bold text-dark">$1,400.00</td>
+                      <td>
+                        <span class="badge rounded-pill px-3 py-2 fw-semibold" style="background-color: #d1fae5; color: #059669;">Entregado</span>
+                      </td>
+                      <td class="text-muted small">11 Jul 2026</td>
+                      <td class="text-end pe-3">
+                        <a href="#" class="text-decoration-none fw-bold small" style="color: #c86d7c;">Ver detalles</a>
+                      </td>
+                    </tr>
+
+                    <!-- Fila 4: Pedido #0038 (Entregado) -->
+                    <tr>
+                      <td class="ps-3 fw-bold" style="color: #c86d7c;">#0038</td>
+                      <td class="fw-semibold text-dark">Laura Mendez</td>
+                      <td class="text-muted">Pulsera Flores</td>
+                      <td class="fw-bold text-dark">$280.00</td>
+                      <td>
+                        <span class="badge rounded-pill px-3 py-2 fw-semibold" style="background-color: #d1fae5; color: #059669;">Entregado</span>
+                      </td>
+                      <td class="text-muted small">10 Jul 2026</td>
+                      <td class="text-end pe-3">
+                        <a href="#" class="text-decoration-none fw-bold small" style="color: #c86d7c;">Ver detalles</a>
+                      </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!-- Fin del contenedor de la tabla -->
+      </section>
+    </main>
 
     <script src="../JScript/Navbar_Footer.js"></script>
   </body>

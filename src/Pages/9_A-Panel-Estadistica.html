@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../Styles/style.css">
   <link rel="stylesheet" href="../Styles/1_index.css">
 <!-- Enlaces a librerías externas por CDN (FontAwesome, Bootstrap Icons y Bootstrap CSS) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -24,8 +25,137 @@
     <header id="navbar2" class="main-header"></header>
 
     <!--------------------------------------PRINCIPAL----------------------------------------->
-    <main></main>
+    <main>
+      <section class="mx-5 my-3">
+        <div class="row">
+          <!-- Columna de 4 para el menú de categorías (Espacio reservado) -->
+          <div class="col-lg-3 mb-3">
+            <!-- Espacio para el menú del panel -->
+            <div class="p-3 bg-white rounded shadow-sm">
+
+              <!-- SECCIÓN: PANEL -->
+              <small class="text-muted fw-bold text-uppercase px-3" style="font-size: 0.75rem;">Panel</small>
+              <ul id="admin-menu" class="nav flex-column mt-2 mb-4">
+                <li class="nav-item">
+                  <a class="nav-link text-white rounded-pill px-3 py-2 menu-link active-custom"
+                  style="background-color: #c86d7c;" href="9_A-Panel-Estadistica.html">Estadísticas</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-dark py-2 menu-link" href="9_A-Panel-Products.html">Mis productos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-dark py-2 menu-link"
+                     href="9_A-Panel-Products-Add.html">
+                    Agregar producto
+                  </a>
+                </li>
+              </ul>
+
+              <!-- SECCIÓN: TIENDA -->
+              <small class="text-muted fw-bold text-uppercase px-3" style="font-size: 0.75rem;">Tienda</small>
+              <ul class="nav flex-column mt-2 mb-4">
+                <li class="nav-item">
+                  <a class="nav-link text-dark py-2 menu-link" href="9_A-Store-Orders.html">Pedidos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-dark py-2 menu-link" href="9_A-Store-Clients.html">Clientes</a>
+                </li>
+              </ul>
+
+              <!-- SECCIÓN: CONFIGURACIÓN -->
+              <small class="text-muted fw-bold text-uppercase px-3" style="font-size: 0.75rem;">Configuración</small>
+              <ul class="nav flex-column mt-2">
+                <li class="nav-item">
+                  <a class="nav-link text-dark py-2 menu-link" href="9_A-Settings-Admin.html">Administradores</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-dark py-2 menu-link" href="9_A-Settings-Jewelry-Categories.html">Categorías</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-dark py-2 menu-link" href="9_A-Settings-Store.html">Config. Tienda</a>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+
+
+<!-- COLUMNA PRINCIPAL DE ESTADÍSTICAS -->
+          <div class="col-lg-9">
+            
+            <!-- Título de la sección -->
+            <div class="mb-4">
+              <h3 class="fw-bold text-dark mb-1">Panel General</h3>
+              <p class="text-muted mb-0">Resumen del rendimiento de tu tienda.</p>
+            </div>
+
+            <!-- FILA DE TARJETAS DE MÉTRICAS (4 columnas en pantallas grandes) -->
+            <div class="row g-3 mb-4">
+              
+              <!-- Card 1: Ventas Totales -->
+              <div class="col-md-6 col-xl-3">
+                <div class="card border-0 shadow-sm p-3 h-100 rounded-4">
+                  <span class="text-muted small mb-1">Ventas Totales</span>
+                  <div class="d-flex align-items-baseline justify-content-between">
+                    <h4 class="fw-bold mb-0 text-dark">$24,500.00</h4>
+                    <span class="text-success fw-bold small">+15%</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2: Pedidos del Mes -->
+              <div class="col-md-6 col-xl-3">
+                <div class="card border-0 shadow-sm p-3 h-100 rounded-4">
+                  <span class="text-muted small mb-1">Pedidos del Mes</span>
+                  <div class="d-flex align-items-baseline justify-content-between">
+                    <h4 class="fw-bold mb-0 text-dark">142</h4>
+                    <span class="text-success fw-bold small">+5%</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 3: Visitas -->
+              <div class="col-md-6 col-xl-3">
+                <div class="card border-0 shadow-sm p-3 h-100 rounded-4">
+                  <span class="text-muted small mb-1">Visitas</span>
+                  <div class="d-flex align-items-baseline justify-content-between">
+                    <h4 class="fw-bold mb-0 text-dark">3,200</h4>
+                    <span class="text-danger fw-bold small">-2%</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 4: Tasa de Conversión -->
+              <div class="col-md-6 col-xl-3">
+                <div class="card border-0 shadow-sm p-3 h-100 rounded-4">
+                  <span class="text-muted small mb-1">Tasa de Conversión</span>
+                  <div class="d-flex align-items-baseline justify-content-between">
+                    <h4 class="fw-bold mb-0 text-dark">4.5%</h4>
+                    <span class="text-success fw-bold small">+1.2%</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <!-- Fin de la fila de tarjetas -->
+
+            <!-- CARD GRANDE: Gráfico de rendimiento (Espacio reservado) -->
+              <!-- CARD GRANDE: Gráfico de rendimiento real con Chart.js -->
+              <div class="card border-0 shadow-sm rounded-4 p-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h5 class="fw-bold text-dark mb-0">Rendimiento de Ventas y Visitas        </h5>
+                  <span class="text-muted small">           Últimos 6 meses</span>
+                </div>
+                <div style="position: relative; height: 320px; width: 100%;">
+                  <canvas id="graficoRendimiento"></canvas>
+                </div>
+              </div>            </div>
+            <!-- Fin de la card grande -->
+      </section>
+    </main>
 
     <script src="../JScript/Navbar_Footer.js"></script>
+    <script src="../JScript/Global.js"></script>
+
   </body>
 </html>

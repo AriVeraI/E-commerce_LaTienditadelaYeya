@@ -24,7 +24,161 @@
     <header id="navbar2" class="main-header"></header>
 
     <!--------------------------------------PRINCIPAL----------------------------------------->
-    <main></main>
+    <main>
+      <section class="mx-5 my-3">
+        <div class="row">
+          <!-- Columna de 4 para el menú de categorías (Espacio reservado) -->
+          <div class="col-lg-3 mb-3">
+            <!-- Espacio para el menú del panel -->
+            <div class="p-3 bg-white rounded shadow-sm">
+
+              <!-- SECCIÓN: PANEL -->
+              <small class="text-muted fw-bold text-uppercase px-3" style="font-size: 0.75rem;">Panel</small>
+              <ul id="admin-menu" class="nav flex-column mt-2 mb-4">
+                <li class="nav-item">
+                  <a class="nav-link text-dark py-2 menu-link"
+                  href="9_A-Panel-Estadistica.html">Estadísticas</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-dark py-2 menu-link" href="9_A-Panel-Products.html">Mis productos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-dark py-2 menu-link"
+                     href="9_A-Panel-Products-Add.html">
+                    Agregar producto
+                  </a>
+                </li>
+              </ul>
+
+              <!-- SECCIÓN: TIENDA -->
+              <small class="text-muted fw-bold text-uppercase px-3" style="font-size: 0.75rem;">Tienda</small>
+              <ul class="nav flex-column mt-2 mb-4">
+                <li class="nav-item">
+                  <a class="nav-link text-dark py-2 menu-link" href="9_A-Store-Orders.html">Pedidos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-dark py-2 menu-link" href="9_A-Store-Clients.html">Clientes</a>
+                </li>
+              </ul>
+
+              <!-- SECCIÓN: CONFIGURACIÓN -->
+              <small class="text-muted fw-bold text-uppercase px-3" style="font-size: 0.75rem;">Configuración</small>
+              <ul class="nav flex-column mt-2">
+                <li class="nav-item">
+                  <a class="nav-link text-dark py-2 menu-link" href="9_A-Settings-Admin.html">Administradores</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-dark py-2 menu-link" href="9_A-Settings-Jewelry-Categories.html">Categorías</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white rounded-pill px-3 py-2 menu-link active-custom" style="background-color: #c86d7c;" href="9_A-Settings-Store.html">Config. Tienda</a>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+
+
+
+          <!-- Termina el div del menu del panel -->
+          <!-- C -->
+          <div class="col-lg-9">
+            <!-- COLUMNA PRINCIPAL: CONFIGURACIÓN DE TIENDA -->
+          <div class="col-lg-9 position-relative">
+            
+            <!-- Encabezado de la sección -->
+            <div class="mb-4">
+              <h3 class="fw-bold text-dark mb-1">Configuración</h3>
+              <p class="text-muted mb-0 small">Ajustes globales de tu tienda en línea.</p>
+            </div>
+
+            <!-- TARJETA CON EL FORMULARIO DE CONFIGURACIÓN -->
+            <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
+              <form>
+                
+                <!-- SECCIÓN 1: Información de la Tienda -->
+                <h5 class="fw-bold text-dark mb-3">Información de la Tienda</h5>
+                
+                <div class="row g-3 mb-3">
+                  <!-- Nombre de la Tienda -->
+                  <div class="col-md-6">
+                    <label class="form-label small text-muted">Nombre de la Tienda</label>
+                    <input type="text" class="form-control rounded-pill px-4 py-2 border bg-light" value="La Tiendita de la Yeya">
+                  </div>
+                  <!-- Correo de Contacto -->
+                  <div class="col-md-6">
+                    <label class="form-label small text-muted">Correo de Contacto</label>
+                    <input type="email" class="form-control rounded-pill px-4 py-2 border bg-light" value="hola@latienditadelayeya.com">
+                  </div>
+                </div>
+
+                <!-- Mensaje de Bienvenida -->
+                <div class="mb-4">
+                  <label class="form-label small text-muted">Mensaje de Bienvenida</label>
+                  <textarea class="form-control rounded-4 px-4 py-3 border bg-light" rows="3" placeholder="Escribe un mensaje de bienvenida..."></textarea>
+                </div>
+
+                <hr class="text-muted opacity-25 my-4">
+
+                <!-- SECCIÓN 2: Redes Sociales -->
+                <h5 class="fw-bold text-dark mb-3">Redes Sociales</h5>
+                
+                <div class="row g-3 mb-4">
+                  <!-- Instagram -->
+                  <div class="col-md-6">
+                    <label class="form-label small text-muted">Instagram</label>
+                    <input type="text" class="form-control rounded-pill px-4 py-2 border bg-light" value="latienditadelayeya">
+                  </div>
+                  <!-- TikTok -->
+                  <div class="col-md-6">
+                    <label class="form-label small text-muted">TikTok</label>
+                    <input type="text" class="form-control rounded-pill px-4 py-2 border bg-light" value="latienditadelayeya">
+                  </div>
+                </div>
+
+                <!-- Botón Guardar Cambios -->
+                <div class="d-flex justify-content-end pt-2">
+                  <button type="submit" class="btn text-white px-5 py-2 rounded-pill fw-bold shadow-sm" style="background-color: #c86d7c;">
+                    Guardar Cambios
+                  </button>
+                </div>
+
+              </form>
+            </div>
+            <!-- Fin de la tarjeta de configuración -->
+          </div>
+        </div>
+      </section>
+
+
+        <!-- Panel flotante de Notificaciones (ejemplo de estructura) -->
+        <!-- <div class="card border-0 shadow rounded-4 position-absolute end-0 mt-2 p-0" style="width: 320px; z-index: 1050; display: none;" id="dropdown-notificaciones">
+          <div class="d-flex justify-content-between align-items-center p-3 border-bottom">
+            <h6 class="fw-bold text-dark mb-0">Notificaciones</h6>
+            <a href="#" class="text-decoration-none small text-muted" style="font-size: 0.8rem;">Cerrar</a>
+          </div>
+          <div class="list-group list-group-flush">
+            <div class="list-group-item px-3 py-2 border-bottom">
+              <div class="d-flex align-items-center gap-2">
+                <span class="rounded-circle bg-danger" style="width: 8px; height: 8px;"></span>
+                <p class="mb-1 fw-semibold text-dark small">Nuevo pedido de María López</p>
+              </div>
+              <small class="text-muted ps-3" style="font-size: 0.7rem;">hace 5 min</small>
+            </div>
+            <div class="list-group-item px-3 py-2 border-bottom">
+              <p class="mb-1 text-dark small ps-3">Sofía Ramírez dejó una reseña</p>
+              <small class="text-muted ps-3" style="font-size: 0.7rem;">hace 1 hora</small>
+            </div>
+            <div class="list-group-item px-3 py-2">
+              <p class="mb-1 text-dark small ps-3">Pedido #0039 marcado entregado</p>
+              <small class="text-muted ps-3" style="font-size: 0.7rem;">hace 3 horas</small>
+            </div>
+          </div>
+        </div> -->
+
+
+
+    </main>
 
     <script src="../JScript/Navbar_Footer.js"></script>
   </body>

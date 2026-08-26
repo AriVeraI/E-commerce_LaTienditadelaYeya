@@ -24,7 +24,131 @@
     <header id="navbar2" class="main-header"></header>
 
     <!--------------------------------------PRINCIPAL----------------------------------------->
-    <main></main>
+    <main>
+      <section class="mx-5 my-3">
+        <div class="row">
+          <!-- Columna de 4 para el menú de categorías (Espacio reservado) -->
+          <div class="col-lg-3 mb-3">
+            <!-- Espacio para el menú del panel -->
+            <div class="p-3 bg-white rounded shadow-sm">
+
+              <!-- SECCIÓN: PANEL -->
+              <small class="text-muted fw-bold text-uppercase px-3" style="font-size: 0.75rem;">Panel</small>
+              <ul id="admin-menu" class="nav flex-column mt-2 mb-4">
+                <li class="nav-item">
+                  <a class="nav-link text-dark py-2 menu-link"
+                  href="9_A-Panel-Estadistica.html">Estadísticas</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-dark py-2 menu-link" href="9_A-Panel-Products.html">Mis productos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-dark py-2 menu-link"
+                     href="9_A-Panel-Products-Add.html">
+                    Agregar producto
+                  </a>
+                </li>
+              </ul>
+
+              <!-- SECCIÓN: TIENDA -->
+              <small class="text-muted fw-bold text-uppercase px-3" style="font-size: 0.75rem;">Tienda</small>
+              <ul class="nav flex-column mt-2 mb-4">
+                <li class="nav-item">
+                  <a class="nav-link text-dark py-2 menu-link" href="9_A-Store-Orders.html">Pedidos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-dark py-2 menu-link" href="9_A-Store-Clients.html">Clientes</a>
+                </li>
+              </ul>
+
+              <!-- SECCIÓN: CONFIGURACIÓN -->
+              <small class="text-muted fw-bold text-uppercase px-3" style="font-size: 0.75rem;">Configuración</small>
+              <ul class="nav flex-column mt-2">
+                <li class="nav-item">
+                  <a class="nav-link text-dark py-2 menu-link" href="9_A-Settings-Admin.html">Administradores</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white rounded-pill px-3 py-2 menu-link active-custom" style="background-color: #c86d7c;" href="9_A-Settings-Jewelry-Categories.html">Categorías</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-dark py-2 menu-link" href="9_A-Settings-Store.html">Config. Tienda</a>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+
+
+
+          <!-- Termina el div del menu del panel -->
+          <!-- C -->
+          <div class="col-lg-9">
+<!-- LISTADO DE CATEGORÍAS (Cards individuales) -->
+            <div class="d-flex flex-column gap-3">
+              
+              <!-- Categoría 1: Collares -->
+              <div class="card border-0 shadow-sm rounded-4 p-3 align-items-center flex-row justify-content-between">
+                <div>
+                  <h6 class="fw-bold text-dark mb-0">Collares</h6>
+                </div>
+                <div class="d-flex align-items-center gap-4">
+                  <span class="text-muted small">8 productos</span>
+                  <div class="d-flex gap-3">
+                    <a href="#" class="text-decoration-none fw-bold small" style="color: #c86d7c;">Editar</a>
+                    <a href="#" class="text-decoration-none fw-bold small text-muted hover-danger">Eliminar</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Categoría 2: Aretes -->
+              <div class="card border-0 shadow-sm rounded-4 p-3 align-items-center flex-row justify-content-between">
+                <div>
+                  <h6 class="fw-bold text-dark mb-0">Aretes</h6>
+                </div>
+                <div class="d-flex align-items-center gap-4">
+                  <span class="text-muted small">5 productos</span>
+                  <div class="d-flex gap-3">
+                    <a href="#" class="text-decoration-none fw-bold small" style="color: #c86d7c;">Editar</a>
+                    <a href="#" class="text-decoration-none fw-bold small text-muted hover-danger">Eliminar</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Categoría 3: Pulseras -->
+              <div class="card border-0 shadow-sm rounded-4 p-3 align-items-center flex-row justify-content-between">
+                <div>
+                  <h6 class="fw-bold text-dark mb-0">Pulseras</h6>
+                </div>
+                <div class="d-flex align-items-center gap-4">
+                  <span class="text-muted small">6 productos</span>
+                  <div class="d-flex gap-3">
+                    <a href="#" class="text-decoration-none fw-bold small" style="color: #c86d7c;">Editar</a>
+                    <a href="#" class="text-decoration-none fw-bold small text-muted hover-danger">Eliminar</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Categoría 4: Anillos -->
+              <div class="card border-0 shadow-sm rounded-4 p-3 align-items-center flex-row justify-content-between">
+                <div>
+                  <h6 class="fw-bold text-dark mb-0">Anillos</h6>
+                </div>
+                <div class="d-flex align-items-center gap-4">
+                  <span class="text-muted small">3 productos</span>
+                  <div class="d-flex gap-3">
+                    <a href="#" class="text-decoration-none fw-bold small" style="color: #c86d7c;">Editar</a>
+                    <a href="#" class="text-decoration-none fw-bold small text-muted hover-danger">Eliminar</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <!-- Fin del listado de categorías -->
+
+          </div>
+        </div>
+      </section>
+    </main>
 
     <script src="../JScript/Navbar_Footer.js"></script>
   </body>
