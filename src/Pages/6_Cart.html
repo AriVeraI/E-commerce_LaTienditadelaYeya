@@ -1,29 +1,29 @@
 <!-- Componente Lateral del Carrito (Offcanvas) -->
-    <div class="offcanvas offcanvas-end shadow" tabindex="-1" id="cartDrawer" aria-labelledby="cartDrawerLabel">
-      <div class="offcanvas-header border-bottom">
-        <h5 class="offcanvas-title fw-bold" id="cartDrawerLabel">
-          <i class="bi bi-bag me-2"></i> Tu Carrito
-        </h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
+<div class="offcanvas offcanvas-end shadow" tabindex="-1" id="cartDrawer" aria-labelledby="cartDrawerLabel">
+  <div class="offcanvas-header border-bottom">
+    <h5 class="offcanvas-title fw-bold" id="cartDrawerLabel">
+      <i class="bi bi-bag me-2"></i> Tu Carrito
+    </h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
 
-      <div class="offcanvas-body d-flex flex-column justify-content-between">
-        
-        <!-- Lista de productos agregados (Aquí se inyectará con JavaScript) -->
-        <div class="cart-items-container">
-            <!-- Aquí se inyectarán los productos dinámicamente desde JS -->        
-        </div>
-
-        <!-- Parte Inferior del Carrito: Totales y Botón de Checkout -->
-        <div class="cart-footer border-top pt-3">
-          <div class="d-flex justify-content-between mb-3">
-            <span class="fw-bold">Subtotal:</span>
-            <span class="fw-bold fs-5 text-dark cart-subtotal">$0.00</span>
-          </div>
-          <!-- Botón que redirige al checkout -->
-          <a href="6_Cart-Checkout.html" class="btn btn-dark w-100 py-2 fw-bold mb-2">Proceder al Pago</a>
-          <button class="btn btn-outline-secondary w-100 btn-sm" data-bs-dismiss="offcanvas">Seguir Comprando</button>
-        </div>
-
-      </div>
+  <div class="offcanvas-body d-flex flex-column justify-content-between">
+    
+    <!-- Lista de productos agregados (Aquí se inyectará con JavaScript) -->
+    <div class="cart-items-container">
+        <!-- Aquí se inyectarán los productos dinámicamente desde JS -->        
     </div>
+
+    <!-- Parte Inferior del Carrito: Totales y Botón de Checkout -->
+    <div class="cart-footer border-top pt-3">
+      <div class="d-flex justify-content-between mb-3">
+        <span class="fw-bold">Subtotal:</span>
+        <span class="fw-bold fs-5 text-dark cart-subtotal">$0.00</span>
+      </div>
+      <!-- Botón que redirige al checkout -->
+      <a href="6_Cart-Checkout.html" class="btn btn-dark w-100 py-2 fw-bold mb-2">Proceder al Pago</a>
+      <button class="btn btn-outline-secondary w-100 btn-sm" data-bs-dismiss="offcanvas">Seguir Comprando</button>
+    </div>
+
+  </div>
+</div>
