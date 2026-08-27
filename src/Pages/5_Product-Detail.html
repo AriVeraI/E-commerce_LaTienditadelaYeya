@@ -8,28 +8,34 @@
     <link rel="stylesheet" href="../Styles/style.css" />
     <link rel="stylesheet" href="../Styles/1_index.css" />
     <link rel="stylesheet" href="../Styles/4_productDetail.css" />
+
     <!-- Enlaces a librerías externas por CDN (FontAwesome, Bootstrap Icons y Bootstrap CSS) -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
+
     <!-- Importación de fuentes tipográficas de Google Fonts (Fredoka y Montserrat) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+
     <!-- Título de la pestaña del navegador -->
     <title>Product-Detail</title>
   </head>
@@ -44,255 +50,430 @@
         class="col-12 col-md-8 mx-auto card rounded-3 overflow-hidden shadow-sm m-3 border-light-subtle"
       >
         <div class="row g-0">
+
           <div class="col-6 p-4 d-flex flex-column gap-3">
+
             <img
+              id="product-image"
               src="../../assets/Images/P33.png"
               class="img-fluid w-100 rounded-3"
               alt="Imagen Producto"
             />
 
             <div id="contenedor-miniaturas" class="d-flex gap-2">
+
               <img
                 src="../../assets/Images/P33.png"
                 class="rounded border border-2 border-dark miniatura-item"
                 alt="Miniatura 1"
               />
+
             </div>
           </div>
 
+
           <div class="col-6 p-4 border-start border-light-subtle">
+
             <div class="d-flex flex-column h-100 justify-content-between">
+
               <div>
-                <h1 id="titulo-negro" class="fw-bold fs-3 mb-1">
+
+                <h1 id="product-name" class="fw-bold fs-3 mb-1">
                   Anillo Halo Luminoso
                 </h1>
+
+
                 <div
                   id="info-resenas"
                   class="d-flex align-items-center gap-2 mb-3 text-secondary"
                 >
                   <span class="text-warning">★★★★★</span>
-                  <a href="#" class="text-decoration-underline text-secondary"
-                    >124 Reseñas</a
+
+                  <a
+                    href="#"
+                    class="text-decoration-underline text-secondary"
                   >
+                    124 Reseñas
+                  </a>
                 </div>
-                <h3 class="fw-bold mb-3 fs-4">$1,250</h3>
-                <p id="descripcion-producto" class="text-secondary lh-base">
+
+
+                <h3 id="product-price" class="fw-bold mb-3 fs-4">
+                  $1,250
+                </h3>
+
+
+                <!-- STOCK -->
+                <p class="text-secondary mb-2">
+                  Stock:
+                  <span id="product-stock">0</span>
+                </p>
+
+
+                <p id="product-description" class="text-secondary lh-base">
                   Inspirado en el resplandor infinito de un amanecer de pleno
                   verano, el Anillo Halo Luminoso simboliza un vínculo
                   inquebrantable. Elaborado con meticulosa atención al detalle,
-                  cada piedra preciosa es seleccionada a mano para garantizar el
-                  máximo brillo. Úselo como una pieza de declaración
+                  cada piedra preciosa es seleccionada a mano para garantizar
+                  el máximo brillo. Úselo como una pieza de declaración
                   independiente o apílelo para crear su propia narrativa.
                 </p>
+
               </div>
+
 
               <!-- Variantes de producto -->
               <div class="mb-3">
+
                 <div
                   class="d-flex justify-content-between align-items-center mb-2"
                 >
-                  <span class="fw-bold small">Material</span>
+
+                  <span class="fw-bold small">
+                    Material
+                  </span>
+
+
                   <span
                     id="texto-material-seleccionado"
                     class="text-secondary small"
-                    >Oro 18k</span
                   >
+                    Selecciona una opción
+                  </span>
+
                 </div>
-                <div class="d-flex flex-wrap gap-2">
-                  <button
-                    class="btn btn-dark btn-sm rounded-3 px-3 py-1 boton-opcion"
-                  >
-                    Oro 18k
-                  </button>
-                  <button
-                    class="btn btn-outline-secondary btn-sm text-dark rounded-3 px-3 py-1 boton-opcion"
-                  >
-                    Oro Rosado
-                  </button>
-                  <button
-                    class="btn btn-outline-secondary btn-sm text-dark rounded-3 px-3 py-1 boton-opcion"
-                  >
-                    Platino
-                  </button>
-                </div>
+
+
+                <!--
+                  JavaScript pintará aquí las variantes
+                  que vienen desde el backend
+                -->
+                <div
+                  id="variants-list"
+                  class="d-flex flex-wrap gap-2"
+                ></div>
+
               </div>
 
+
               <div class="d-flex align-items-center gap-2 mb-3">
-                
+
                 <div id="selector-cantidad" class="input-group">
+
                   <button
                     class="btn btn-outline-secondary btn-sm border-light-subtle text-secondary px-2"
                     type="button"
+                    id="btn-restar"
                   >
                     -
                   </button>
+
+
                   <input
+                    id="quantity"
                     type="text"
                     class="form-control form-control-sm border-light-subtle text-center fw-bold bg-white"
                     value="1"
                     readonly
                   />
+
+
                   <button
                     class="btn btn-outline-secondary btn-sm border-light-subtle text-secondary px-2"
                     type="button"
+                    id="btn-sumar"
                   >
                     +
                   </button>
+
                 </div>
 
-                <button
-                  id="btn-anadir-carrito"
-                  class="btn text-white btn-sm flex-grow-1 fw-semibold py-2 rounded-3"
+
+                <button 
+                id="btn-anadir-carrito" 
+                class="btn text-white btn-sm flex-grow-1 fw-semibold py-2 rounded-3" 
+                 type="button"
                 >
-                  Añadir al Carrito
+                Añadir al Carrito
                 </button>
 
-                
+
                 <button
                   id="btn-favorito"
                   class="btn btn-outline-secondary btn-sm border-light-subtle d-flex align-items-center justify-content-center p-2 rounded-3"
+                  type="button"
                 >
                   <span>♡</span>
                 </button>
+
               </div>
-             
+
+
               <div
                 id="seccion-beneficios"
                 class="mt-4 pt-3 border-top border-light-subtle"
               >
+
                 <div class="row g-3">
-                  
+
                   <div class="col-6 d-flex align-items-center gap-2">
+
                     <i class="bi bi-truck icono-beneficio"></i>
-                    <span class="texto-beneficio text-secondary"
-                      >Envío gratis sobre $500</span
-                    >
+
+                    <span class="texto-beneficio text-secondary">
+                      Envío gratis sobre $500
+                    </span>
+
                   </div>
 
-                
+
                   <div class="col-6 d-flex align-items-center gap-2">
-                    <i class="bi bi-arrow-counterclockwise icono-beneficio"></i>
-                    <span class="texto-beneficio text-secondary"
-                      >Devoluciones en 30 días</span
-                    >
+
+                    <i
+                      class="bi bi-arrow-counterclockwise icono-beneficio"
+                    ></i>
+
+                    <span class="texto-beneficio text-secondary">
+                      Devoluciones en 30 días
+                    </span>
+
                   </div>
 
-                  
+
                   <div class="col-6 d-flex align-items-center gap-2">
+
                     <i class="bi bi-shield-check icono-beneficio"></i>
-                    <span class="texto-beneficio text-secondary"
-                      >Garantía de por vida</span
-                    >
+
+                    <span class="texto-beneficio text-secondary">
+                      Garantía de por vida
+                    </span>
+
                   </div>
+
                 </div>
+
               </div>
+
             </div>
+
           </div>
-        
+
 
           <!------------RESEÑAS------------------>
+
           <section class="container my-5">
+
             <div
               class="col-12 col-md-8 mx-auto card rounded-3 shadow-sm p-4 border-light-subtle"
             >
+
               <div
                 class="d-flex justify-content-between align-items-start mb-4"
               >
+
                 <div>
-                  <h2 class="fw-bold fs-3 mb-1">Reseñas de Clientes</h2>
+
+                  <h2 class="fw-bold fs-3 mb-1">
+                    Reseñas de Clientes
+                  </h2>
+
+
                   <div
                     id="puntuacion-general"
                     class="d-flex align-items-center gap-2"
                   >
-                    <span class="text-warning">★★★★★</span>
-                    <span class="fw-bold">4.9</span>
-                    <span class="text-secondary">(124 reseñas)</span>
+
+                    <span class="text-warning">
+                      ★★★★★
+                    </span>
+
+                    <span class="fw-bold">
+                      4.9
+                    </span>
+
+                    <span class="text-secondary">
+                      (124 reseñas)
+                    </span>
+
                   </div>
+
                 </div>
+
+
                 <button
                   id="btn-escribir-reseña"
                   class="btn btn-outline-dark fw-semibold px-3 py-2 rounded-3"
+                  type="button"
                 >
                   Escribir una reseña
                 </button>
+
               </div>
 
+
               <!-- RESEÑAS -->
+
               <div class="d-flex flex-column gap-4">
+
                 <!-- Reseña 1 -->
+
                 <div class="bloque-reseña">
+
                   <div
                     class="d-flex justify-content-between align-items-center mb-1"
                   >
-                    <span class="fw-bold nombre-usuario">Amanda T.</span>
-                    <span class="text-warning estrellas-reseña">★★★★★</span>
+
+                    <span class="fw-bold nombre-usuario">
+                      Amanda T.
+                    </span>
+
+                    <span class="text-warning estrellas-reseña">
+                      ★★★★★
+                    </span>
+
                   </div>
-                  <span class="text-secondary d-block mb-2 fecha-reseña"
-                    >12 de Octubre, 2025</span
+
+
+                  <span
+                    class="text-secondary d-block mb-2 fecha-reseña"
                   >
-                  <h4 class="fw-bold fs-6 mb-1 titulo-comentario">
+                    12 de Octubre, 2025
+                  </span>
+
+
+                  <h4
+                    class="fw-bold fs-6 mb-1 titulo-comentario"
+                  >
                     Superó mis expectativas
                   </h4>
+
+
                   <p class="text-secondary comentario-texto">
                     La artesanía es inigualable. La forma en que la luz incide
                     sobre las piedras es absolutamente impresionante. Ya he
                     recibido muchísimos cumplidos.
                   </p>
+
                 </div>
 
+
                 <!-- Reseña 2 -->
+
                 <div class="bloque-reseña border-top pt-4">
+
                   <div
                     class="d-flex justify-content-between align-items-center mb-1"
                   >
-                    <span class="fw-bold nombre-usuario">Jessica H.</span>
-                    <span class="text-warning estrellas-reseña">★★★★★</span>
+
+                    <span class="fw-bold nombre-usuario">
+                      Jessica H.
+                    </span>
+
+                    <span class="text-warning estrellas-reseña">
+                      ★★★★★
+                    </span>
+
                   </div>
-                  <span class="text-secondary d-block mb-2 fecha-reseña"
-                    >28 de Septiembre, 2025</span
+
+
+                  <span
+                    class="text-secondary d-block mb-2 fecha-reseña"
                   >
-                  <h4 class="fw-bold fs-6 mb-1 titulo-comentario">
+                    28 de Septiembre, 2025
+                  </span>
+
+
+                  <h4
+                    class="fw-bold fs-6 mb-1 titulo-comentario"
+                  >
                     Pieza perfecta para el día a día
                   </h4>
+
+
                   <p class="text-secondary comentario-texto">
                     Buscaba algo elegante pero lo suficientemente sutil para el
                     uso diario. Este anillo encaja a la perfección. El tamaño
                     fue exacto y el envío rápido.
                   </p>
+
                 </div>
 
+
                 <!-- Reseña 3 -->
+
                 <div class="bloque-reseña border-top pt-4">
+
                   <div
                     class="d-flex justify-content-between align-items-center mb-1"
                   >
-                    <span class="fw-bold nombre-usuario">Raquel M.</span>
 
-                    <span class="text-warning estrellas-reseña">★★★★☆</span>
+                    <span class="fw-bold nombre-usuario">
+                      Raquel M.
+                    </span>
+
+                    <span class="text-warning estrellas-reseña">
+                      ★★★★☆
+                    </span>
+
                   </div>
-                  <span class="text-secondary d-block mb-2 fecha-reseña"
-                    >15 de Agosto, 2025</span
+
+
+                  <span
+                    class="text-secondary d-block mb-2 fecha-reseña"
                   >
-                  <h4 class="fw-bold fs-6 mb-1 titulo-comentario">
+                    15 de Agosto, 2025
+                  </span>
+
+
+                  <h4
+                    class="fw-bold fs-6 mb-1 titulo-comentario"
+                  >
                     Hermoso pero un poco delicado
                   </h4>
+
+
                   <p class="text-secondary comentario-texto">
                     El anillo es impresionante, exactamente como en la foto. Le
                     doy 4 estrellas solo porque la banda es un poco más delgada
                     de lo que esperaba, así que siento que debo ser muy
                     cuidadosa.
                   </p>
+
                 </div>
+
               </div>
+
             </div>
+
           </section>
+
         </div>
       </div>
     </main>
 
-    <!--------------------------------------- Footer ---------------------------------------------------->
-    <footer id="footer1" class="footer-seccion py-5 px-4 px-md-5"></footer>
 
+    <!--------------------------------------- Footer ---------------------------------------------------->
+
+    <footer
+      id="footer1"
+      class="footer-seccion py-5 px-4 px-md-5"
+    ></footer>
+
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrVxcX/KfJzV2b6g2mQfM5E5Z"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <!-- JavaScript de Navbar y Footer -->
     <script src="../JScript/Navbar_Footer.js"></script>
+
+
+    <!-- JavaScript del detalle de producto y variantes -->
+    <script src="../JScript/Product-Detail.js"></script>
+
   </body>
 </html>
