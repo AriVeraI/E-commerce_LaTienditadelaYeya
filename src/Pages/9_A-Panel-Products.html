@@ -2,22 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-<!-- Página responsiva -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">     <!-- Página responsiva -->
-<!-- Referencia a archivos con estilos -->
-  <link rel="stylesheet" href="../Styles/style.css">
-  <link rel="stylesheet" href="../Styles/1_index.css">
-<!-- Enlaces a librerías externas por CDN (FontAwesome, Bootstrap Icons y Bootstrap CSS) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-<!-- Importación de fuentes tipográficas de Google Fonts (Fredoka y Montserrat) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<!-- Título de la pestaña del navegador -->
+    <!-- Página responsiva -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Referencia a archivos con estilos -->
+    <link rel="stylesheet" href="../Styles/style.css" />
+    <link rel="stylesheet" href="../Styles/1_index.css" />
+    <!-- Enlaces a librerías externas por CDN (FontAwesome, Bootstrap Icons y Bootstrap CSS) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Importación de fuentes tipográficas de Google Fonts (Fredoka y Montserrat) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Título de la pestaña del navegador -->
     <title>A-Panel-Products</title>
-  </head>
+    <link rel="stylesheet" href="../Styles/11_predeploy.css">
+</head>
 
   <body>
     <!------------------------------------------------ NAVBAR --------------------------------------------->
@@ -27,192 +31,147 @@
     <main>
       <section class="mx-5 my-3">
         <div class="row">
-          <!-- Columna de 4 para el menú de categorías (Espacio reservado) -->
+          <!-- COLUMNA DEL MENÚ LATERAL -->
           <div class="col-lg-3 mb-3">
-            <!-- Espacio para el menú del panel -->
             <div class="p-3 bg-white rounded shadow-sm">
-
               <!-- SECCIÓN: PANEL -->
-              <small class="text-muted fw-bold text-uppercase px-3" style="font-size: 0.75rem;">Panel</small>
+              <small
+                class="text-muted fw-bold text-uppercase px-3"
+                style="font-size: 0.75rem"
+                >Panel</small
+              >
               <ul id="admin-menu" class="nav flex-column mt-2 mb-4">
                 <li class="nav-item">
-                  <a class="nav-link text-dark py-2 menu-link"
-                   href="9_A-Panel-Estadistica.html">Estadísticas</a>
+                  <a
+                    class="nav-link text-dark py-2 menu-link"
+                    href="9_A-Panel-Estadistica.html"
+                    >Estadísticas</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white rounded-pill px-3 py-2 menu-link active-custom" style="background-color: #c86d7c;" href="9_A-Panel-Products.html">Mis productos</a>
+                  <a
+                    class="nav-link text-white rounded-pill px-3 py-2 menu-link active-custom"
+                    style="background-color: #c86c7c"
+                    href="9_A-Panel-Products.html"
+                    >Mis productos</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-dark py-2 menu-link"
-                     href="9_A-Panel-Products-Add.html">
-                    Agregar producto
-                  </a>
+                  <a
+                    class="nav-link text-dark py-2 menu-link"
+                    href="9_A-Panel-Products-Add.html"
+                    >Agregar producto</a
+                  >
                 </li>
               </ul>
 
               <!-- SECCIÓN: TIENDA -->
-              <small class="text-muted fw-bold text-uppercase px-3" style="font-size: 0.75rem;">Tienda</small>
+              <small
+                class="text-muted fw-bold text-uppercase px-3"
+                style="font-size: 0.75rem"
+                >Tienda</small
+              >
               <ul class="nav flex-column mt-2 mb-4">
                 <li class="nav-item">
-                  <a class="nav-link text-dark py-2 menu-link" href="9_A-Store-Orders.html">Pedidos</a>
+                  <a
+                    class="nav-link text-dark py-2 menu-link"
+                    href="9_A-Store-Orders.html"
+                    >Pedidos</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-dark py-2 menu-link" href="9_A-Store-Clients.html">Clientes</a>
+                  <a
+                    class="nav-link text-dark py-2 menu-link"
+                    href="9_A-Store-Clients.html"
+                    >Clientes</a
+                  >
                 </li>
               </ul>
 
               <!-- SECCIÓN: CONFIGURACIÓN -->
-              <small class="text-muted fw-bold text-uppercase px-3" style="font-size: 0.75rem;">Configuración</small>
+              <small
+                class="text-muted fw-bold text-uppercase px-3"
+                style="font-size: 0.75rem"
+                >Configuración</small
+              >
               <ul class="nav flex-column mt-2">
                 <li class="nav-item">
-                  <a class="nav-link text-dark py-2 menu-link" href="9_A-Settings-Admin.html">Administradores</a>
+                  <a
+                    class="nav-link text-dark py-2 menu-link"
+                    href="9_A-Settings-Admin.html"
+                    >Administradores</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-dark py-2 menu-link" href="9_A-Settings-Jewelry-Categories.html">Categorías</a>
+                  <a
+                    class="nav-link text-dark py-2 menu-link"
+                    href="9_A-Settings-Jewelry-Categories.html"
+                    >Categorías</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-dark py-2 menu-link" href="9_A-Settings-Store.html">Config. Tienda</a>
+                  <a
+                    class="nav-link text-dark py-2 menu-link"
+                    href="9_A-Settings-Store.html"
+                    >Config. Tienda</a
+                  >
                 </li>
               </ul>
-
             </div>
           </div>
 
-<!-- COLUMNA PRINCIPAL: MIS PRODUCTOS -->
+          <!-- COLUMNA PRINCIPAL: MIS PRODUCTOS -->
           <div class="col-lg-9">
-            
             <!-- Encabezado de la sección y botón de agregar -->
             <div class="d-flex justify-content-between align-items-center mb-3">
               <div>
                 <h3 class="fw-bold text-dark mb-1">Mis productos</h3>
-                <p class="text-muted mb-0 small">4 productos en tu tienda</p>
+                <!-- Añadimos un id al contador para actualizarlo con la cantidad real de MySQL -->
+                <p class="text-muted mb-0 small" id="total-productos-contador">
+                  Cargando productos...
+                </p>
               </div>
-              <a href="9_A-Panel-Products-Add.html" class="btn text-white px-4 py-2 rounded-pill fw-bold shadow-sm" style="background-color: #c86d7c;">
+              <a
+                href="9_A-Panel-Products-Add.html"
+                class="btn text-white px-4 py-2 rounded-pill fw-bold shadow-sm"
+                style="background-color: #C66271"
+              >
                 + Agregar producto
               </a>
             </div>
 
             <!-- Barra de búsqueda -->
             <div class="mb-4">
-              <input type="text" class="form-control rounded-pill px-4 py-2 border-0 shadow-sm" placeholder="Buscar producto...">
+              <!-- Agregamos un id para que el administrador pueda buscar en tiempo real -->
+              <input
+                type="text"
+                id="admin-search-products"
+                class="form-control rounded-pill px-4 py-2 border-0 shadow-sm"
+                placeholder="Buscar producto por nombre..."
+              />
             </div>
 
-            <!-- LISTADO DE PRODUCTOS (Cards individuales) -->
-            <div class="d-flex flex-column gap-3">
-              
-              <!-- Producto 1: Collar Gato -->
-              <div class="card border-0 shadow-sm rounded-4 p-3 align-items-center flex-row justify-content-between">
-                <div class="d-flex align-items-center gap-3">
-                  <img src="../../assets/Images/collarazul.png" alt="Collar Azul" class="rounded-3 object-fit-cover" style="width: 70px; height: 70px;">
-                  <div>
-                    <h6 class="fw-bold text-dark mb-1">Collar Azúl</h6>
-                    <span class="text-muted small" style="color: #c86d7c !important;">Collares</span>
-                  </div>
-                </div>
-                <div class="d-flex align-items-center gap-4 text-center">
-                  <div>
-                    <span class="d-block fw-bold text-dark">263</span>
-                    <span class="text-muted" style="font-size: 0.75rem;">vistas</span>
-                  </div>
-                  <div>
-                    <span class="d-block fw-bold text-dark">28</span>
-                    <span class="text-muted" style="font-size: 0.75rem;">favoritos</span>
-                  </div>
-                  <div class="text-end px-2">
-                    <span class="fw-bold fs-5 text-dark">$260</span>
-                  </div>
-                  <div>
-                    <a href="#" class="text-decoration-none fw-bold small" style="color: #c86d7c;">Editar</a>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Producto 2: Dúo corazón + espada -->
-              <div class="card border-0 shadow-sm rounded-4 p-3 align-items-center flex-row justify-content-between">
-                <div class="d-flex align-items-center gap-3">
-                  <img src="../../assets/Images/collarmar.png" alt="Collar mar" class="rounded-3 object-fit-cover" style="width: 70px; height: 70px;">
-                  <div>
-                    <h6 class="fw-bold text-dark mb-1">Collar Mar</h6>
-                    <span class="text-muted small" style="color: #c86d7c !important;">Collares</span>
-                  </div>
-                </div>
-                <div class="d-flex align-items-center gap-4 text-center">
-                  <div>
-                    <span class="d-block fw-bold text-dark">263</span>
-                    <span class="text-muted" style="font-size: 0.75rem;">vistas</span>
-                  </div>
-                  <div>
-                    <span class="d-block fw-bold text-dark">18</span>
-                    <span class="text-muted" style="font-size: 0.75rem;">favoritos</span>
-                  </div>
-                  <div class="text-end px-2">
-                    <span class="fw-bold fs-5 text-dark">$920</span>
-                  </div>
-                  <div>
-                    <a href="#" class="text-decoration-none fw-bold small" style="color: #c86d7c;">Editar</a>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Producto 3: Aretes Luna -->
-              <div class="card border-0 shadow-sm rounded-4 p-3 align-items-center flex-row justify-content-between">
-                <div class="d-flex align-items-center gap-3">
-                  <img src="../../assets/Images/A1.png" alt="Aretes Luna" class="rounded-3 object-fit-cover" style="width: 70px; height: 70px;">
-                  <div>
-                    <h6 class="fw-bold text-dark mb-1">Aretes Luna</h6>
-                    <span class="text-muted small" style="color: #c86d7c !important;">Aretes</span>
-                  </div>
-                </div>
-                <div class="d-flex align-items-center gap-4 text-center">
-                  <div>
-                    <span class="d-block fw-bold text-dark">141</span>
-                    <span class="text-muted" style="font-size: 0.75rem;">vistas</span>
-                  </div>
-                  <div>
-                    <span class="d-block fw-bold text-dark">11</span>
-                    <span class="text-muted" style="font-size: 0.75rem;">favoritos</span>
-                  </div>
-                  <div class="text-end px-2">
-                    <span class="fw-bold fs-5 text-dark">$320</span>
-                  </div>
-                  <div>
-                    <a href="#" class="text-decoration-none fw-bold small" style="color: #c86d7c;">Editar</a>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Producto 4: Pulsera Flores -->
-              <div class="card border-0 shadow-sm rounded-4 p-3 align-items-center flex-row justify-content-between">
-                <div class="d-flex align-items-center gap-3">
-                  <img src="../../assets/Images/P2.png" alt="Pulsera Flores" class="rounded-3 object-fit-cover" style="width: 70px; height: 70px;">
-                  <div>
-                    <h6 class="fw-bold text-dark mb-1">Pulsera Flores</h6>
-                    <span class="text-muted small" style="color: #c86d7c !important;">Pulseras</span>
-                  </div>
-                </div>
-                <div class="d-flex align-items-center gap-4 text-center">
-                  <div>
-                    <span class="d-block fw-bold text-dark">88</span>
-                    <span class="text-muted" style="font-size: 0.75rem;">vistas</span>
-                  </div>
-                  <div>
-                    <span class="d-block fw-bold text-dark">7</span>
-                    <span class="text-muted" style="font-size: 0.75rem;">favoritos</span>
-                  </div>
-                  <div class="text-end px-2">
-                    <span class="fw-bold fs-5 text-dark">$280</span>
-                  </div>
-                  <div>
-                    <a href="#" class="text-decoration-none fw-bold small" style="color: #c86d7c;">Editar</a>
-                  </div>
-                </div>
-              </div>
-
+            <!-- AJUSTE CRUCIAL: Contenedor vacío con ID donde el script inyectará las tarjetas -->
+            <div
+              id="contenedor-tabla-productos"
+              class="d-flex flex-column gap-3"
+            >
+              <!-- Los productos de la base de datos se pintarán aquí de forma automática -->
             </div>
-            <!-- Fin del listado de productos -->
+          </div>
+          <!-- Fin del col-lg-9 -->
+        </div>
+        <!-- Fin del row -->
       </section>
     </main>
 
+    <!-- LLAMADA A LOS SCRIPTS (Aseguramos Bootstrap Bundle y tus lógicas del panel) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../JScript/RuntimeConfig.js"></script>
+    <script src="../JScript/ApiConfig.js"></script>
+    <script src="../JScript/StoreConfig.js"></script>
+    <script src="../JScript/Auth.js"></script>
     <script src="../JScript/Navbar_Footer.js"></script>
+    <script src="../JScript/Admin-Panel.js"></script>
   </body>
 </html>

@@ -18,7 +18,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <!-- Título de la pestaña del navegador -->
     <title>Home - La Tiendita de la Yeya</title>
-  </head>
+    <link rel="stylesheet" href="../Styles/11_predeploy.css">
+</head>
 
   <body>
     <!------------------------------------ NAVBAR -------------------------------------------->
@@ -30,7 +31,7 @@
       <section class="cabecera-inicio">
         <div id="contenedor-inicio" class="container">
           <h1 class="titulo-blanco" style="font-size: 60px">Bisutería Temáteca y Única</h1>
-          <p class="parrafo-blanco">Descubre nuestra colección exclusiva de joyería artesanal, diseñada para iluminar tu estilo e identidad.</p>
+          <p class="parrafo-blanco" data-store-welcome>Descubre nuestra colección exclusiva de joyería artesanal, diseñada para iluminar tu estilo e identidad.</p>
           <a href="4_Catalog-Items.html" id="btn-inicio" class="btn">Explorar Colecciones<img src="../../assets/Icons/flecha-icono.png" alt="Flecha" /></a>
         </div>
       </section>
@@ -46,7 +47,7 @@
             </div>
             <div class="col text-center">
               <div class="circulo"><img src="../../assets/Icons/garantia-icono.png" /></div>
-              <h3 class="titulo-negro" style="font-size: 25px; margin-bottom: 30px">Envío Gratuito</h3>
+              <h3 class="titulo-negro" style="font-size: 25px; margin-bottom: 30px">Calidad Garantizada</h3>
               <p class="parrafo-negro">Materiales de calidad garantizada</p>
             </div>
             <div class="col text-center">
@@ -90,63 +91,10 @@
           <p class="text-end"><a class="parrafo-rosa" href="4_Catalog-Items.html">Ver todo <img src="../../assets/Icons/flecha-icono.png"/></a></p>
         </div>
         <div class="container text-center">
-          <div class="row">
-            <!------------ Card 1 ------------>
-            <div class="col-12 col-sm-6 col-md-3 mb-4">
-              <div class="card text-center h-100">
-                <div class="card-img-container"><img src="../../assets/Images/banner-anillos.png" class="card-img-top" alt="Anillo Halo Zafiro">
-                </div>
-                <div class="card-body">
-                  <h5 class="titulo-negro">Anillo Halo Zafiro</h5>
-                  <p class="parrafo-negro">$1,250</p>
-                  <button id="art1" class="btn btn-add-cart" data-id="1" data-title="Colgante Azul Océano" data-price="890" data-img="../../assets/Images/banner-collares.png" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">Comprar Ahora</button>
-                </div>
-              </div>
-            </div>
-
-            <!------------ Card 2 ------------>
-            <div class="col-12 col-sm-6 col-md-3 mb-4">
-              <div class="card text-center h-100">
-                <div class="card-img-container">
-                  <img src="../../assets/Images/banner-collares.png" class="card-img-top" alt="Colgante Azul Océano">
-                </div>
-                <div class="card-body">
-                  <h5 class="titulo-negro">Colgante Azul Océano</h5>
-                  <p class="parrafo-negro">$890</p>
-                  <button id="art2" class="btn btn-add-cart"  data-id="2" data-title="Colgante Azul Océano" data-price="890" data-img="../../assets/Images/banner-collares.png" data-bs-toggle="offcanvas"  data-bs-target="#cartOffcanvas">Comprar Ahora</button>
-                </div>
-              </div>
-            </div>
-
-            <!------------ Card 3 ------------>
-            <div class="col-12 col-sm-6 col-md-3 mb-4">
-              <div class="card text-center h-100">
-                <div class="card-img-container">
-                  <img src="../../assets/Images/banner-pulseras.png" class="card-img-top" alt="Pulsera de Cuentas Rubí">
-                </div>
-                <div class="card-body">
-                  <h5 class="titulo-negro">Pulsera de Cuentas Rubí</h5>
-                  <p class="parrafo-negro">$450</p>
-                  <button id="art3" class="btn btn-add-cart" data-id="3" data-title="Pulsera de Cuentas Rubí" data-price="450" data-img="../../assets/Images/banner-pulseras.png" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">Comprar Ahora</button>
-                </div>
-              </div>
-            </div>
-
-            <!------------ Card 4 ------------>
-            <div class="col-12 col-sm-6 col-md-3 mb-4">
-              <div class="card text-center h-100">
-                <div class="card-img-container">
-                  <img src="../../assets/Images/banda-de-eternidad-diamante.png" class="card-img-top" alt="Banda de Eternidad Diamante">
-                </div>
-                <div class="card-body">
-                  <h5 class="titulo-negro">Banda de Eternidad Diamante</h5>
-                  <p class="parrafo-negro">$2,100</p>
-                  <button id="art4" class="btn btn-add-cart" data-id="4" data-title="Banda de Eternidad Diamante" data-price="2100" data-img="../../assets/Images/banda-de-eternidad-diamante.png" data-bs-toggle="offcanvas"  data-bs-target="#cartOffcanvas">Comprar Ahora</button>
-                </div>
-              </div>
-            </div>
+          <div id="home-featured-products" class="row g-4">
+            <div class="col-12 py-4"><p class="text-muted">Cargando piezas desde la tienda...</p></div>
           </div>
-        </div> 
+        </div>
       </section>
 
       <!-------------------------------------RESEÑAS------------------------------------------>
@@ -216,7 +164,12 @@
 
     <!-- SCRIPT de Card, Bootstrap, carrito lateral, Navbar y Footer (MANTENER UN LINK POR LÍNEA DE CÓDIGO POR FAVOR)-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="../JScript/RuntimeConfig.js"></script>
+    <script src="../JScript/ApiConfig.js"></script>
+    <script src="../JScript/Home.js"></script>
+    <script src="../JScript/StoreConfig.js"></script>
     <script src="../JScript/Cart.js"></script>
+    <script src="../JScript/Auth.js"></script>
     <script src="../JScript/Navbar_Footer.js"></script>
   </body>
 </html>

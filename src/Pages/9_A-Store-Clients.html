@@ -17,7 +17,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <!-- Título de la pestaña del navegador -->
     <title>A-Store-Clients</title>
-  </head>
+    <link rel="stylesheet" href="../Styles/11_predeploy.css">
+</head>
 
   <body>
     <!------------------------------------------------ NAVBAR --------------------------------------------->
@@ -57,7 +58,7 @@
                   <a class="nav-link text-dark py-2 menu-link" href="9_A-Store-Orders.html">Pedidos</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white rounded-pill px-3 py-2 menu-link active-custom" style="background-color: #c86d7c;" href="9_A-Store-Clients.html">Clientes</a>
+                  <a class="nav-link text-white rounded-pill px-3 py-2 menu-link active-custom" style="background-color: #C66271;" href="9_A-Store-Clients.html">Clientes</a>
                 </li>
               </ul>
 
@@ -84,157 +85,25 @@
             <!-- Encabezado de la sección -->
             <div class="mb-3">
               <h3 class="fw-bold text-dark mb-1">Clientes</h3>
-              <p class="text-muted mb-0 small">5 clientes registrados</p>
+              <p id="admin-client-count" class="text-muted mb-0 small">Cargando clientes...</p>
             </div>
 
             <!-- Barra de búsqueda -->
             <div class="mb-4">
-              <input type="text" class="form-control rounded-pill px-4 py-2 border-0 shadow-sm" placeholder="Buscar cliente...">
+              <input id="admin-client-search" type="text" class="form-control rounded-pill px-4 py-2 border-0 shadow-sm" placeholder="Buscar cliente...">
             </div>
 
             <!-- LISTADO DE CLIENTES (Cards individuales) -->
-            <div class="d-flex flex-column gap-3">
-              
-              <!-- Cliente 1: María López -->
-              <div class="card border-0 shadow-sm rounded-4 p-3 align-items-center flex-row justify-content-between">
-                <div class="d-flex align-items-center gap-3">
-                  <div class="rounded-circle d-flex justify-content-center align-items-center fw-bold text-white" style="width: 50px; height: 50px; background-color: #c86d7c; font-size: 0.9rem;">
-                    ML
-                  </div>
-                  <div>
-                    <h6 class="fw-bold text-dark mb-1">María López</h6>
-                    <span class="text-muted small">maria@email.com</span>
-                  </div>
-                </div>
-                <div class="d-flex align-items-center gap-4 text-center">
-                  <div>
-                    <span class="d-block fw-bold text-dark">3</span>
-                    <span class="text-muted" style="font-size: 0.75rem;">pedidos</span>
-                  </div>
-                  <div>
-                    <span class="d-block fw-bold text-dark">$1950</span>
-                    <span class="text-muted" style="font-size: 0.75rem;">gastado</span>
-                  </div>
-                  <div class="text-end px-2">
-                    <span class="fw-bold d-block text-dark small">Mar 2026</span>
-                    <span class="text-muted" style="font-size: 0.75rem;">miembro desde</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Cliente 2: Sofía Ramírez -->
-              <div class="card border-0 shadow-sm rounded-4 p-3 align-items-center flex-row justify-content-between">
-                <div class="d-flex align-items-center gap-3">
-                  <div class="rounded-circle d-flex justify-content-center align-items-center fw-bold text-white" style="width: 50px; height: 50px; background-color: #c86d7c; font-size: 0.9rem;">
-                    SR
-                  </div>
-                  <div>
-                    <h6 class="fw-bold text-dark mb-1">Sofía Ramírez</h6>
-                    <span class="text-muted small">sofia@email.com</span>
-                  </div>
-                </div>
-                <div class="d-flex align-items-center gap-4 text-center">
-                  <div>
-                    <span class="d-block fw-bold text-dark">5</span>
-                    <span class="text-muted" style="font-size: 0.75rem;">pedidos</span>
-                  </div>
-                  <div>
-                    <span class="d-block fw-bold text-dark">$3200</span>
-                    <span class="text-muted" style="font-size: 0.75rem;">gastado</span>
-                  </div>
-                  <div class="text-end px-2">
-                    <span class="fw-bold d-block text-dark small">Ene 2026</span>
-                    <span class="text-muted" style="font-size: 0.75rem;">miembro desde</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Cliente 3: Valeria Torres -->
-              <div class="card border-0 shadow-sm rounded-4 p-3 align-items-center flex-row justify-content-between">
-                <div class="d-flex align-items-center gap-3">
-                  <div class="rounded-circle d-flex justify-content-center align-items-center fw-bold text-white" style="width: 50px; height: 50px; background-color: #c86d7c; font-size: 0.9rem;">
-                    VT
-                  </div>
-                  <div>
-                    <h6 class="fw-bold text-dark mb-1">Valeria Torres</h6>
-                    <span class="text-muted small">valeria@email.com</span>
-                  </div>
-                </div>
-                <div class="d-flex align-items-center gap-4 text-center">
-                  <div>
-                    <span class="d-block fw-bold text-dark">1</span>
-                    <span class="text-muted" style="font-size: 0.75rem;">pedidos</span>
-                  </div>
-                  <div>
-                    <span class="d-block fw-bold text-dark">$1400</span>
-                    <span class="text-muted" style="font-size: 0.75rem;">gastado</span>
-                  </div>
-                  <div class="text-end px-2">
-                    <span class="fw-bold d-block text-dark small">Jun 2026</span>
-                    <span class="text-muted" style="font-size: 0.75rem;">miembro desde</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Cliente 4: Laura Mendez -->
-              <div class="card border-0 shadow-sm rounded-4 p-3 align-items-center flex-row justify-content-between">
-                <div class="d-flex align-items-center gap-3">
-                  <div class="rounded-circle d-flex justify-content-center align-items-center fw-bold text-white" style="width: 50px; height: 50px; background-color: #c86d7c; font-size: 0.9rem;">
-                    LM
-                  </div>
-                  <div>
-                    <h6 class="fw-bold text-dark mb-1">Laura Mendez</h6>
-                    <span class="text-muted small">laura@email.com</span>
-                  </div>
-                </div>
-                <div class="d-flex align-items-center gap-4 text-center">
-                  <div>
-                    <span class="d-block fw-bold text-dark">2</span>
-                    <span class="text-muted" style="font-size: 0.75rem;">pedidos</span>
-                  </div>
-                  <div>
-                    <span class="d-block fw-bold text-dark">$930</span>
-                    <span class="text-muted" style="font-size: 0.75rem;">gastado</span>
-                  </div>
-                  <div class="text-end px-2">
-                    <span class="fw-bold d-block text-dark small">Abr 2026</span>
-                    <span class="text-muted" style="font-size: 0.75rem;">miembro desde</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Cliente 5: Ana García -->
-              <div class="card border-0 shadow-sm rounded-4 p-3 align-items-center flex-row justify-content-between">
-                <div class="d-flex align-items-center gap-3">
-                  <div class="rounded-circle d-flex justify-content-center align-items-center fw-bold text-white" style="width: 50px; height: 50px; background-color: #c86d7c; font-size: 0.9rem;">
-                    AG
-                  </div>
-                  <div>
-                    <h6 class="fw-bold text-dark mb-1">Ana García</h6>
-                    <span class="text-muted small">ana@email.com</span>
-                  </div>
-                </div>
-                <div class="d-flex align-items-center gap-4 text-center">
-                  <div>
-                    <span class="d-block fw-bold text-dark">1</span>
-                    <span class="text-muted" style="font-size: 0.75rem;">pedidos</span>
-                  </div>
-                  <div>
-                    <span class="d-block fw-bold text-dark">$650</span>
-                    <span class="text-muted" style="font-size: 0.75rem;">gastado</span>
-                  </div>
-                  <div class="text-end px-2">
-                    <span class="fw-bold d-block text-dark small">Jul 2026</span>
-                    <span class="text-muted" style="font-size: 0.75rem;">miembro desde</span>
-                  </div>
-                </div>
-              </div>
-
-            </div>
+            <div id="admin-client-list" class="d-flex flex-column gap-3"><p class="text-muted">Cargando...</p></div>
             <!-- Fin del listado de clientes -->
       </section>
     </main>
 
+    <script src="../JScript/RuntimeConfig.js"></script>
+    <script src="../JScript/ApiConfig.js"></script>
+    <script src="../JScript/StoreConfig.js"></script>
+    <script src="../JScript/Auth.js"></script>
     <script src="../JScript/Navbar_Footer.js"></script>
+      <script src="../JScript/Admin-Store.js"></script>
   </body>
 </html>

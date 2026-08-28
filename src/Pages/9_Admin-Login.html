@@ -18,6 +18,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <!-- Título de la pestaña del navegador -->
   <title>Admin-Login</title>
+  <script>
+    // Login unificado: esta URL antigua se conserva para no romper enlaces guardados.
+    window.location.replace("8_Client-Login.html");
+  </script>
+  <link rel="stylesheet" href="../Styles/11_predeploy.css">
 </head>
 
 <body>
@@ -48,7 +53,7 @@
               <div class="d-flex justify-content-between align-items-center mb-1">
                 <label for="exampleInputPassword1" class="form-label mb-0">Contraseña</label>
                 <!-- Usamos utilidades de Bootstrap en lugar de margin-left inline para mejor responsividad -->
-                <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                <a href="#" class="forgot-password" data-forgot-password>¿Olvidaste tu contraseña?</a>
               </div>
 
               <!-- INGRESAR CONTRASEÑA Y MOSTRAR Y/U OCULTARLA -->
@@ -71,7 +76,11 @@
       </div>
     </section>
   </main>
-  <script src="../JScript/Navbar_Footer.js"></script>
+    <script src="../JScript/RuntimeConfig.js"></script>
+    <script src="../JScript/ApiConfig.js"></script>
+    <script src="../JScript/StoreConfig.js"></script>
+      <script src="../JScript/Auth.js"></script>
+    <script src="../JScript/Navbar_Footer.js"></script>
   <script src="../JScript/Admin-Login.js"></script>
 </body>
 

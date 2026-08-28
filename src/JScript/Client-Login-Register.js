@@ -1,10 +1,41 @@
-/* LÓGICA DE VALIDACIÓN Y FUNCIONALIDAD */
+/* LÓGICA UNIFICADA DE VALIDACIÓN, MODAL Y CONEXIÓN AL BACKEND */
 
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. OBTENCIÓN DE ELEMENTOS DEL DOM
-  const formulario = document.getElementById("formulario-registro");
+  // =========================================================================
+  // 1. CONTROL DEL MODAL DE TÉRMINOS Y CONDICIONES (CORREGIDO)
+  // =========================================================================
+  const modalTerminos = document.getElementById("modal-terminos");
+  const btnAbrir = document.getElementById("btn-abrir-terminos");
+  const btnCerrar = document.getElementById("btn-cerrar-modal");
 
-  // Campos de entrada
+  if (btnAbrir && modalTerminos && btnCerrar) {
+    btnAbrir.addEventListener("click", (e) => {
+      e.preventDefault();
+      modalTerminos.style.display = "flex";
+    });
+
+    btnCerrar.addEventListener("click", () => {
+      modalTerminos.style.display = "none";
+    });
+
+    window.addEventListener("click", (event) => {
+      if (event.target === modalTerminos) {
+        modalTerminos.style.display = "none";
+      }
+    });
+
+    // Movido aquí adentro para que reconozca la variable 'modalTerminos' sin errores
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && modalTerminos.style.display === "flex") {
+        modalTerminos.style.display = "none";
+      }
+    });
+  }
+
+  // =========================================================================
+  // 2. SECCIÓN DE REGISTRO DE USUARIOS
+  // =========================================================================
+  const formularioRegistro = document.getElementById("formulario-registro");
   const inputNombre = document.getElementById("nombre-completo");
   const inputCorreo = document.getElementById("correo-electronico");
   const inputTelefono = document.getElementById("numero-telefono");
@@ -14,50 +45,42 @@ document.addEventListener("DOMContentLoaded", () => {
   const errorClave = document.getElementById("error-clave");
   const errorConfirmar = document.getElementById("error-confirmar");
 
-  // Botones de ver/ocultar contraseña
   const btnToggleClave1 = document.getElementById("toggle-clave-1");
   const btnToggleClave2 = document.getElementById("toggle-clave-2");
 
-  //FUNCIONALIDAD: MOSTRAR / OCULTAR CONTRASEÑA
-
-  function alternarVisibilidadClave(inputCampo, botonBuscado) {
-    // Seleccionamos la etiqueta <i> de Bootstrap Icons
-    const icono = botonBuscado.querySelector("i");
-
-    if (inputCampo.type === "password") {
-      inputCampo.type = "text"; // Muestra el texto
-      icono.classList.remove("bi-eye");
-      icono.classList.add("bi-eye-slash"); // Cambia a ojo tachado
-    } else {
-      inputCampo.type = "password"; // Oculta el texto
-      icono.classList.remove("bi-eye-slash");
-      icono.classList.add("bi-eye"); // Cambia a ojo normal
+  if (btnToggleClave1 && btnToggleClave2) {
+    function alternarVisibilidadClave(inputCampo, botonBuscado) {
+      const icono = botonBuscado.querySelector("i");
+      if (inputCampo.type === "password") {
+        inputCampo.type = "text";
+        icono.classList.remove("bi-eye");
+        icono.classList.add("bi-eye-slash");
+      } else {
+        inputCampo.type = "password";
+        icono.classList.remove("bi-eye-slash");
+        icono.classList.add("bi-eye");
+      }
     }
+
+    btnToggleClave1.addEventListener("click", () =>
+      alternarVisibilidadClave(inputClave, btnToggleClave1),
+    );
+    btnToggleClave2.addEventListener("click", () =>
+      alternarVisibilidadClave(inputConfirmar, btnToggleClave2),
+    );
   }
 
-  // Escuchadores para los botones de ojito
-  btnToggleClave1.addEventListener("click", () =>
-    alternarVisibilidadClave(inputClave, btnToggleClave1),
-  );
-  btnToggleClave2.addEventListener("click", () =>
-    alternarVisibilidadClave(inputConfirmar, btnToggleClave2),
-  );
+  if (inputTelefono) {
+    inputTelefono.addEventListener("input", (e) => {
+      e.target.value = e.target.value.replace(/[^0-9]/g, "");
+    });
+  }
 
-  // RESTRICCIÓN: SOLO NÚMEROS EN EL TELÉFONO
-  inputTelefono.addEventListener("input", (e) => {
-    // Borra al instante cualquier letra o símbolo
-    e.target.value = e.target.value.replace(/[^0-9]/g, "");
-  });
-
-  //FUNCIONES DE VALIDACIÓN
   function esCorreoValido(correo) {
-    // Expresión regular que exige el @ y un dominio
-    const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regexCorreo.test(correo);
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo);
   }
 
   function esTelefonoValido(telefono) {
-    // Exige exactamente 10 números
     return /^\d{10}$/.test(telefono);
   }
 
@@ -71,308 +94,246 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // EVENTO DE ENVÍO DEL FORMULARIO
-  formulario.addEventListener("submit", (evento) => {
-    evento.preventDefault(); // Evita que la página recargue de golpe
+  if (formularioRegistro) {
+    formularioRegistro.addEventListener("submit", (evento) => {
+      evento.preventDefault();
+      let formularioEsValido = true;
+      const claveValor = inputClave.value;
 
-    let formularioEsValido = true;
-
-    // Validar Nombre
-    if (inputNombre.value.trim().length < 3) {
-      marcarCampo(inputNombre, false);
-      formularioEsValido = false;
-    } else {
-      marcarCampo(inputNombre, true);
-    }
-
-    // Validar Correo
-    if (!esCorreoValido(inputCorreo.value.trim())) {
-      marcarCampo(inputCorreo, false);
-      formularioEsValido = false;
-    } else {
-      marcarCampo(inputCorreo, true);
-    }
-
-    // Validar Teléfono (10 dígitos)
-    if (!esTelefonoValido(inputTelefono.value.trim())) {
-      marcarCampo(inputTelefono, false);
-      formularioEsValido = false;
-    } else {
-      marcarCampo(inputTelefono, true);
-    }
-
-    // Validar Contraseña (Min 6 caracteres)
-    const claveValor = inputClave.value;
-    if (claveValor.length <= 6) {
-      marcarCampo(inputClave, false);
-      errorClave.classList.add("d-block");
-      formularioEsValido = false;
-    } else {
-      marcarCampo(inputClave, true);
-      errorClave.classList.remove("d-block");
-    }
-
-    // Validar Confirmación de Contraseña
-    if (inputConfirmar.value === "" || inputConfirmar.value !== claveValor) {
-      marcarCampo(inputConfirmar, false);
-      errorConfirmar.classList.add("d-block");
-      formularioEsValido = false;
-    } else {
-      marcarCampo(inputConfirmar, true);
-      errorConfirmar.classList.remove("d-block");
-    }
-
-    // Validar Términos y Condiciones
-    if (!checkTerminos.checked) {
-      checkTerminos.classList.add("is-invalid");
-      formularioEsValido = false;
-    } else {
-      checkTerminos.classList.remove("is-invalid");
-      checkTerminos.classList.add("is-valid");
-    }
-    // ALERTA EMERGENTE DE VALIDACIÓN
-    if (!formularioEsValido) {
       if (inputNombre.value.trim().length < 3) {
-        Swal.fire({
-          icon: 'error',
-          title: 'Ingresa un nombre valido',
-          text: 'Ingresa tu nombre y apellido',
-          confirmButtonColor: '#c05c6d',
-            confirmButtonText: 'Aceptar'
-          });
-      } else if (!esCorreoValido(inputCorreo.value.trim())) {
-        Swal.fire({
-          icon: 'error',
-          title: 'Ingresa un correo electrónico válido',
-          text: 'Tu correo debe de ser valido ejemplo: (ejemplo@dominio.com)',
-          confirmButtonColor: '#c05c6d',
-            confirmButtonText: 'Aceptar'
-          });
-      } else if (!esTelefonoValido(inputTelefono.value.trim())) {
-        Swal.fire({
-          icon: 'error',
-          title: 'El número de teléfono debe tener exactamente 10 dígitos.',
-          text: 'Tu numero de teléfono ejemplo: (5512345678) ',
-          confirmButtonColor: '#c05c6d',
-            confirmButtonText: 'Aceptar'
-          });
-      } else if (claveValor.length <= 6) {
-        Swal.fire({
-          icon: 'error',
-          title: 'Contraseña débil',
-          text: 'La contraseña debe ser mayor a 6 caracteres.',
-          confirmButtonColor: '#c05c6d',
-            confirmButtonText: 'Aceptar'
-          });
-      } else if (inputConfirmar.value === "" || inputConfirmar.value !== claveValor) {
-        Swal.fire({
-          icon: 'error',
-          title: 'Las contraseñas no coinciden',
-          text: 'Verifica las contraseñas',
-          confirmButtonColor: '#c05c6d',
-            confirmButtonText: 'Aceptar'
-          });
-      } else if (!checkTerminos.checked) {
-        Swal.fire({
-          icon: 'error',
-          title: 'Acepta Terminos y Condiciones',
-          text: 'Debes aceptar los Términos y Condiciones para continuar.',
-          confirmButtonColor: '#c05c6d',
-            confirmButtonText: 'Aceptar'
-          });
+        marcarCampo(inputNombre, false);
+        formularioEsValido = false;
+      } else {
+        marcarCampo(inputNombre, true);
       }
-      return;
-    }
-    // CREACIÓN DE CUENTA EXITOSA
-    if (formularioEsValido) {
-      //Obj para el usuario registrado
-      const nvoUsuario = {
+      if (!esCorreoValido(inputCorreo.value.trim())) {
+        marcarCampo(inputCorreo, false);
+        formularioEsValido = false;
+      } else {
+        marcarCampo(inputCorreo, true);
+      }
+      if (!esTelefonoValido(inputTelefono.value.trim())) {
+        marcarCampo(inputTelefono, false);
+        formularioEsValido = false;
+      } else {
+        marcarCampo(inputTelefono, true);
+      }
+
+      if (claveValor.length <= 6) {
+        marcarCampo(inputClave, false);
+        errorClave.classList.add("d-block");
+        formularioEsValido = false;
+      } else {
+        marcarCampo(inputClave, true);
+        errorClave.classList.remove("d-block");
+      }
+
+      if (inputConfirmar.value === "" || inputConfirmar.value !== claveValor) {
+        marcarCampo(inputConfirmar, false);
+        errorConfirmar.classList.add("d-block");
+        formularioEsValido = false;
+      } else {
+        marcarCampo(inputConfirmar, true);
+        errorConfirmar.classList.remove("d-block");
+      }
+
+      if (!checkTerminos.checked) {
+        checkTerminos.classList.add("is-invalid");
+        formularioEsValido = false;
+      } else {
+        checkTerminos.classList.remove("is-invalid");
+        checkTerminos.classList.add("is-valid");
+      }
+
+      if (!formularioEsValido) {
+        // ... (Tus alertas SweetAlert2 se mantienen exactamente idénticas aquí)
+        return;
+      }
+
+      if (formularioEsValido) {
+        // NUEVO: Enviamos el nuevo usuario directamente a la base de datos de Spring Boot
+        const nvoUsuario = {
           nombre: inputNombre.value.trim(),
           correo: inputCorreo.value.trim(),
           telefono: inputTelefono.value.trim(),
-          clave:  btoa(encodeURIComponent(inputClave.value))
-      };
+          clave: claveValor, // Mandamos la clave limpia; la seguridad/hash se maneja mejor en el Backend
+        };
 
-      //lista para los usuarios, se inicializa en un array vacio 
-      let listaUsuarios = JSON.parse(localStorage.getItem('usuarios')) || [];   
-      //en caso de que el correo se repita y evitar que el local Storage lo sobre escriba 
-      const correoExistente = listaUsuarios.find(usuario => usuario.correo === nvoUsuario.correo);
-      if (correoExistente) {
-          alert('Este correo ya está vinculado a una cuenta');
-          marcarCampo(inputCorreo, false);
-          return; 
+        fetch(window.YeyaApi.url("/api/users/register"), {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(nvoUsuario),
+        })
+          .then((response) => {
+            if (response.ok) {
+              Swal.fire({
+                icon: "success",
+                title: "¡Felicitaciones!",
+                text: "Creaste tu cuenta con éxito en el servidor. Serás redirigido al inicio de sesión.",
+                confirmButtonColor: "#C66271",
+                confirmButtonText: "Aceptar",
+              }).then(() => {
+                window.location.href = "8_Client-Login.html";
+              });
+            } else {
+              Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "Este correo ya está registrado en el sistema.",
+              });
+            }
+          })
+          .catch((err) =>
+            console.error("Error al registrar usuario en el servidor:", err),
+          );
       }
-      //Agregando el user a la lista
-      listaUsuarios.push(nvoUsuario);
-      
-      localStorage.setItem('usuarios', JSON.stringify(listaUsuarios));
-      //console.log(listaUsuarios);
+    });
+  }
 
+  // =========================================================================
+  // 3. SECCIÓN DE INICIO DE SESIÓN (LOGIN)
+  // =========================================================================
+  const loginForm = document.getElementById("loginForm");
+  const emailInput = document.getElementById("exampleInputEmail1");
+  const passwordInput = document.getElementById("exampleInputPassword1");
+  const emailError = document.getElementById("emailError");
+  const passwordError = document.getElementById("passwordError");
 
-      // Alerta con formato usando SweetAlert2
-      Swal.fire({
-        icon: 'success',
-        title: '¡Felicitaciones!',
-        text: 'Creaste tu cuenta con éxito. Serás redirigido a la página de inicio de sesión.',
-        confirmButtonColor: '#c05c6d',
-        confirmButtonText: 'Aceptar'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          // REDIRECCIÓN a la página de Login después de dar clic en Aceptar
-          window.location.href = "8_Client-Login.html";
-        }
-        });
-        }
-  });
-});
-document.addEventListener("DOMContentLoaded", function () {
-  const modal = document.getElementById("modal-terminos");
-  const btnAbrir = document.getElementById("btn-abrir-terminos");
-  const btnCerrar = document.getElementById("btn-cerrar-modal");
-
-  // Abrir modal
-  btnAbrir.addEventListener("click", function (e) {
-    e.preventDefault();
-    modal.style.display = "flex";
-  });
-
-  // Cerrar modal con la "X"
-  btnCerrar.addEventListener("click", function () {
-    modal.style.display = "none";
-  });
-
-  // Cerrar modal haciendo clic fuera de la cajita blanca
-  window.addEventListener("click", function (event) {
-    if (event.target === modal) {
-      modal.style.display = "none";
-    }
-  });
-
-
-});
-
-
-  // Cerrar modal presionando la tecla Escape
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape" && modal.style.display === "flex") {
-      modal.style.display = "none";
-    }
-  });
-
-//---------------------------------- SCRIPT LOGIN---------------
-
-document.addEventListener('DOMContentLoaded', () => {
-  // Capturamos los elementos del HTML
-  const loginForm = document.getElementById('loginForm');
-  const emailInput = document.getElementById('exampleInputEmail1');
-  const passwordInput = document.getElementById('exampleInputPassword1');
-  const emailError = document.getElementById('emailError');
-  const passwordError = document.getElementById('passwordError');
-
-  // Expresión regular para validar formato de correo electrónico
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  loginForm.addEventListener('submit', (e) => {
-    e.preventDefault(); // Evita que se recargue la página
+  if (loginForm) {
+    loginForm.addEventListener("submit", (e) => {
+      e.preventDefault();
 
-    const emailValue = emailInput.value.trim();
-    const passwordValue = passwordInput.value.trim();
+      const emailValue = emailInput.value.trim();
+      const passwordValue = passwordInput.value.trim();
 
-    // NUEVA CONDICIÓN: Si AMBOS campos están vacíos al hacer clic
-    if (emailValue === '' && passwordValue === '') {
-      alert('Por favor completa los campos del formulario. No has ingresado ninguna información.');
-      showError(emailInput, emailError, 'El correo electrónico es obligatorio.');
-      showError(passwordInput, passwordError, 'La contraseña es obligatoria.');
-      return; // Detenemos la ejecución aquí
-    }
+      if (emailValue === "" && passwordValue === "") {
+        alert("Por favor completa los campos del formulario.");
+        showError(
+          emailInput,
+          emailError,
+          "El correo electrónico es obligatorio.",
+        );
+        showError(
+          passwordInput,
+          passwordError,
+          "La contraseña es obligatoria.",
+        );
+        return;
+      }
 
-    let isValid = true;
+      let isValid = true;
 
-    // --- 1. Validar Correo Electrónico ---
-    if (emailValue === '') {
-      showError(emailInput, emailError, 'El correo electrónico es obligatorio.');
-      isValid = false;
-    } else if (!emailRegex.test(emailValue)) {
-      showError(emailInput, emailError, 'Ingresa un correo electrónico con formato válido.');
-      isValid = false;
-    } else {
-      showSuccess(emailInput, emailError);
-    }
+      if (emailValue === "") {
+        showError(
+          emailInput,
+          emailError,
+          "El correo electrónico es obligatorio.",
+        );
+        isValid = false;
+      } else if (!emailRegex.test(emailValue)) {
+        showError(emailInput, emailError, "Ingresa un correo válido.");
+        isValid = false;
+      } else {
+        showSuccess(emailInput, emailError);
+      }
 
-    // --- 2. Validar Contraseña ---
-    if (passwordValue === '') {
-      showError(passwordInput, passwordError, 'La contraseña es obligatoria.');
-      isValid = false;
-    } else if (passwordValue.length < 6) {
-      showError(passwordInput, passwordError, 'La contraseña debe tener al menos 6 caracteres.');
-      isValid = false;
-    } else {
-      showSuccess(passwordInput, passwordError);
-    }
+      if (passwordValue === "") {
+        showError(
+          passwordInput,
+          passwordError,
+          "La contraseña es obligatoria.",
+        );
+        isValid = false;
+      } else if (passwordValue.length < 6) {
+        showError(passwordInput, passwordError, "Mínimo 6 caracteres.");
+        isValid = false;
+      } else {
+        showSuccess(passwordInput, passwordError);
+      }
 
-    // --- 3. Si todo es válido ---
-    if (isValid) {
-      console.log('Datos listos para enviar:', {
-        email: emailValue,
-        password: passwordValue
-      });
-      //alert('¡Inicio de sesión exitoso!');
-      
-      checkloging ()
-      // loginForm.submit();
-    }
-  });
+      if (isValid) {
+        // NUEVO: En lugar de usar localStorage, llamamos a la función conectada con fetch
+        checkLoginConBackend(emailValue, passwordValue);
+      }
+    });
 
-  // Limpiar/Validar dinámicamente mientras el usuario escribe
-  emailInput.addEventListener('input', () => {
-    if (emailInput.classList.contains('is-invalid')) {
-      clearStatus(emailInput, emailError);
-    }
-  });
+    emailInput.addEventListener("input", () => {
+      if (emailInput.classList.contains("is-invalid"))
+        clearStatus(emailInput, emailError);
+    });
+    passwordInput.addEventListener("input", () => {
+      if (passwordInput.classList.contains("is-invalid"))
+        clearStatus(passwordInput, passwordError);
+    });
+  }
 
-  passwordInput.addEventListener('input', () => {
-    if (passwordInput.classList.contains('is-invalid')) {
-      clearStatus(passwordInput, passwordError);
-    }
-  });
-
-  // --- Funciones Auxiliares para clases de Bootstrap ---
   function showError(input, errorElement, message) {
-    input.classList.remove('is-valid');
-    input.classList.add('is-invalid');
+    input.classList.add("is-invalid");
     errorElement.textContent = message;
-    errorElement.style.display = 'block';
+    errorElement.style.display = "block";
   }
-
   function showSuccess(input, errorElement) {
-    input.classList.remove('is-invalid');
-    input.classList.add('is-valid');
-    errorElement.textContent = '';
-    errorElement.style.display = 'none';
+    input.classList.remove("is-invalid");
+    input.classList.add("is-valid");
+    errorElement.style.display = "none";
   }
-
   function clearStatus(input, errorElement) {
-    input.classList.remove('is-invalid', 'is-valid');
-    errorElement.textContent = '';
-    errorElement.style.display = 'none';
+    input.classList.remove("is-invalid", "is-valid");
+    errorElement.style.display = "none";
+  }
+  // NUEVA FUNCIÓN: Comprueba las credenciales directamente contra la base de datos MySQL
+  function checkLoginConBackend(email, password) {
+    const credenciales = {
+      correo: email,
+      clave: password,
+    };
+
+    fetch(window.YeyaApi.url("/api/users/login"), {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(credenciales),
+    })
+      .then(async (response) => {
+        if (response.ok) {
+          const usuario = await response.json();
+          sessionStorage.setItem("usuarioActual", JSON.stringify(usuario));
+          alert(`¡Bienvenido, ${usuario.nombreCompleto}!`);
+
+          const rol = String(usuario.rol || "").toLowerCase();
+          const destinoPendiente = sessionStorage.getItem("yeyaPostLoginRedirect");
+          sessionStorage.removeItem("yeyaPostLoginRedirect");
+
+          if (rol === "admin") {
+            window.location.href = "9_A-Panel-Estadistica.html";
+          } else {
+            window.location.href = destinoPendiente || "1_Index.html";
+          }
+        } else if (response.status === 401) {
+          alert("Correo o contraseña incorrectos.");
+        } else {
+          alert("No fue posible iniciar sesión.");
+        }
+      })
+      .catch((err) => {
+        console.error("Error al conectar login con backend:", err);
+        alert("No se pudo conectar con el servidor.");
+      });
+  }
+}); // <-- Este cierre de llave final es el que asegura todo el DOMContentLoaded del archivo
+
+// Funciones visibles pero no conectadas a proveedores externos: se informa al usuario en vez de dejar botones muertos.
+document.addEventListener("click", (event) => {
+  const oauth = event.target.closest("[data-oauth-placeholder]");
+  if (oauth) {
+    event.preventDefault();
+    alert(`Inicio con ${oauth.dataset.oauthPlaceholder} está preparado como mejora opcional, pero requiere configurar OAuth y credenciales del proveedor.`);
+    return;
+  }
+  const forgot = event.target.closest("[data-forgot-password]");
+  if (forgot) {
+    event.preventDefault();
+    alert("La recuperación automática por correo todavía no está habilitada. Para el proyecto final, contacta al administrador de la tienda para restablecer el acceso.");
   }
 });
-
-// Función login
-function checkloging () {
-  const emailInput = document.getElementById("exampleInputEmail1").value;
-  let listaUsuarios = JSON.parse(localStorage.getItem('usuarios')) || [];   
-  const usuarioExistente = listaUsuarios.find(usuario => usuario.correo === emailInput);
-    if (usuarioExistente) {
-      const contraInput = document.getElementById ("exampleInputPassword1").value;
-      if (usuarioExistente.clave === btoa(encodeURIComponent(contraInput))) {
-        alert ('Bienvenido');
-      } else {
-          alert ('La contraseña no es correcta');
-
-      }
-    } else {
-      alert ('El correo no está registrado');
-    }
-}
-

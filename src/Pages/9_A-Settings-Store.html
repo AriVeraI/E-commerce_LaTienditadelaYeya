@@ -17,7 +17,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <!-- Título de la pestaña del navegador -->
     <title>A-Settings_Store</title>
-  </head>
+    <link rel="stylesheet" href="../Styles/11_predeploy.css">
+</head>
 
   <body>
     <!------------------------------------------------ NAVBAR --------------------------------------------->
@@ -71,7 +72,7 @@
                   <a class="nav-link text-dark py-2 menu-link" href="9_A-Settings-Jewelry-Categories.html">Categorías</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white rounded-pill px-3 py-2 menu-link active-custom" style="background-color: #c86d7c;" href="9_A-Settings-Store.html">Config. Tienda</a>
+                  <a class="nav-link text-white rounded-pill px-3 py-2 menu-link active-custom" style="background-color: #C66271;" href="9_A-Settings-Store.html">Config. Tienda</a>
                 </li>
               </ul>
 
@@ -94,55 +95,13 @@
 
             <!-- TARJETA CON EL FORMULARIO DE CONFIGURACIÓN -->
             <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
-              <form>
-                
-                <!-- SECCIÓN 1: Información de la Tienda -->
+              <form id="store-config-form">
                 <h5 class="fw-bold text-dark mb-3">Información de la Tienda</h5>
-                
-                <div class="row g-3 mb-3">
-                  <!-- Nombre de la Tienda -->
-                  <div class="col-md-6">
-                    <label class="form-label small text-muted">Nombre de la Tienda</label>
-                    <input type="text" class="form-control rounded-pill px-4 py-2 border bg-light" value="La Tiendita de la Yeya">
-                  </div>
-                  <!-- Correo de Contacto -->
-                  <div class="col-md-6">
-                    <label class="form-label small text-muted">Correo de Contacto</label>
-                    <input type="email" class="form-control rounded-pill px-4 py-2 border bg-light" value="hola@latienditadelayeya.com">
-                  </div>
-                </div>
-
-                <!-- Mensaje de Bienvenida -->
-                <div class="mb-4">
-                  <label class="form-label small text-muted">Mensaje de Bienvenida</label>
-                  <textarea class="form-control rounded-4 px-4 py-3 border bg-light" rows="3" placeholder="Escribe un mensaje de bienvenida..."></textarea>
-                </div>
-
-                <hr class="text-muted opacity-25 my-4">
-
-                <!-- SECCIÓN 2: Redes Sociales -->
-                <h5 class="fw-bold text-dark mb-3">Redes Sociales</h5>
-                
-                <div class="row g-3 mb-4">
-                  <!-- Instagram -->
-                  <div class="col-md-6">
-                    <label class="form-label small text-muted">Instagram</label>
-                    <input type="text" class="form-control rounded-pill px-4 py-2 border bg-light" value="latienditadelayeya">
-                  </div>
-                  <!-- TikTok -->
-                  <div class="col-md-6">
-                    <label class="form-label small text-muted">TikTok</label>
-                    <input type="text" class="form-control rounded-pill px-4 py-2 border bg-light" value="latienditadelayeya">
-                  </div>
-                </div>
-
-                <!-- Botón Guardar Cambios -->
-                <div class="d-flex justify-content-end pt-2">
-                  <button type="submit" class="btn text-white px-5 py-2 rounded-pill fw-bold shadow-sm" style="background-color: #c86d7c;">
-                    Guardar Cambios
-                  </button>
-                </div>
-
+                <div class="row g-3 mb-3"><div class="col-md-6"><label class="form-label small text-muted">Nombre de la Tienda</label><input name="nombre" required class="form-control rounded-pill px-4 py-2 bg-light"></div><div class="col-md-6"><label class="form-label small text-muted">Correo de Contacto</label><input name="correo" type="email" required class="form-control rounded-pill px-4 py-2 bg-light"></div></div>
+                <div class="mb-4"><label class="form-label small text-muted">Mensaje de Bienvenida</label><textarea name="bienvenida" class="form-control rounded-4 px-4 py-3 bg-light" rows="3"></textarea></div>
+                <hr class="text-muted opacity-25 my-4"><h5 class="fw-bold text-dark mb-3">Redes Sociales</h5>
+                <div class="row g-3 mb-4"><div class="col-md-6"><label class="form-label small text-muted">Instagram</label><input name="instagram" class="form-control rounded-pill px-4 py-2 bg-light"></div><div class="col-md-6"><label class="form-label small text-muted">TikTok</label><input name="tiktok" class="form-control rounded-pill px-4 py-2 bg-light"></div></div>
+                <div class="d-flex justify-content-end"><button type="submit" class="btn text-white px-5 py-2 rounded-pill fw-bold" style="background:#C66271">Guardar en MySQL</button></div>
               </form>
             </div>
             <!-- Fin de la tarjeta de configuración -->
@@ -180,6 +139,11 @@
 
     </main>
 
+    <script src="../JScript/RuntimeConfig.js"></script>
+    <script src="../JScript/ApiConfig.js"></script>
+    <script src="../JScript/StoreConfig.js"></script>
+    <script src="../JScript/Auth.js"></script>
     <script src="../JScript/Navbar_Footer.js"></script>
+      <script src="../JScript/Admin-Settings.js"></script>
   </body>
 </html>
