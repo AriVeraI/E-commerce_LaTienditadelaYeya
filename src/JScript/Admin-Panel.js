@@ -1,24 +1,49 @@
-//  FUNCIONAMIENTO ODE LA BARRA DE NAVEGACIÓN DEL PANEL, PARA QUE EL MENÚ RESALTE LA PARTE EN DONDE SE ENCUENTRA EL ADMIN ACTUALMENTE
+document.addEventListener("DOMContentLoaded", () => {
+  const listContainer = document.getElementById("contenedor-tabla-productos");
+  const searchInput = document.getElementById("admin-search-products");
+  const counterEl = document.getElementById("total-productos-contador");
+  let productos = [];
 
-//Inicio de funcionalidad
-//NOTA: Falta cubrir el detalle de que cuando cambia a otra opción, hace algo raro en la animación, se alcanza a ver 
-//el campo cuadrado y despues se redondea, es muy perceptible - Iran
-const menuLinks = document.querySelectorAll('.menu-link');
+  async function cargar() {
+    if (!listContainer) return;
+    try {
+      const res = await fetch(window.YeyaApi.url("/api/products/catalog"));
+      if (!res.ok) throw new Error(await res.text());
+      productos = await res.json();
+      render(productos);
+    } catch (e) {
+      console.error(e);
+      listContainer.innerHTML = '<p class="text-danger p-3">No se pudieron cargar los productos.</p>';
+    }
+  }
 
-  menuLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      // 1. Restablecemos todos los enlaces a su estado normal (texto oscuro, sin fondo)
-      menuLinks.forEach(item => {
-        item.classList.remove('text-white', 'rounded-pill', 'px-3', 'active-custom');
-        item.classList.add('text-dark');
-        item.style.backgroundColor = '';
-      });
+  function render(lista) {
+    if (!listContainer) return;
+    if (counterEl) counterEl.textContent = `${lista.length} productos en tu tienda`;
+    listContainer.innerHTML = lista.length ? lista.map(p => `
+      <div class="card border-0 shadow-sm rounded-4 p-3 align-items-center flex-row justify-content-between gap-3 flex-wrap">
+        <div class="d-flex align-items-center gap-3">
+          <img src="${p.imagen || '../../assets/Images/An1.png'}" onerror="this.src='../../assets/Images/An1.png'" alt="${p.nombreProducto}" class="rounded-3 object-fit-cover" style="width:70px;height:70px">
+          <div><h6 class="fw-bold mb-1">${p.nombreProducto}</h6><span class="small" style="color:#C66271">${(p.categorias||[]).join(', ') || 'Sin categoría'} · ${p.disponibilidad}</span><small class="d-block text-muted">Stock: ${p.stock}</small></div>
+        </div>
+        <div class="d-flex align-items-center gap-4"><b>$${Number(p.precio).toFixed(2)}</b><a href="9_A-Panel-Products-Add.html?id=${p.idProductos}" class="text-decoration-none fw-bold small" style="color:#C66271">Editar</a><button class="btn btn-link text-danger text-decoration-none fw-bold small p-0" data-delete-product="${p.idProductos}">Eliminar</button></div>
+      </div>`).join('') : '<p class="text-muted p-3 text-center">No hay productos.</p>';
 
-      // 2. Aplicamos el estilo activo (fondo rosa y texto blanco) al enlace seleccionado
-      this.classList.remove('text-dark');
-      this.classList.add('text-white', 'rounded-pill', 'px-3', 'active-custom');
-      this.style.backgroundColor = '#C66271';
+    listContainer.querySelectorAll('[data-delete-product]').forEach(btn => btn.onclick = async () => {
+      const id = btn.dataset.deleteProduct;
+      if (!confirm('¿Eliminar este producto? Si tiene historial de pedidos, el backend protegerá la integridad de la información.')) return;
+      try {
+        const res = await fetch(window.YeyaApi.url(`/api/products/${id}`), {method:'DELETE', headers:window.YeyaAuth.authHeaders()});
+        if (res.status === 409) { alert('Este producto ya tiene historial de pedidos. En lugar de borrarlo, edítalo y deja stock 0.'); return; }
+        if (!res.ok) throw new Error(await res.text());
+        await cargar();
+      } catch(e) { console.error(e); alert('No se pudo eliminar el producto.'); }
     });
-  });
+  }
 
-  //Fin de la fucionalidad
+  searchInput?.addEventListener('input', () => {
+    const q = searchInput.value.toLowerCase().trim();
+    render(productos.filter(p => `${p.nombreProducto} ${p.sku} ${(p.categorias||[]).join(' ')}`.toLowerCase().includes(q)));
+  });
+  cargar();
+});

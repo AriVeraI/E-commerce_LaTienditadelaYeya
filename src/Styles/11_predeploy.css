@@ -1,0 +1,349 @@
+/* Ajustes transversales de responsive/pre-deploy. No cambia la identidad visual. */
+html,body{max-width:100%;overflow-x:hidden}
+img{max-width:100%}
+.table-responsive{overflow-x:auto;-webkit-overflow-scrolling:touch}
+@media (max-width:991.98px){
+  .admin-sidebar,.sidebar,.panel-sidebar{position:static!important;width:100%!important;max-width:none!important}
+  .admin-layout,.settings-layout{display:block!important}
+  main.container,main.container-fluid{padding-left:1rem!important;padding-right:1rem!important}
+  .card{min-width:0}
+}
+@media (max-width:767.98px){
+  h1,.display-4,.display-5{font-size:clamp(1.8rem,9vw,2.5rem)!important}
+  .navbar,.navbar-nav{gap:.35rem}
+  .title-shop-header{font-size:1rem!important}
+  .offcanvas{max-width:92vw}
+  .product-detail-grid,.checkout-grid{grid-template-columns:1fr!important}
+  #product-grid{--bs-columns:1}
+  .admin-order-status{min-width:125px}
+  table{font-size:.88rem}
+}
+@media (max-width:575.98px){
+  .btn{white-space:normal}
+  .card-body{padding:1rem}
+  .form-control,.form-select{font-size:16px}
+}
+
+/* Ajustes específicos detectados en las pantallas del proyecto. */
+@media (max-width:767.98px){
+  main section.mx-5{margin-left:1rem!important;margin-right:1rem!important}
+  .inicio-beneficios .row,.contenedor-categoria .row,.recomendaciones .row{row-gap:1rem}
+  .inicio-beneficios .row>.col,.contenedor-categoria .row>.col,.recomendaciones .row>.col{flex:0 0 100%;max-width:100%}
+  .cabecera-inicio #contenedor-inicio{padding-left:1rem!important;padding-right:1rem!important}
+  .cabecera-inicio h1{font-size:clamp(2rem,11vw,3rem)!important}
+  .piezas-destacadas .text-end{text-align:center!important}
+}
+
+/* ========================================================================
+   FASE 6C - PULIDO RESPONSIVE FINAL
+   Cambios exclusivamente visuales. No modifica lógica, endpoints ni datos.
+   ======================================================================== */
+
+/* Cabecera pública: en móvil se divide en dos filas para evitar enlaces
+   recortados y mantener visibles marca, sesión e iconos. */
+@media (max-width: 767.98px) {
+  .main-header {
+    padding: .65rem .85rem !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: .45rem .65rem !important;
+    min-height: auto !important;
+  }
+
+  .main-header .title-shop-header {
+    order: 1;
+    flex: 0 1 auto;
+    max-width: 55%;
+    margin: 0 !important;
+    font-size: .96rem !important;
+    line-height: 1.15 !important;
+    white-space: nowrap;
+  }
+
+  .main-header .icons-header {
+    order: 2;
+    margin-left: auto;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: .45rem !important;
+    min-width: 0;
+  }
+
+  .main-header .icons-header img {
+    width: 18px !important;
+    height: 18px !important;
+    object-fit: contain;
+  }
+
+  .main-header .icons-header img,
+  .main-header .icons-header a {
+    margin-left: 0 !important;
+  }
+
+  .main-header [data-yeya-logout] {
+    font-size: .68rem !important;
+    line-height: 1.1 !important;
+    padding: .15rem !important;
+    white-space: nowrap !important;
+  }
+
+  .main-header .main-nav {
+    order: 3;
+    flex: 1 0 100%;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .main-header .links-nav {
+    width: 100%;
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: center;
+    gap: .1rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .main-header .links-nav li {
+    margin: 0 !important;
+    min-width: 0;
+    text-align: center;
+  }
+
+  .main-header .principal-link-header {
+    display: block;
+    padding: .32rem .12rem;
+    font-size: .72rem !important;
+    line-height: 1.15;
+    white-space: nowrap;
+  }
+
+  /* Navbar administrativo: Ver tienda pasa a una segunda fila propia. */
+  #navbar2 .icons-header-right {
+    order: 3;
+    flex: 1 0 100%;
+    width: 100%;
+    text-align: center;
+  }
+
+  #navbar2 .icons-header-right .principal-link-header {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .35rem;
+    padding: .2rem .5rem;
+    font-size: .76rem !important;
+  }
+
+  #navbar2 .main-nav {
+    display: none !important;
+  }
+
+  /* Home: mejora legibilidad sin cambiar diseño. */
+  .cabecera-inicio,
+  #contenedor-inicio {
+    min-height: 470px;
+    height: auto !important;
+  }
+
+  .cabecera-inicio #contenedor-inicio {
+    text-align: center;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .cabecera-inicio h1,
+  .cabecera-inicio .titulo-blanco {
+    margin-bottom: 1.1rem !important;
+    line-height: 1.05 !important;
+  }
+
+  .cabecera-inicio .parrafo-blanco {
+    font-size: .92rem !important;
+    line-height: 1.45;
+  }
+
+  /* Login: evita huecos grandes y el enlace de contraseña apretado. */
+  #inicio-de-sesion,
+  #contenedor-login-admin {
+    width: 100% !important;
+    max-width: calc(100vw - 2rem) !important;
+    margin: 2rem auto !important;
+    padding: 1.35rem !important;
+    border-radius: 16px !important;
+  }
+
+  #inicio-de-sesion .form-group,
+  #contenedor-login-admin .form-group {
+    margin: 1rem 0 !important;
+  }
+
+  #inicio-de-sesion .form-group > .d-flex,
+  #contenedor-login-admin .form-group > .d-flex {
+    flex-wrap: wrap !important;
+    gap: .25rem .75rem;
+  }
+
+  #inicio-de-sesion .forgot-password,
+  #contenedor-login-admin .forgot-password {
+    margin-left: auto;
+    font-size: .78rem !important;
+    line-height: 1.25;
+    text-align: right;
+  }
+
+  #inicio-de-sesion h1,
+  #contenedor-login-admin h1 {
+    font-size: 1.85rem !important;
+    padding-bottom: .5rem !important;
+  }
+
+  /* Catálogo: filtros y productos aprovechan todo el ancho móvil. */
+  body:has(#product-grid) main.container {
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  body:has(#product-grid) aside .p-4 {
+    padding: 1rem !important;
+  }
+
+  body:has(#product-grid) #product-grid .card {
+    width: 100%;
+  }
+
+  /* Detalle: conserva proporción y reduce espacios excesivos. */
+  body:has(#product-detail-root) main,
+  body:has([data-product-detail]) main {
+    padding-top: 1rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  /* Panel admin: menú compacto en dos columnas. Así el contenido real
+     aparece mucho antes sin ocultar ninguna función. */
+  body:has(#admin-menu) main section.mx-5 {
+    margin: .85rem !important;
+  }
+
+  body:has(#admin-menu) main section.mx-5 > .row > .col-lg-3 .p-3 {
+    padding: .8rem !important;
+  }
+
+  body:has(#admin-menu) main section.mx-5 > .row > .col-lg-3 .nav.flex-column {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .25rem;
+    margin-top: .35rem !important;
+    margin-bottom: .8rem !important;
+  }
+
+  body:has(#admin-menu) main section.mx-5 > .row > .col-lg-3 .nav-link {
+    padding: .42rem .35rem !important;
+    font-size: .76rem !important;
+    line-height: 1.2;
+    text-align: center;
+    overflow-wrap: anywhere;
+  }
+
+  body:has(#admin-menu) main section.mx-5 > .row > .col-lg-3 small {
+    display: block;
+    padding-left: .25rem !important;
+    font-size: .66rem !important;
+  }
+
+  body:has(#admin-menu) .card.rounded-4 {
+    border-radius: .85rem !important;
+  }
+
+  body:has(#admin-menu) canvas {
+    max-width: 100% !important;
+  }
+
+  /* Checkout: bloques, inputs y resumen sin desbordamiento. */
+  body:has(#checkout-form) main,
+  body:has([data-checkout]) main {
+    padding-left: .75rem !important;
+    padding-right: .75rem !important;
+  }
+}
+
+/* En teléfonos especialmente angostos mantenemos la cabecera estable. */
+@media (max-width: 390px) {
+  .main-header .title-shop-header {
+    font-size: .88rem !important;
+    max-width: 48%;
+  }
+
+  .main-header .icons-header {
+    gap: .32rem !important;
+  }
+
+  .main-header [data-yeya-logout] {
+    font-size: .62rem !important;
+  }
+
+  .main-header .principal-link-header {
+    font-size: .68rem !important;
+  }
+}
+
+/* Tablet: el panel ya está apilado por Bootstrap; compactamos el menú para
+   que no ocupe una pantalla completa antes del contenido. */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  body:has(#admin-menu) main section.mx-5 > .row > .col-lg-3 .p-3 {
+    padding: 1rem !important;
+  }
+
+  body:has(#admin-menu) main section.mx-5 > .row > .col-lg-3 .nav.flex-column {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: .35rem;
+    margin-bottom: .85rem !important;
+  }
+
+  body:has(#admin-menu) main section.mx-5 > .row > .col-lg-3 .nav-link {
+    text-align: center;
+  }
+}
+
+
+/* ========================================================================
+   FASE 6E - CIERRE VISUAL DE TIPOGRAFÍA EN CATÁLOGO
+   Solo presentación. Se carga después de Bootstrap para preservar la
+   identidad Fredoka + Montserrat sin modificar lógica ni componentes.
+   ======================================================================== */
+.catalog-page {
+  font-family: var(--fuente-cuerpo), "Montserrat", sans-serif !important;
+}
+
+.catalog-page .main-header .title-shop-header,
+.catalog-page .main-header .title-shop-header strong,
+.catalog-page h1,
+.catalog-page h2,
+.catalog-page h3,
+.catalog-page h4,
+.catalog-page h5,
+.catalog-page h6,
+.catalog-page .card-title,
+.catalog-page .fw-bold {
+  font-family: var(--fuente-titulos), "Fredoka", sans-serif !important;
+}
+
+.catalog-page .main-header .principal-link-header,
+.catalog-page .main-header [data-yeya-logout],
+.catalog-page p,
+.catalog-page .text-muted,
+.catalog-page input,
+.catalog-page select,
+.catalog-page button,
+.catalog-page label,
+.catalog-page .form-control,
+.catalog-page .form-select,
+.catalog-page .form-check-label,
+.catalog-page .card,
+.catalog-page .page-link {
+  font-family: var(--fuente-cuerpo), "Montserrat", sans-serif !important;
+}

@@ -17,7 +17,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <!-- Título de la pestaña del navegador -->
     <title>A-Settings-Admin</title>
-  </head>
+    <link rel="stylesheet" href="../Styles/11_predeploy.css">
+</head>
 
   <body>
     <!------------------------------------------------ NAVBAR --------------------------------------------->
@@ -65,7 +66,7 @@
               <small class="text-muted fw-bold text-uppercase px-3" style="font-size: 0.75rem;">Configuración</small>
               <ul class="nav flex-column mt-2">
                 <li class="nav-item">
-                  <a class="nav-link text-white rounded-pill px-3 py-2 menu-link active-custom" style="background-color: #c86d7c;" href="9_A-Settings-Admin.html">Administradores</a>
+                  <a class="nav-link text-white rounded-pill px-3 py-2 menu-link active-custom" style="background-color: #C66271;" href="9_A-Settings-Admin.html">Administradores</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link text-dark py-2 menu-link" href="9_A-Settings-Jewelry-Categories.html">Categorías</a>
@@ -85,78 +86,22 @@
             <div class="d-flex justify-content-between align-items-center mb-4">
               <div>
                 <h3 class="fw-bold text-dark mb-1">Administradores</h3>
-                <p class="text-muted mb-0 small">3 con acceso al panel</p>
+                <p id="admin-users-count" class="text-muted mb-0 small">Cargando...</p>
               </div>
-              <a href="#" class="btn text-white px-4 py-2 rounded-pill fw-bold shadow-sm" style="background-color: #c86d7c;">
-                + Invitar
-              </a>
+              <button id="admin-add-user" type="button" class="btn text-white px-4 py-2 rounded-pill fw-bold shadow-sm" style="background-color:#C66271">+ Crear administrador</button>
             </div>
 
             <!-- LISTADO DE ADMINISTRADORES (Cards individuales) -->
-            <div class="d-flex flex-column gap-3">
-              
-              <!-- Administrador 1: Yeva Herrera (Dueña) -->
-              <div class="card border-0 shadow-sm rounded-4 p-3 align-items-center flex-row justify-content-between">
-                <div class="d-flex align-items-center gap-3">
-                  <div class="rounded-circle d-flex justify-content-center align-items-center fw-bold text-white" style="width: 50px; height: 50px; background-color: #c86d7c; font-size: 0.9rem;">
-                    YE
-                  </div>
-                  <div>
-                    <div class="d-flex align-items-center gap-2 mb-1">
-                      <h6 class="fw-bold text-dark mb-0">Yeva Herrera</h6>
-                      <span class="badge rounded-pill px-2 py-1 fw-semibold" style="background-color: #fce7f3; color: #db2777; font-size: 0.7rem;">DUEÑA</span>
-                    </div>
-                    <span class="text-muted small">yeva@tiendita.com &bull; desde Ene 2025</span>
-                  </div>
-                </div>
-                <!-- Los dueños normalmente no tienen botón de revocar -->
-                <div></div>
-              </div>
-
-              <!-- Administrador 2: Carmen Ruiz (Colaboradora) -->
-              <div class="card border-0 shadow-sm rounded-4 p-3 align-items-center flex-row justify-content-between">
-                <div class="d-flex align-items-center gap-3">
-                  <div class="rounded-circle d-flex justify-content-center align-items-center fw-bold text-white" style="width: 50px; height: 50px; background-color: #c86d7c; font-size: 0.9rem;">
-                    CA
-                  </div>
-                  <div>
-                    <div class="d-flex align-items-center gap-2 mb-1">
-                      <h6 class="fw-bold text-dark mb-0">Carmen Ruiz</h6>
-                      <span class="badge rounded-pill px-2 py-1 fw-semibold" style="background-color: #ede9fe; color: #7c3aed; font-size: 0.7rem;">COLABORADORA</span>
-                    </div>
-                    <span class="text-muted small">carmen@tiendita.com &bull; desde Mar 2026</span>
-                  </div>
-                </div>
-                <div>
-                  <a href="#" class="text-decoration-none fw-bold small text-muted hover-danger">Revocar</a>
-                </div>
-              </div>
-
-              <!-- Administrador 3: Daniela Paz (Soporte / Invitación pendiente) -->
-              <div class="card border-0 shadow-sm rounded-4 p-3 align-items-center flex-row justify-content-between">
-                <div class="d-flex align-items-center gap-3">
-                  <div class="rounded-circle d-flex justify-content-center align-items-center fw-bold text-white" style="width: 50px; height: 50px; background-color: #c86d7c; font-size: 0.9rem;">
-                    DA
-                  </div>
-                  <div>
-                    <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
-                      <h6 class="fw-bold text-dark mb-0">Daniela Paz</h6>
-                      <span class="badge rounded-pill px-2 py-1 fw-semibold" style="background-color: #e0f2fe; color: #0284c7; font-size: 0.7rem;">SOPORTE</span>
-                      <span class="small fw-semibold" style="color: #d97706; font-size: 0.75rem;">&bull; Invitación pendiente</span>
-                    </div>
-                    <span class="text-muted small">daniela@tiendita.com &bull; desde Jul 2026</span>
-                  </div>
-                </div>
-                <div>
-                  <a href="#" class="text-decoration-none fw-bold small text-muted hover-danger">Revocar</a>
-                </div>
-              </div>
-
-            </div>
+            <div id="admin-users-list" class="d-flex flex-column gap-3"><p class="text-muted">Cargando...</p></div>
             <!-- Fin del listado de administradores -->
       </section>
     </main>
 
+    <script src="../JScript/RuntimeConfig.js"></script>
+    <script src="../JScript/ApiConfig.js"></script>
+    <script src="../JScript/StoreConfig.js"></script>
+    <script src="../JScript/Auth.js"></script>
     <script src="../JScript/Navbar_Footer.js"></script>
+      <script src="../JScript/Admin-Settings.js"></script>
   </body>
 </html>

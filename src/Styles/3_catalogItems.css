@@ -27,3 +27,31 @@
   background-color: #f8f9fa;
   color: #dc3545;
 }
+
+
+/* FASE 6D: restablece la identidad tipográfica del proyecto en Catálogo.
+   Bootstrap define su propia fuente sobre body; estas reglas son deliberadamente
+   posteriores/específicas para conservar Montserrat + Fredoka. */
+.catalog-page,
+.catalog-page input,
+.catalog-page select,
+.catalog-page button,
+.catalog-page textarea,
+.catalog-page .form-control,
+.catalog-page .form-select,
+.catalog-page .form-check-label,
+.catalog-page .card,
+.catalog-page .page-link {
+  font-family: var(--fuente-cuerpo), "Montserrat", sans-serif !important;
+}
+
+.catalog-page h1,
+.catalog-page h2,
+.catalog-page h3,
+.catalog-page h4,
+.catalog-page h5,
+.catalog-page h6,
+.catalog-page .card-title,
+.catalog-page .fw-bold {
+  font-family: var(--fuente-titulos), "Fredoka", sans-serif !important;
+}

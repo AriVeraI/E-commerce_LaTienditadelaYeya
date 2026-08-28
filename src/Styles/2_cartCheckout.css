@@ -1,5 +1,5 @@
 :root {
-  --color-principal: #b05763;
+  --color-principal: #C66271;
   --color-oscuro: #333333;
 }
 
@@ -60,4 +60,27 @@ h6,
 .btn-yeya:active {
   transform: translateY(0) !important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+
+/* Fase 3: opciones de pago inspiradas en el diseño de Figma. */
+.payment-option {
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.payment-option:hover {
+  border-color: var(--color-principal) !important;
+}
+
+.payment-option.selected {
+  border-color: var(--color-principal) !important;
+  background-color: rgba(198, 98, 113, 0.05);
+  box-shadow: 0 0 0 1px rgba(198, 98, 113, 0.15);
+}
+
+.payment-option .form-check-input:checked {
+  background-color: var(--color-principal);
+  border-color: var(--color-principal);
 }
